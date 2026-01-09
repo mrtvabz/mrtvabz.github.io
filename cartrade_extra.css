@@ -190,3 +190,22 @@
   font-weight: 900;
   font-family: "DM Sans", sans-serif;
 }
+
+
+.card-link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.card-link .card{
+  cursor: pointer;
+
+}
+
+
+.card-link:focus-visible .card{
+  outline: 3px solid black;
+  outline-offset: 4px;
+}
