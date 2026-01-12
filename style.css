@@ -1008,6 +1008,26 @@ html { scroll-behavior: smooth; }
   .mw-help__grid{ grid-template-columns: 1fr; }
 }
 
+
+ /* Brand (logo + text) */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo{
+  width: 78px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.brand-text{
+  line-height: 1;
+}
+
   
 
 
