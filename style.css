@@ -1008,7 +1008,6 @@ html { scroll-behavior: smooth; }
   .mw-help__grid{ grid-template-columns: 1fr; }
 }
 
-
  /* Brand (logo + text) */
 .brand{
   display: flex;
