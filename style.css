@@ -154,8 +154,12 @@ font-size: 32px;
         background-color: transparent;
         border: none;
         position: absolute;
-        right: 0;
+        right: 10px;
+        top:80%;
         margin: 8px 10px;
+        display: none;
+        padding:8px;
+        z-index:9999;
         display: none;
     }
 
