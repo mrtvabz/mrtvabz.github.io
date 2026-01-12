@@ -1,0 +1,159 @@
+/* ==========================================================
+   Contacts page (ONLY) — staff cards
+   contacts.html uses: <body class="page-contacts">
+   ========================================================== */
+
+.page-contacts .page-section{
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.page-contacts .contacts-frame{
+  max-width: 1200px;
+  margin: 24px auto 26px auto;
+  border: 2px solid #000;
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px 18px;
+  text-align: center;
+}
+
+.page-contacts .contacts-frame__title{
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.page-contacts .contacts-frame__sub{
+  font-family: "Roboto", sans-serif;
+  opacity: 0.75;
+}
+
+.page-contacts .staff-grid{
+  max-width: 1100px;
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  
+
+}
+
+.page-contacts .staff-card{
+  border: 2px solid #000;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-contacts .staff-photo{
+  height: 220px;
+  background: #f2f4f7;
+  overflow: hidden;
+}
+
+.page-contacts .staff-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.page-contacts .staff-body{
+  padding: 14px 16px 16px;
+}
+
+.page-contacts .staff-name{
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  margin: 0 0 6px 0;
+}
+
+.page-contacts .staff-role{
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 12px 0;
+  opacity: 0.8;
+}
+
+.page-contacts .staff-meta{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.page-contacts .staff-meta li{
+  padding: 6px 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+.page-contacts .staff-meta li:first-child{
+  border-top: none;
+  padding-top: 0;
+}
+
+.page-contacts .staff-meta span{
+  opacity: 0.7;
+}
+
+.page-contacts .staff-actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.page-contacts .staff-btn{
+  display: inline-block;
+  border: 2px solid #000;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  color: #000;
+  background: #fff;
+}
+
+.page-contacts .staff-btn:hover{
+  opacity: 0.75;
+}
+
+.page-contacts .staff-btn--ghost{
+  background: transparent;
+}
+
+.page-contacts .contacts-note{
+  max-width: 1200px;
+  margin: 18px auto 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .page-contacts .staff-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .page-contacts .staff-grid{ grid-template-columns: 1fr; }
+  .page-contacts .staff-photo{ height: 200px; }
+}
+
+
+.page-contacts .staff-photo{
+  height: 60% !important;
+}
+
+.page-contacts .staff-photo img{
+  height: auto !important;
+  width: 100%;
+  object-fit: contain !important;
+  background: #f3f3f3; /* optional */
+}
+
+
+
