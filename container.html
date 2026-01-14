@@ -68,7 +68,7 @@
             </p>
 
             <div class="ct-cta-row">
-              <a class="ct-btn ct-btn-solid" href="contacts.html"><i class="fa-solid fa-headset"></i>Связаться</a>
+              <a class="ct-btn ct-btn-solid js-open-contacts" href="contacts.html"><i class="fa-solid fa-headset"></i>Связаться</a>
               <a class="ct-btn" href="mailto:maxwincorp1@gmail.com"><i class="fa-solid fa-envelope"></i>Почта</a>
             </div>
           </div>
@@ -193,7 +193,7 @@
           <span>Напишите направление и параметры — ответим быстро и по делу.</span>
         </div>
         <div class="right">
-          <a class="ct-btn ct-btn-solid" href="contacts.html"><i class="fa-solid fa-paper-plane"></i>Запрос</a>
+          <a class="ct-btn ct-btn-solid js-open-contacts" href="contacts.html"><i class="fa-solid fa-paper-plane"></i>Запрос</a>
           <a class="ct-btn" href="mailto:maxwincorp1@gmail.com"><i class="fa-solid fa-envelope"></i>maxwincorp1@gmail.com</a>
         </div>
       </div>
@@ -226,6 +226,81 @@
   </section>
 
 </main>
+
+
+<!-- Contacts Modal (Container page only) -->
+<div class="ct-modal" id="ctContactsModal" aria-hidden="true">
+  <div class="ct-modal__overlay" data-ct-close="1"></div>
+
+  <div class="ct-modal__panel" role="dialog" aria-modal="true" aria-label="Contacts">
+    <button class="ct-modal__close" type="button" aria-label="Закрыть" data-ct-close="1">×</button>
+
+    <h3 class="ct-modal__title">Связь и заявки</h3>
+    <p class="ct-modal__sub">Выберите удобный способ — ответим быстро и по делу.</p>
+
+    <div class="ct-modal__grid">
+      <!-- Manager -->
+      <div class="ct-modal__card">
+        <div class="ct-modal__cardTitle">Менеджер</div>
+
+        <div class="ct-modal__photo">
+          <img class="ct-modal__img" src="11.jpg" alt="Менеджер">
+        </div>
+
+        <div class="ct-modal__cardSub">Консультация / подбор</div>
+        <div class="ct-modal__actions">
+          <a class="ct-btn ct-btn-solid" href="https://t.me/USERNAME" target="_blank" rel="noopener">
+            <i class="fa-brands fa-telegram"></i>Telegram
+          </a>
+          <a class="ct-btn" href="tel:+821012345678">
+            <i class="fa-solid fa-phone"></i>Позвонить
+          </a>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="ct-modal__card">
+        <div class="ct-modal__cardTitle">Телефон</div>
+
+        <div class="ct-modal__photo">
+          <img class="ct-modal__img" src="12.jpg" alt="Телефон">
+        </div>
+
+        <div class="ct-modal__cardSub">Номер добавим позже</div>
+        <div class="ct-modal__actions">
+          <a class="ct-btn" href="tel:+821012345678">
+            <i class="fa-solid fa-phone"></i>Позвонить
+          </a>
+          <a class="ct-btn" href="https://wa.me/821012345678" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Request -->
+      <div class="ct-modal__card">
+        <div class="ct-modal__cardTitle">Заявка</div>
+
+        <!-- If you don't have a 3rd photo yet, you can delete this ct-modal__photo block -->
+        <div class="ct-modal__photo">
+          <img class="ct-modal__img" src="13.jpg" alt="Заявка">
+        </div>
+
+        <div class="ct-modal__cardSub">VIN / ссылка / требования</div>
+        <div class="ct-modal__actions">
+          <a class="ct-btn ct-btn-solid" href="mailto:maxwincorp1@gmail.com">
+            <i class="fa-solid fa-envelope"></i>Email
+          </a>
+          <a class="ct-btn" href="contacts.html">
+            <i class="fa-solid fa-file-lines"></i>Форма
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- custom javascript -->
 <script src="sss.js" defer></script>
