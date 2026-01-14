@@ -361,3 +361,135 @@
     transform: none !important;
   }
 }
+
+
+/* =========================
+   Contacts modal (Container)
+   Scoped to this page only
+   ========================= */
+.page-container .ct-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.page-container .ct-modal[aria-hidden="true"]{ display: none; }
+
+.page-container .ct-modal__overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+}
+
+.page-container .ct-modal__panel{
+  position: relative;
+  width: min(980px, calc(100% - 18px));
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.page-container .ct-modal__close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.page-container .ct-modal__title{
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.page-container .ct-modal__sub{
+  margin: 0 0 14px;
+  opacity: .82;
+  line-height: 1.5;
+}
+
+.page-container .ct-modal__grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px){
+  .page-container .ct-modal__grid{ grid-template-columns: 1fr; }
+}
+
+.page-container .ct-modal__card{
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff;
+}
+
+.page-container .ct-modal__cardTitle{
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+
+.page-container .ct-modal__cardSub{
+  font-size: 13px;
+  opacity: .75;
+  margin-bottom: 10px;
+}
+
+.page-container .ct-modal__actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* make ct-btn a bit smaller inside modal */
+.page-container .ct-modal .ct-btn{
+  padding: 10px 12px;
+}
+
+
+/* ===== Container modal: photo fills top (no empty space) ===== */
+.page-container #ctContactsModal .ct-modal__card{
+  overflow: hidden;
+  padding: 0;
+}
+
+.page-container #ctContactsModal .ct-modal__photo{
+  width: 100%;
+  height: 340px;               /* change 300–420 */
+  margin: 0 0 12px 0;
+  border-bottom: 2px solid #000;
+  overflow: hidden;
+  background:#000;
+}
+
+.page-container #ctContactsModal .ct-modal__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display:block;
+}
+
+/* Put padding back for text/buttons */
+.page-container #ctContactsModal .ct-modal__cardTitle,
+.page-container #ctContactsModal .ct-modal__cardSub,
+.page-container #ctContactsModal .ct-modal__actions{
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.page-container #ctContactsModal .ct-modal__cardTitle{ padding-top: 14px; }
+.page-container #ctContactsModal .ct-modal__actions{ padding-bottom: 14px; }
