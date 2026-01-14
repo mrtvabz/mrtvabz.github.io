@@ -209,3 +209,222 @@
   outline: 3px solid black;
   outline-offset: 4px;
 }
+
+
+
+/* ==========================================================
+   CarTrade Modal (ONLY) — popup for "Связаться / VIN"
+   Scoped to .page-cartrade so other pages are untouched.
+   ========================================================== */
+.page-cartrade .ct-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.page-cartrade .ct-modal[aria-hidden="true"]{ display:none; }
+
+.page-cartrade .ct-modal__overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.45);
+}
+
+.page-cartrade .ct-modal__panel{
+  position: relative;
+  width: min(920px, 100%);
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 18px;
+  padding: 18px 18px 16px 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  max-height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.page-cartrade .ct-modal__close{
+  position:absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid #000;
+  background:#fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor:pointer;
+}
+
+.page-cartrade .ct-modal__title{
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  margin: 4px 0 6px 0;
+  font-size: 22px;
+}
+
+.page-cartrade .ct-modal__sub{
+  margin: 0 0 14px 0;
+  font-family: "Roboto", sans-serif;
+  opacity: .78;
+}
+
+.page-cartrade .ct-modal__grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 980px){
+  .page-cartrade .ct-modal__grid{ grid-template-columns: 1fr; }
+}
+
+.page-cartrade .ct-modal__card{
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff;
+}
+
+.page-cartrade .ct-modal__card.is-focus{
+  box-shadow: 0 12px 30px rgba(0,0,0,.14);
+  transform: translateY(-2px);
+}
+
+.page-cartrade .ct-modal__top{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.page-cartrade .ct-staff-photo{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 2px solid #000;
+  flex: 0 0 auto;
+}
+
+.page-cartrade .ct-modal__name{
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+
+.page-cartrade .ct-modal__role{
+  font-family: "Roboto", sans-serif;
+  opacity: .78;
+  margin-top: 2px;
+}
+
+.page-cartrade .ct-modal__actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.page-cartrade .ct-modal__actions .ct-btn{
+  padding: 10px 14px;
+}
+
+.page-cartrade .ct-modal__hint{
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  opacity: .72;
+  font-size: 13px;
+}
+
+/* Make contact cards feel clickable */
+.page-cartrade .ct-contact[data-ct-open]{
+  cursor: pointer;
+}
+.page-cartrade .ct-contact[data-ct-open]:focus-visible{
+  outline: 3px solid #000;
+  outline-offset: 4px;
+}
+
+
+.page-cartrade .ct-avatar{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  border: 2px solid #000;
+  overflow: hidden;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.page-cartrade .ct-avatar .ct-staff-photo{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.page-cartrade .ct-avatar__fallback{
+  display: grid; /* will be hidden on image load */
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+}
+
+.ct-modal__grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
+  gap: 18px;
+  justify-content: center;
+}       
+
+
+
+/* --- CarTrade modal: single card centered + photo fills top --- */
+.page-cartrade #ctContactsModal .ct-modal__grid{
+  display: grid;
+  grid-template-columns: minmax(320px, 420px);
+  justify-content: center;
+  gap: 18px;
+}
+
+.page-cartrade #ctContactsModal .ct-modal__card{
+  border: 2px solid #000;
+  border-radius: 18px;
+  background: #fff;
+  padding: 14px;
+  overflow: hidden;
+}
+
+/* full-bleed photo (touches top border, no empty gap) */
+.page-cartrade #ctContactsModal .ct-modal__photo{
+  height: 360px;                 /* change if you want taller */
+  margin: -14px -14px 12px -14px;/* cancels card padding */
+  border-bottom: 2px solid #000;
+}
+
+.page-cartrade #ctContactsModal .ct-modal__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.page-cartrade #ctContactsModal .ct-modal__name{
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  margin-top: 6px;
+}
+
+.page-cartrade #ctContactsModal .ct-modal__role{
+  font-family: "Roboto", sans-serif;
+  opacity: .78;
+  margin-top: 4px;
+}
