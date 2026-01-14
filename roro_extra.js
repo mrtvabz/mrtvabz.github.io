@@ -9,6 +9,16 @@
   const subEl = document.getElementById("shipModalSubtitle");
   const detailsEl = document.getElementById("shipModalDetails");
   const thumbsEl = document.getElementById("shipModalThumbs");
+  // Contacts modal (RoRo CTA button)
+  const contactsModal = document.getElementById("contactsModal");
+  const contactsBtn = document.getElementById("openContacts");
+
+  function updateScrollLock(){
+    const shipOpen = modal.classList.contains("is-open");
+    const contactsOpen = contactsModal ? contactsModal.classList.contains("is-open") : false;
+    document.body.style.overflow = (shipOpen || contactsOpen) ? "hidden" : "";
+  }
+
 
   function setActiveThumb(idx){
     thumbsEl.querySelectorAll(".ship-thumb").forEach((t,i)=>{
@@ -45,13 +55,13 @@
     imgEl.src = safeImages[0] || "";
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    updateScrollLock();
   }
 
   function closeModal(){
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+    updateScrollLock();
     imgEl.src = "";
     thumbsEl.innerHTML = "";
   }
@@ -67,7 +77,33 @@
     if (e.key === "Escape") closeModal();
   });
 
+  // Open CTA contacts modal (without leaving RoRo page)
+  if (contactsBtn && contactsModal){
+    const openContacts = (e) => {
+      e.preventDefault();
+      contactsModal.classList.add("is-open");
+      contactsModal.setAttribute("aria-hidden", "false");
+      updateScrollLock();
+    };
+
+    const closeContacts = () => {
+      contactsModal.classList.remove("is-open");
+      contactsModal.setAttribute("aria-hidden", "true");
+      updateScrollLock();
+    };
+
+    contactsBtn.addEventListener("click", openContacts);
+
+    // close when clicking overlay or X (data-close="1")
+    contactsModal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-close='1']")) closeContacts();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && contactsModal.classList.contains("is-open")) closeContacts();
+    });
+  }
+
   // Simple reveal (only if global reveal isn't present)
   if (!document.querySelector("[data-reveal]")) return;
 })();
-
