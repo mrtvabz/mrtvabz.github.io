@@ -149,7 +149,7 @@
             <div class="cta-text">Готовы отправить автомобиль?</div>
             <div class="cta-sub">Напишите нам — ответим быстро и по делу.</div>
           </div>
-          <a class="btn-solid" href="contacts.html"><i class="fa-solid fa-envelope"></i> Контакты</a>
+          <a class="btn-solid" href="contacts.html" id="openContacts"><i class="fa-solid fa-envelope"></i> Контакты</a>
         </div>
       </div>
     </section>
@@ -169,6 +169,59 @@
           <p class="ship-modal__sub" id="shipModalSubtitle"></p>
           <p class="ship-modal__details" id="shipModalDetails"></p>
           <div class="ship-modal__thumbs" id="shipModalThumbs"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contacts Modal (RoRo only) -->
+  <div class="ship-modal ship-modal--contacts" id="contactsModal" aria-hidden="true">
+    <div class="ship-modal__overlay" data-close="1"></div>
+    <div class="ship-modal__box" role="dialog" aria-modal="true" aria-label="Contacts">
+      <button class="ship-modal__close" type="button" data-close="1">×</button>
+
+      <div class="ship-modal__content">
+        <div class="ship-modal__text">
+          <h3>Связь и заявки</h3>
+          <p class="ship-modal__sub">Выберите удобный способ — мы ответим быстро.</p>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <img class="contact-photo" src="10.jpg" alt="Менеджер">
+
+              <div class="contact-title">Менеджер</div>
+              <div class="contact-sub">Консультация / подбор</div>
+              <div class="contact-actions">
+                <a class="btn-solid" href="https://t.me/USERNAME" target="_blank" rel="noopener">Telegram</a>
+                <a class="btn-solid" href="tel:+821012345678">Позвонить</a>
+              </div>
+              <div class="contact-note">Замените USERNAME и номер на ваши.</div>
+            </div>
+
+            <div class="contact-card">
+              <img class="contact-photo" src="10.jpg" alt="Телефон">
+
+              <div class="contact-title">Телефон</div>
+              <div class="contact-sub">Быстрый звонок / WhatsApp</div>
+              <div class="contact-actions">
+                <a class="btn-solid" href="tel:+821012345678">Позвонить</a>
+                <a class="btn-solid" href="https://wa.me/821012345678" target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+              <div class="contact-note">Замените номер на ваш.</div>
+            </div>
+
+            <div class="contact-card">
+              <img class="contact-photo" src="10.jpg" alt="Телефон">
+
+              <div class="contact-title">Телефон</div>
+              <div class="contact-sub">Быстрый звонок / WhatsApp</div>
+              <div class="contact-actions">
+                <a class="btn-solid" href="tel:+821012345678">Позвонить</a>
+                <a class="btn-solid" href="https://wa.me/821012345678" target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+              <div class="contact-note">Замените номер на ваш.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
