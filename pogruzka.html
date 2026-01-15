@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaxWin Logistics — Погрузка</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pogruzka.js" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+  <!-- Page-only styles -->
+  <link rel="stylesheet" href="pogruzka.css" />
+</head>
+
+<body class="page-pogruzka">
+  <header id="header">
+    <nav class="navbar container">
+      <a href="index.html" class="nav-brand text-dark brand">
+        <img src="Picture1.png" alt="MaxWin Logistics" class="brand-logo">
+        <span class="brand-text">MaxWin Logistics</span>
+      </a>
+
+      <button class="toggle-button" type="button" aria-label="Menu">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+
+      <div class="collapse">
+        <ul class="navbar-nav">
+          <a href="index.html" class="nav-link">Главная страница</a>
+          <a href="roro.html" class="nav-link">RoRo</a>
+          <a href="container.html" class="nav-link">Контейнер</a>
+          <a href="cartrade.html" class="nav-link">КарТрейд</a>
+          <a href="contacts.html" class="nav-link">Контакты</a>
+          <a href="pogruzka.html" class="nav-link">Погрузка</a>
+          
+        </ul>
+      </div>
+
+      <div class="collapse">
+        <ul class="navbar-nav">
+          <a href="https://www.instagram.com/maxwin.co?igsh=MWpsNnZzN3JlbXF5eQ%3D%3D&utm_source=qr" class="nav-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@maxwin.co1?si=4Nvc-4zzMUFd7dng" class="nav-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="#" class="nav-link"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="nav-link"><i class="fa-brands fa-whatsapp"></i></a>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="site-main">
+    <section class="page-section pg-wrap">
+      <div class="container">
+
+        <div class="pg-breadcrumb">MaxWin <span>›</span> Погрузка</div>
+        <h1 class="pg-title">Отчет погрузок</h1>
+
+        <!-- Filters -->
+        <div class="pg-filters" id="pgFilters">
+          <button class="pg-pill is-active" type="button" data-filter="all">Все</button>
+          <button class="pg-pill" type="button" data-filter="korea">Отзывы</button>
+          
+        </div>
+
+        <!-- Grid -->
+        <div class="pg-grid" id="pgGrid">
+
+          <!-- CARD (example #1) -->
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="14 января 2026"
+            data-video="video/ff.mp4"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="sf.jpg" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">14 января 2026</div>
+              <div class="pg-country"><span class="flag">🇨🇳</span> Китай</div>
+            </div>
+          </article>
+
+          <!-- CARD (example #2) -->
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="26 декабря 2025"
+            data-video="videos/pogruzka-02.mp4"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="thumbs/pogruzka-02.jpg" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">26 декабря 2025</div>
+              <div class="pg-country"><span class="flag">🇰🇷</span>Отзывы</div>
+            </div>
+          </article>
+
+          <!-- CARD (example #3) -->
+          <article class="pg-card" tabindex="0"
+            data-country="all"
+            data-date="19 декабря 2025"
+            data-video="videos/pogruzka-03.mp4"
+            data-title="Погрузка — Корея">
+            <div class="pg-media">
+              <img src="thumbs/pogruzka-03.jpg" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">19 декабря 2025</div>
+              <div class="pg-country"><span class="flag">🇰🇷</span> Корея</div>
+            </div>
+          </article>
+
+          <!-- CARD (example #4) -->
+          <article class="pg-card" tabindex="0"
+            data-country="japan"
+            data-date="12 декабря 2025"
+            data-video="videos/pogruzka-04.mp4"
+            data-title="Погрузка — Япония">
+            <div class="pg-media">
+              <img src="thumbs/pogruzka-04.jpg" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">12 декабря 2025</div>
+              <div class="pg-country"><span class="flag">🇯🇵</span> Япония</div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Video Modal -->
+  <div class="pg-modal" id="pgModal" aria-hidden="true">
+    <div class="pg-modal__overlay" data-close="1"></div>
+
+    <div class="pg-modal__box" role="dialog" aria-modal="true" aria-label="Видео погрузки">
+      <button class="pg-modal__close" type="button" data-close="1">×</button>
+
+      <div class="pg-modal__title" id="pgModalTitle">Видео</div>
+
+      <div class="pg-modal__player">
+        <video id="pgModalVideo" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+
+  <script src="sss.js" defer></script>
+  <script src="pogruzka.js" defer></script>
+</body>
+</html>
