@@ -6,9 +6,7 @@
   <title>MaxWin Logistics — Погрузка</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="pogruzka.js" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-
 
   <!-- Page-only styles -->
   <link rel="stylesheet" href="pogruzka.css" />
@@ -34,7 +32,6 @@
           <a href="cartrade.html" class="nav-link">КарТрейд</a>
           <a href="contacts.html" class="nav-link">Контакты</a>
           <a href="pogruzka.html" class="nav-link">Погрузка</a>
-          
         </ul>
       </div>
 
@@ -64,78 +61,149 @@
         <div class="pg-filters" id="pgFilters">
           <button class="pg-pill is-active" type="button" data-filter="all">Все</button>
           <button class="pg-pill" type="button" data-filter="korea">Отзывы</button>
-          
         </div>
 
         <!-- Grid -->
         <div class="pg-grid" id="pgGrid">
 
-          <!-- CARD (example #1) -->
+          <!-- CARD #1 (ID only) -->
           <article class="pg-card" tabindex="0"
             data-country="korea"
             data-date="14 января 2026"
-            data-yt="wgF-HA6IMME"
+            data-yt="NjxoV7eQi3U"
             data-title="Погрузка — Отзывы">
             <div class="pg-media">
               <img src="sf.jpg" alt="Погрузка видео превью">
               <div class="pg-play"><i class="fa-solid fa-play"></i></div>
             </div>
-            <div class="pg-meta">
-              <div class="pg-date">14 января 2026</div>
-              <div class="pg-country"><span class="flag">🇨🇳</span> Китай</div>
-            </div>
+            <div class="pg-meta"></div>
           </article>
 
-          <!-- CARD (example #2) -->
+          <!-- CARD #2 (Shorts URL) -->
           <article class="pg-card" tabindex="0"
             data-country="korea"
             data-date="26 декабря 2025"
-            data-yt="https://www.youtube.com/shorts/wgF-HA6IMME"
+            data-yt="https://www.youtube.com/shorts/chju2lPheiY"
             data-title="Погрузка — Отзывы">
             <div class="pg-media">
-              <img src="thumbs/pogruzka-02.jpg" alt="Погрузка видео превью">
+              <img src="Picture1.png" alt="Погрузка видео превью">
               <div class="pg-play"><i class="fa-solid fa-play"></i></div>
             </div>
-            <div class="pg-meta">
-              <div class="pg-date">26 декабря 2025</div>
-              <div class="pg-country"><span class="flag">🇰🇷</span>Отзывы</div>
-            </div>
+            <div class="pg-meta"></div>
           </article>
 
-          <!-- CARD (example #3) -->
+          <!-- CARD #3 -->
           <article class="pg-card" tabindex="0"
             data-country="all"
             data-date="19 декабря 2025"
-            data-video="videos/pogruzka-03.mp4"
+            data-yt="https://www.youtube.com/shorts/wgF-HA6IMME"
             data-title="Погрузка — Корея">
             <div class="pg-media">
-              <img src="thumbs/pogruzka-03.jpg" alt="Погрузка видео превью">
+              <img src="Picture1.png" alt="Погрузка видео превью">
               <div class="pg-play"><i class="fa-solid fa-play"></i></div>
             </div>
-            <div class="pg-meta">
-              <div class="pg-date">19 декабря 2025</div>
-              <div class="pg-country"><span class="flag">🇰🇷</span> Корея</div>
-            </div>
+            <div class="pg-meta"></div>
           </article>
 
-          <!-- CARD (example #4) -->
+          <!-- CARD #4 -->
           <article class="pg-card" tabindex="0"
             data-country="japan"
             data-date="12 декабря 2025"
-            data-video="videos/pogruzka-04.mp4"
+            data-yt="https://www.youtube.com/shorts/BciQEziJVMY"
             data-title="Погрузка — Япония">
             <div class="pg-media">
-              <img src="thumbs/pogruzka-04.jpg" alt="Погрузка видео превью">
+              <img src="Picture1.png" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta"></div>
+          </article>
+
+          <!-- The rest of your cards (keep as-is) -->
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="14 января 2026"
+            data-yt="https://www.youtube.com/shorts/YnfhJnh3IVw"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="Picture1.png" alt="Погрузка видео превью">
               <div class="pg-play"><i class="fa-solid fa-play"></i></div>
             </div>
             <div class="pg-meta">
-              <div class="pg-date">12 декабря 2025</div>
-              <div class="pg-country"><span class="flag">🇯🇵</span> Япония</div>
+              <div class="pg-date">14 января 2026</div>
+            </div>
+          </article>
+
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="14 января 2026"
+            data-yt="https://www.youtube.com/shorts/swhw2k7GGHA"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="Picture1.png" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">14 января 2026</div>
+            </div>
+          </article>
+
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="14 января 2026"
+            data-yt="https://www.youtube.com/shorts/b_4j-YXcoGQ"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="Picture1.png" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">14 января 2026</div>
+            </div>
+          </article>
+
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="14 января 2026"
+            data-yt="https://www.youtube.com/shorts/VK6jnp_BLuE"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="Picture1.png" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">14 января 2026</div>
+            </div>
+          </article>
+
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="14 января 2026"
+            data-yt="https://www.youtube.com/watch?v=0AuX0DgI3Vo"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="Picture1.png" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">14 января 2026</div>
+            </div>
+          </article>
+
+          <article class="pg-card" tabindex="0"
+            data-country="korea"
+            data-date="14 января 2026"
+            data-yt="https://www.youtube.com/watch?v=3AcnfOL71Ek"
+            data-title="Погрузка — Отзывы">
+            <div class="pg-media">
+              <img src="Picture1.png" alt="Погрузка видео превью">
+              <div class="pg-play"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="pg-meta">
+              <div class="pg-date">14 января 2026</div>
             </div>
           </article>
 
         </div>
-
       </div>
     </section>
   </main>
@@ -151,20 +219,21 @@
 
       <div class="pg-modal__player">
         <iframe
-  id="pgModalFrame"
-  class="pg-modal__frame"
-  src=""
-  title="Видео погрузки"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-
+          id="pgModalFrame"
+          class="pg-modal__frame"
+          src=""
+          title="Видео погрузки"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </div>
 
-  <script src="sss.js" defer></script>
+  <!-- Keep your existing site scripts -->
+  <!-- NOTE: your project uses sss_container.js (sss.js does not exist) -->
+  <script src="sss_container.js" defer></script>
   <script src="pogruzka.js" defer></script>
 </body>
 </html>
