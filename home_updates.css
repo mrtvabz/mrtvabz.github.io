@@ -1,5 +1,7 @@
 /* Home-only styles. Everything is scoped under body.home so other pages won't be affected. */
 
+/* Home-only styles. Everything is scoped under body.home so other pages won't be affected. */
+
 body.home {
   min-height: 100vh;
   display: flex;
@@ -285,4 +287,295 @@ body.home .home-footer__inner {
 body.home .home-footer__brand {
   color: #666;
   font-size: 14px;
+}
+
+/* Home-only About + Location (won't touch other pages) */
+.page-home .home-about .home-about__grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:18px;
+  align-items:stretch;
+  margin-top:18px;
+}
+
+.page-home .home-about .home-card{
+  border:2px solid #000;
+  border-radius:18px;
+  background:#fff;
+  padding:18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.06);
+}
+
+.page-home .home-about .home-card__kicker{
+  font-family:"Roboto",sans-serif;
+  font-weight:800;
+  opacity:.65;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:6px;
+  font-size:12px;
+}
+
+.page-home .home-about .home-card__title{
+  font-family:"DM Sans",sans-serif;
+  font-weight:900;
+  margin:0 0 10px 0;
+  font-size:28px;
+}
+
+.page-home .home-about .home-card__text{
+  font-family:"Roboto",sans-serif;
+  opacity:.82;
+  line-height:1.55;
+  margin:0 0 12px 0;
+}
+
+.page-home .home-about .home-bullets{
+  margin:0 0 14px 0;
+  padding-left:18px;
+  font-family:"Roboto",sans-serif;
+  line-height:1.55;
+}
+
+.page-home .home-about .home-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:10px;
+}
+
+.page-home .home-about .btn-ghost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:999px;
+  border:2px solid #000;
+  background:#fff;
+  color:#000;
+  font-family:"Roboto",sans-serif;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* =====================================================
+   HOME — ABOUT US (6 cards, alternating) + MAP
+   (Scoped to body.home so other pages stay untouched)
+   ===================================================== */
+
+body.home .home-about{
+  padding: 70px 0 40px;
+}
+
+body.home .about-card{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+  margin: 0 0 72px;
+}
+
+body.home .about-card--reverse{
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+body.home .about-card--reverse .about-card__media{ order: -1; }
+
+body.home .about-kicker{
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+  margin-bottom: 10px;
+}
+
+body.home .about-title{
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.02;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+body.home .about-subtitle{
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+body.home .about-lead,
+body.home .about-text{
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(0,0,0,0.75);
+  margin: 0 0 16px;
+  max-width: 62ch;
+}
+
+body.home .about-text{ margin-bottom: 0; }
+
+body.home .about-chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 18px;
+}
+
+body.home .about-chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.82);
+}
+
+body.home .about-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+body.home .about-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  color: rgba(0,0,0,0.88);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+body.home .about-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+body.home .about-btn--dark{
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+body.home .about-card__media{
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: radial-gradient(1200px 600px at 20% 20%, rgba(0,0,0,0.06), transparent 60%),
+              linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.03));
+  box-shadow: 0 24px 60px rgba(0,0,0,0.10);
+}
+
+body.home .about-media-placeholder{
+  min-height: 320px;
+}
+
+body.home .about-card__media img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* MAP (Kakao / Google) */
+body.home .home-map{
+  padding: 10px 0 60px;
+}
+
+body.home .map-title{
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+body.home .map-subtitle{
+  font-weight: 700;
+  margin: 6px 0 10px;
+  color: rgba(0,0,0,0.75);
+}
+
+body.home .map-text{
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.72);
+  margin-bottom: 14px;
+}
+
+body.home .map-embed{
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: #fff;
+}
+
+body.home .kakao-map-link,
+body.home .google-map-iframe{
+  display: block;
+}
+
+/* Keep the map premium + not too tall */
+body.home .kakao-map-link{
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+body.home .kakao-map-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+body.home .kakao-map-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.03);
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+body.home .kakao-map-logo img{
+  display: block;
+}
+
+body.home .kakao-map-route{
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  color: rgba(0,0,0,0.85);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+}
+
+body.home .kakao-map-route:hover{
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  body.home .about-card,
+  body.home .about-card--reverse{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  body.home .about-card--reverse .about-card__media{ order: 0; }
+  body.home .about-media-placeholder{ min-height: 240px; }
+  body.home .map-title{ font-size: 34px; }
 }
