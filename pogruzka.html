@@ -74,7 +74,7 @@
           <article class="pg-card" tabindex="0"
             data-country="korea"
             data-date="14 января 2026"
-            data-video="ff.mp4"
+            data-yt="NjxoV7eQi3U"
             data-title="Погрузка — Отзывы">
             <div class="pg-media">
               <img src="sf.jpg" alt="Погрузка видео превью">
@@ -150,7 +150,16 @@
       <div class="pg-modal__title" id="pgModalTitle">Видео</div>
 
       <div class="pg-modal__player">
-        <video id="pgModalVideo" controls playsinline preload="metadata"></video>
+        <iframe
+  id="pgModalFrame"
+  class="pg-modal__frame"
+  src=""
+  title="Видео погрузки"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
       </div>
     </div>
   </div>
