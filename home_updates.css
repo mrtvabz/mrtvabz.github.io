@@ -579,35 +579,17 @@ body.home .kakao-map-route:hover{
 }
 
 
-/* картинка внутри блока */
+/* media box */
+.about-card__media{
+  overflow: hidden;
+  border-radius: 28px;
+  aspect-ratio: 16 / 9;   /* держит форму всегда */
+}
+
+/* image */
 .about-media-img{
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  border-radius: 28px;
-}
-
-/* сам медиа-блок */
-.about-card__media{
-  overflow: hidden;
-  border-radius: 28px;
-}
-
-/* Десктоп: пусть будет “красиво крупно” */
-.about-card__media{
-  min-height: 360px;   /* можешь 320-420 подобрать */
-}
-
-/* Телефон: уменьшаем высоту, чтобы не было гиганта */
-@media (max-width: 768px){
-  .about-card__media{
-    min-height: 220px;
-  }
-}
-
-@media (max-width: 480px){
-  .about-card__media{
-    min-height: 190px;
-  }
+  object-fit: cover;      /* красиво обрезает */
 }
