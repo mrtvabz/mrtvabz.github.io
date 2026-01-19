@@ -76,22 +76,28 @@
 }
 
 /* Phone-like rounded preview */
-.page-pogruzka .pg-media{
-  position:relative;
-  border-radius: 20px;
-  overflow:hidden;
-  background:#000;
-  aspect-ratio: 9 / 16;
-  box-shadow: 0 20px 40px rgba(0,0,0,.10);
-  cursor:pointer;
+/* CARD MEDIA: make image fully cover the frame */
+.pg-media{
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;       /* keep your rounded look */
+  background: #000;          /* background won't show after fix */
+  aspect-ratio: 3 / 4;       /* choose your frame shape */
 }
-.page-pogruzka .pg-media img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  display:block;
-  filter: saturate(1.02) contrast(1.02);
+
+/* if you already set a fixed height somewhere, remove it.
+   aspect-ratio is cleaner and responsive */
+
+.pg-media img{
+  position: absolute;
+  inset: 0;                  /* top:0 right:0 bottom:0 left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* IMPORTANT: fills the frame */
+  object-position: center;   /* centers crop */
+  display: block;
 }
+
 .page-pogruzka .pg-play{
   position:absolute;
   inset:0;
@@ -200,7 +206,31 @@
 }
 
 
+.pg-modal__player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+}
 
+.pg-modal__frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
+/* the frame */
+.pg-media{
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
 
+  /* choose ONE of these options: */
 
+  /* Option A (recommended): fixed aspect ratio */
+  aspect-ratio: 9 / 16;
+
+  /* Option B: fixed height (if you prefer) */
+  /* height: 520px; */
+}
