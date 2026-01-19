@@ -27,7 +27,7 @@ body.page-pogruzka {
   line-height: 1.02;
   letter-spacing: -0.02em;
   font-weight: 800;
-  font-size: clamp(44px, 6vw, 92px);
+  font-size: clamp(27px, 6vw, 40px);
 }
 
 /* Filters */
@@ -185,7 +185,7 @@ body.page-pogruzka {
   top: 10px;
   right: 12px;
   z-index: 2;
-  width: 42px;
+  width: 12px;
   height: 42px;
   border-radius: 999px;
   border: 1px solid rgba(0,0,0,0.12);
@@ -207,11 +207,12 @@ body.page-pogruzka {
 
 .page-pogruzka .pg-modal__frame {
   display: block;
-  width: 100%;
+  width: 80%;
   aspect-ratio: 16 / 9;
   border: 0;
   border-radius: 16px;
   background: #000;
+  position: center;
 }
 
 /* Shorts in modal (vertical) */
@@ -240,7 +241,7 @@ body.page-pogruzka {
 
 @media (max-width: 420px) {
   .page-pogruzka .pg-title {
-    font-size: 56px;
+    font-size: 30px;
   }
   .page-pogruzka .pg-pill {
     padding: 10px 16px;
