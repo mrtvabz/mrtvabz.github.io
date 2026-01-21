@@ -1,3 +1,35 @@
+/* Mobile navbar toggle (Pogruzka page only)
+   Uses existing CSS: .collapse-toggle to expand .collapse on small screens.
+   Implemented with a capture-phase listener to avoid conflicts with other scripts. */
+(function () {
+  'use strict';
+  const isPogruzka = document.body && document.body.classList.contains('page-pogruzka');
+  if (!isPogruzka) return;
+
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest && e.target.closest('.toggle-button');
+    if (!btn) return;
+
+    // Prevent other handlers from double-toggling
+    e.preventDefault();
+    e.stopPropagation();
+
+    const collapses = document.querySelectorAll('header .collapse');
+    if (!collapses.length) return;
+
+    collapses.forEach((c) => c.classList.toggle('collapse-toggle'));
+  }, true);
+
+  // Optional: close menu after clicking a nav link (mobile UX)
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest && e.target.closest('header .collapse a');
+    if (!link) return;
+
+    const collapses = document.querySelectorAll('header .collapse');
+    collapses.forEach((c) => c.classList.remove('collapse-toggle'));
+  }, true);
+})();
+
 /* MaxWin Logistics — pogruzka.js
    - Filters cards by data-country
    - Opens modal and plays YouTube videos inside iframe
@@ -162,4 +194,3 @@
   // Start
   applyFilter('all');
 })();
-
