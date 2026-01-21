@@ -1,0 +1,128 @@
+
+// RoRo-only ship gallery modal + reveal (safe)
+(function () {
+  const modal = document.getElementById("shipModal");
+  if (!modal) return; // Not RoRo page
+
+  const imgEl = document.getElementById("shipModalImg");
+  const titleEl = document.getElementById("shipModalTitle");
+  const subEl = document.getElementById("shipModalSubtitle");
+  const detailsEl = document.getElementById("shipModalDetails");
+  const thumbsEl = document.getElementById("shipModalThumbs");
+  // Contacts modal (RoRo CTA button)
+  const contactsModal = document.getElementById("contactsModal");
+  const contactsBtn = document.getElementById("openContacts");
+
+  function updateScrollLock(){
+    const shipOpen = modal.classList.contains("is-open");
+    const contactsOpen = contactsModal ? contactsModal.classList.contains("is-open") : false;
+    document.body.style.overflow = (shipOpen || contactsOpen) ? "hidden" : "";
+  }
+
+
+  function setActiveThumb(idx){
+    thumbsEl.querySelectorAll(".ship-thumb").forEach((t,i)=>{
+      t.classList.toggle("is-active", i===idx);
+    });
+  }
+
+  function openModal(card){
+    const title = card.dataset.title || "SHIP";
+    const sub = card.dataset.subtitle || "";
+    const details = card.dataset.details || "";
+    const images = (card.dataset.images || "").split(",").map(s=>s.trim()).filter(Boolean);
+
+    titleEl.textContent = title;
+    subEl.textContent = sub;
+    detailsEl.textContent = details;
+
+    // Build thumbs
+    thumbsEl.innerHTML = "";
+    const safeImages = images.length ? images : [card.querySelector("img")?.getAttribute("src") || ""].filter(Boolean);
+
+    safeImages.forEach((src, idx)=>{
+      const btn = document.createElement("button");
+      btn.type="button";
+      btn.className="ship-thumb" + (idx===0 ? " is-active" : "");
+      btn.innerHTML = `<img src="${src}" alt="thumb">`;
+      btn.addEventListener("click", ()=>{
+        imgEl.src = src;
+        setActiveThumb(idx);
+      });
+      thumbsEl.appendChild(btn);
+    });
+
+    imgEl.src = safeImages[0] || "";
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    updateScrollLock();
+  }
+
+  function closeModal(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    updateScrollLock();
+    imgEl.src = "";
+    thumbsEl.innerHTML = "";
+  }
+
+  document.addEventListener("click", (e)=>{
+    const card = e.target.closest(".ship-card[data-images]");
+    if (card) openModal(card);
+
+    if (e.target.closest("[data-close='1']")) closeModal();
+  });
+
+  document.addEventListener("keydown", (e)=>{
+    if (e.key === "Escape") closeModal();
+  });
+
+  // Open CTA contacts modal (without leaving RoRo page)
+  if (contactsBtn && contactsModal){
+    const openContacts = (e) => {
+      e.preventDefault();
+      contactsModal.classList.add("is-open");
+      contactsModal.setAttribute("aria-hidden", "false");
+      updateScrollLock();
+    };
+
+    const closeContacts = () => {
+      contactsModal.classList.remove("is-open");
+      contactsModal.setAttribute("aria-hidden", "true");
+      updateScrollLock();
+    };
+
+    contactsBtn.addEventListener("click", openContacts);
+
+    // close when clicking overlay or X (data-close="1")
+    contactsModal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-close='1']")) closeContacts();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && contactsModal.classList.contains("is-open")) closeContacts();
+    });
+  }
+
+  // Simple reveal (only if global reveal isn't present)
+  if (!document.querySelector("[data-reveal]")) return;
+})();
+
+const y = window.scrollY;
+document.body.dataset.scrollY = y;
+document.body.style.position = "fixed";
+document.body.style.top = `-${y}px`;
+document.body.style.left = "0";
+document.body.style.right = "0";
+
+const scrollY = parseInt(document.body.dataset.scrollY || "0", 10);
+document.body.style.position = "";
+document.body.style.top = "";
+document.body.style.left = "";
+document.body.style.right = "";
+window.scrollTo(0, y);
+
+
+
+
+
