@@ -1031,7 +1031,15 @@ html { scroll-behavior: smooth; }
   line-height: 1;
 }
 
-
+.lang-switch{
+  margin-left: auto;
+  margin-right: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  opacity: .85;
+}
+.lang-switch:hover{ opacity: 1; }
 
 
 
