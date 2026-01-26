@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.maxwinlogistics.co/sitemap.xml
+Sitemap: https://maxwinlogistics.co/sitemap.xml
