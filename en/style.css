@@ -1031,53 +1031,5 @@ html { scroll-behavior: smooth; }
   line-height: 1;
 }
 
-.lang-switch{
-  margin-left: auto;
-  margin-right: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  color: inherit;
-  opacity: .85;
-}
-.lang-switch:hover{ opacity: 1; }
-
-
-/* 1) Make header layout stable */
-.navbar,
-header nav,
-.header {
-  display: flex;
-  align-items: center;
-}
-
-/* 2) Push menu to the right nicely (or remove this if you want it near logo) */
-.collapse {
-  margin-left: auto;
-}
-
-/* 3) Remove bullets + default padding, make links horizontal */
-.navbar-nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  align-items: center;
-  gap: 18px; /* spacing between items */
-}
-
-/* If your HTML has <li> */
-.navbar-nav li {
-  margin: 0;
-  padding: 0;
-}
-
-/* Optional: keep links clean */
-.navbar-nav a {
-  text-decoration: none;
-  display: inline-block;
-}
-
-
 
 
