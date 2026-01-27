@@ -1043,46 +1043,6 @@ html { scroll-behavior: smooth; }
 
 
 
-/* header layout */
-.navbar{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* NOT space-between */
-  gap: 22px;
-}
-
-/* don't push menu twice */
-.collapse{
-  margin-left: 0; /* remove the auto push */
-  align-self: center;
-}
-
-/* kill bullets + make horizontal */
-.navbar-nav,
-.navbar–nav {              
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-
-.navbar-nav li,
-.navbar–nav li {
-  list-style: none !important;
-  margin: 0;
-  padding: 0;
-}
-
-/* keep links clean */
-.navbar-nav a,
-.navbar–nav a {
-  display: inline-block;
-  text-decoration: none;
-}
 
 
 
