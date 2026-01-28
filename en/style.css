@@ -1031,69 +1031,17 @@ html { scroll-behavior: smooth; }
   line-height: 1;
 }
 
-/* =========================
-   NAV: Desktop horizontal + Mobile toggle safe
-   Paste at END of your CSS
-   ========================= */
-
-/* KILL bullets everywhere, even if class has a weird dash */
-ul.navbar-nav,
-ul.navbar–nav {          /* <- this handles the "wrong dash" version too */
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+.lang-switch{
+  margin-left: auto;
+  margin-right: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  opacity: .85;
 }
+.lang-switch:hover{ opacity: 1; }
 
-/* DESKTOP: make menu horizontal */
-@media (min-width: 575px){
-  ul.navbar-nav,
-  ul.navbar–nav{
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 18px !important;
-  }
 
-  /* if you use <li> */
-  ul.navbar-nav li,
-  ul.navbar–nav li{
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* if you DON'T use <li> and links are direct children */
-  ul.navbar-nav > a,
-  ul.navbar–nav > a{
-    display: inline-block !important;
-  }
-}
-
-/* MOBILE: keep your toggle working + vertical menu when opened */
-@media (max-width: 574px){
-  .collapse{
-    max-height: 0;
-    overflow: hidden;
-    transition: all 1s ease-in;
-  }
-  .collapse-toggle{
-    max-height: 500px;
-  }
-
-  ul.navbar-nav,
-  ul.navbar–nav{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-
-  /* make each link full-width and centered (mobile) */
-  .collapse .nav-link{
-    display: block;
-    text-align: center;
-  }
-}
 
 
 
