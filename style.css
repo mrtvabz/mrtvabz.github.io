@@ -1095,5 +1095,13 @@ ul.navbar–nav {          /* <- this handles the "wrong dash" version too */
   }
 }
 
+.lang-switch,
+.lang-switch:visited {
+  color: #000 !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+.lang-switch:hover { opacity: 0.7; }
+
 
 
