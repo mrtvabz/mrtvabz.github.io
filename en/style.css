@@ -1130,6 +1130,14 @@ img, video, svg, canvas {
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+  .hero, .banner, .top, .main, .section-hero {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+
 
 
 
