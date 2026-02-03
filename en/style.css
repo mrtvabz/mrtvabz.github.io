@@ -1103,7 +1103,32 @@ ul.navbar–nav {          /* <- this handles the "wrong dash" version too */
 }
 .lang-switch:hover { opacity: 0.7; }
 
+/* === MOBILE SAFETY PATCH (doesn't break desktop) === */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Anything that is wider than the screen gets clamped */
+.container, section, header, nav, main, footer, .wrapper {
+  max-width: 100%;
+}
+
+/* If your big hero/logo is inside a flex row, this prevents overflow */
+.flex, .row, .navbar, .header, .hero {
+  flex-wrap: wrap;
+}
 
 
 
