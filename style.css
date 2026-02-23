@@ -425,7 +425,7 @@ html { scroll-behavior: smooth; }
 
 .ship-caption{
   padding: 10px 8px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 @media (max-width: 768px){
