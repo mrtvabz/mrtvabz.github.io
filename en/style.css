@@ -311,7 +311,7 @@ html { scroll-behavior: smooth; }
 }
 .news-meta{
   font-family: "Roboto", sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 6px;
 }
 .news-title{
@@ -425,7 +425,7 @@ html { scroll-behavior: smooth; }
 
 .ship-caption{
   padding: 10px 8px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 @media (max-width: 768px){
@@ -1101,12 +1101,6 @@ ul.navbar–nav {          /* <- this handles the "wrong dash" version too */
   font-weight: 700;
   text-decoration: none;
 }
-.lang-switch:hover { opacity: 0.7; }
-
-
-
-
-
 
 
 
