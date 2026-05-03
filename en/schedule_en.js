@@ -14,21 +14,21 @@
     if (!value) return '';
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return value;
-    return d.toLocaleDateString('ru-RU', options || undefined);
+    return d.toLocaleDateString('en-GB', options || undefined);
   };
 
   const fmtShort = (value) => {
     if (!value) return '—';
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return value;
-    return d.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit' });
+    return d.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' });
   };
 
   const fmtMonth = (value) => {
     if (!value) return '—';
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return '—';
-    return d.toLocaleDateString('ru-RU', { month: 'short' }).replace('.', '').toUpperCase();
+    return d.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase();
   };
 
   const fmtDay = (value) => {
@@ -46,12 +46,12 @@
     .replace(/'/g, '&#39;');
 
   const statusBadge = (status) => {
-    const raw = (status || 'По запросу').toLowerCase();
+    const raw = (status || 'On Request').toLowerCase();
     let cls = 'sch-status';
-    if (raw.includes('откры')) cls += ' sch-status--open';
-    else if (raw.includes('скоро') || raw.includes('послед')) cls += ' sch-status--closing';
-    else if (raw.includes('закры')) cls += ' sch-status--closed';
-    return `<span class="${cls}">${escapeHtml(status || 'По запросу')}</span>`;
+    if (raw.includes('open')) cls += ' sch-status--open';
+    else if (raw.includes('closing')) cls += ' sch-status--closing';
+    else if (raw.includes('closed')) cls += ' sch-status--closed';
+    return `<span class="${cls}">${escapeHtml(status || 'On Request')}</span>`;
   };
 
   const datePill = (value, isWarn) => {
@@ -63,16 +63,16 @@
     if (row.tracking) {
       return `<a class="sch-track-link" href="${escapeHtml(row.tracking)}" target="_blank" rel="noopener">Track</a>`;
     }
-    return `<span class="sch-track-link--muted">По запросу</span>`;
+    return `<span class="sch-track-link--muted">On Request</span>`;
   };
 
   const calendarTile = (value) => {
     if (!value) {
       return `
         <div class="sch-cal-tile sch-cal-tile--empty">
-          <div class="sch-cal-tile__top">Погрузка</div>
+          <div class="sch-cal-tile__top">Loading</div>
           <div class="sch-cal-tile__day">—</div>
-          <div class="sch-cal-tile__bottom">Дата уточняется</div>
+          <div class="sch-cal-tile__bottom">Date pending</div>
         </div>
       `;
     }
@@ -93,9 +93,9 @@
           ${calendarTile(row.loading_date)}
 
           <div class="sch-detail-hero-copy">
-            <div class="sch-detail-overline">Детали рейса</div>
+            <div class="sch-detail-overline">Voyage Details</div>
             <div class="sch-detail-head">${escapeHtml(row.vessel || '—')}</div>
-            <div class="sch-detail-sub">${escapeHtml(row.route || 'Маршрут уточняется')}</div>
+            <div class="sch-detail-sub">${escapeHtml(row.route || 'Route pending')}</div>
             <div class="sch-detail-badges">
               ${statusBadge(row.status)}
             </div>
@@ -104,51 +104,51 @@
 
         <div class="sch-detail-grid">
           <div class="sch-detail-item">
-            <span>№ рейса</span>
+            <span>Voyage No.</span>
             <strong>${escapeHtml(row.voyage || '—')}</strong>
-            <small>Номер рейса / слота</small>
+            <small>Voyage / slot number</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Погрузка Busan</span>
-            <strong>${escapeHtml(row.loading_date ? fmtDate(row.loading_date) : 'Уточняется')}</strong>
-            <small>Плановая дата погрузки</small>
+            <span>Busan Loading</span>
+            <strong>${escapeHtml(row.loading_date ? fmtDate(row.loading_date) : 'Pending')}</strong>
+            <small>Planned loading date</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Документы до</span>
-            <strong>${escapeHtml(row.docs_deadline ? fmtDate(row.docs_deadline) : 'Уточняется')}</strong>
-            <small>Лучше отправить заранее</small>
+            <span>Docs Deadline</span>
+            <strong>${escapeHtml(row.docs_deadline ? fmtDate(row.docs_deadline) : 'Pending')}</strong>
+            <small>Better to send early</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>ETA Владивосток</span>
-            <strong>${escapeHtml(row.eta ? fmtDate(row.eta) : 'Уточняется')}</strong>
-            <small>Ориентировочное прибытие</small>
+            <span>ETA Vladivostok</span>
+            <strong>${escapeHtml(row.eta ? fmtDate(row.eta) : 'Pending')}</strong>
+            <small>Estimated arrival</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Статус</span>
-            <strong>${escapeHtml(row.status || 'По запросу')}</strong>
-            <small>Актуальность подтверждается менеджером</small>
+            <span>Status</span>
+            <strong>${escapeHtml(row.status || 'On Request')}</strong>
+            <small>Final confirmation comes from the manager</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Трекинг</span>
-            <strong>${row.tracking ? 'Доступен' : 'По запросу'}</strong>
-            <small>${row.tracking ? `<a class="sch-detail-link" href="${escapeHtml(row.tracking)}" target="_blank" rel="noopener">Открыть трекинг</a>` : 'Ссылка добавляется вручную'}</small>
+            <span>Tracking</span>
+            <strong>${row.tracking ? 'Available' : 'On Request'}</strong>
+            <small>${row.tracking ? `<a class="sch-detail-link" href="${escapeHtml(row.tracking)}" target="_blank" rel="noopener">Open tracking</a>` : 'Tracking link is added manually'}</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Комментарий</span>
-            <strong>${escapeHtml(row.note || 'Без комментария')}</strong>
-            <small>Дополнительная информация по рейсу</small>
+            <span>Comment</span>
+            <strong>${escapeHtml(row.note || 'No comment')}</strong>
+            <small>Additional voyage info</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Маршрут</span>
+            <span>Route</span>
             <strong>${escapeHtml(row.route || '—')}</strong>
-            <small>Основное направление отправки</small>
+            <small>Main shipping direction</small>
           </div>
         </div>
       </div>
@@ -160,7 +160,7 @@
     currentRows = Array.isArray(items) ? items : [];
 
     if (!currentRows.length) {
-      tbody.innerHTML = `<tr><td colspan="7" class="sch-empty">Пока нет данных для расписания.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="7" class="sch-empty">No schedule data yet.</td></tr>`;
       return;
     }
 
@@ -169,7 +169,7 @@
         <td>
           <button type="button" class="sch-vessel-btn" data-row-index="${index}">
             <span class="sch-vessel-name">${escapeHtml(row.vessel || '—')}</span>
-            <span class="sch-vessel-meta">Нажмите для деталей рейса</span>
+            <span class="sch-vessel-meta">Click for voyage details</span>
           </button>
         </td>
         <td><span class="sch-voyage">${escapeHtml(row.voyage || '—')}</span></td>
@@ -235,8 +235,8 @@
     let data = { updated: '', items: [] };
 
     try {
-      const res = await fetch('schedule.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('schedule.json not found');
+      const res = await fetch('schedule_en.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('schedule_en.json not found');
       data = await res.json();
     } catch (err) {
       console.warn('Schedule load failed:', err);
@@ -250,16 +250,16 @@
             loading_date: '2026-05-08',
             docs_deadline: '2026-05-07',
             eta: '2026-05-11',
-            status: 'Открыто',
+            status: 'Open',
             tracking: '',
-            note: 'Плановая погрузка подтверждается менеджером'
+            note: 'Planned loading is confirmed by the manager'
           }
         ]
       };
     }
 
     if (updatedEl) {
-      updatedEl.textContent = data.updated ? fmtDate(data.updated) : 'вручную';
+      updatedEl.textContent = data.updated ? fmtDate(data.updated) : 'manually';
     }
 
     renderRows(data.items);
