@@ -1,19 +1,49 @@
 {
-  "updated": "2026-01-12",
+  "updated": "2026-05-03",
   "items": [
     {
-      "vessel": "SUN RIO",
-      "route": "Incheon → Vladivostok",
-      "etd": "2026-01-15",
-      "eta": "2026-01-18",
-      "status": "Open"
+      "vessel": "Hiroyuki",
+      "voyage": "11",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026-05-08",
+      "docs_deadline": "2026-05-07",
+      "eta": "2026-05-11",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "Плановая погрузка подтверждается менеджером"
     },
     {
-      "vessel": "HIROYUKI",
+      "vessel": "Ocean Pride",
+      "voyage": "12",
       "route": "Busan → Vladivostok",
-      "etd": "2026-01-19",
-      "eta": "2026-01-22",
-      "status": "Waiting"
+      "loading_date": "2026-05-15",
+      "docs_deadline": "2026-05-14",
+      "eta": "2026-05-18",
+      "status": "Скоро закрытие",
+      "tracking": "",
+      "note": "Проверьте документы заранее"
+    },
+    {
+      "vessel": "Hansung",
+      "voyage": "13",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026-05-22",
+      "docs_deadline": "2026-05-21",
+      "eta": "2026-05-25",
+      "status": "По запросу",
+      "tracking": "",
+      "note": "Дата может корректироваться линией"
+    },
+    {
+      "vessel": "Sun Rio",
+      "voyage": "14",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026-05-29",
+      "docs_deadline": "2026-05-28",
+      "eta": "2026-06-01",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "Лучше отправить документы заранее"
     }
   ]
 }
