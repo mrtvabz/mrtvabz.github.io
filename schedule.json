@@ -2,27 +2,28 @@
   "updated": "2026-05-03",
   "items": [
     {
-      "vessel": "Hiroyuki",
+      "vessel": "Ocean Pride",
       "voyage": "11",
+      "route": "Busan → Vladivostok",
+      "loading_date": "Каждая суббота",
+      "docs_deadline": "До субботы",
+      "eta": "от 3 до 5 дней",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "Проверьте документы заранее"
+    },
+    {
+      "vessel": "Hiroyuki",
+      "voyage": "12",
       "route": "Busan → Vladivostok",
       "loading_date": "2026-05-08",
       "docs_deadline": "2026-05-07",
       "eta": "2026-05-11",
-      "status": "Открыто",
+      "status": "Временно закрыто",
       "tracking": "",
       "note": "Плановая погрузка подтверждается менеджером"
     },
-    {
-      "vessel": "Ocean Pride",
-      "voyage": "12",
-      "route": "Busan → Vladivostok",
-      "loading_date": "2026-05-15",
-      "docs_deadline": "2026-05-14",
-      "eta": "2026-05-18",
-      "status": "Скоро закрытие",
-      "tracking": "",
-      "note": "Проверьте документы заранее"
-    },
+    
     {
       "vessel": "Hansung",
       "voyage": "13",
@@ -30,7 +31,7 @@
       "loading_date": "2026-05-22",
       "docs_deadline": "2026-05-21",
       "eta": "2026-05-25",
-      "status": "По запросу",
+      "status": "Временно закрыто",
       "tracking": "",
       "note": "Дата может корректироваться линией"
     },
@@ -41,7 +42,7 @@
       "loading_date": "2026-05-29",
       "docs_deadline": "2026-05-28",
       "eta": "2026-06-01",
-      "status": "Открыто",
+      "status": "Временно закрыто",
       "tracking": "",
       "note": "Лучше отправить документы заранее"
     }
