@@ -36,11 +36,11 @@ body.home .home-subtitle {
 
 body.home .home-code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 7em;
+  font-size: 3em;
   background: #f3f3f3;
   border: 1px solid #e5e5e5;
   padding: 2px 6px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 body.home .home-actions {
