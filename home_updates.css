@@ -31,16 +31,16 @@ body.home .home-title {
 body.home .home-subtitle {
   margin: 0 0 14px;
   color: #6c6c6c;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 body.home .home-code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 4em;
+  font-size: 7em;
   background: #f3f3f3;
   border: 1px solid #e5e5e5;
   padding: 2px 6px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 body.home .home-actions {
@@ -118,7 +118,7 @@ body.home .home-badge {
   padding: 6px 10px;
   border: 2px solid #111;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
 }
