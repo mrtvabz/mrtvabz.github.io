@@ -1,6 +1,17 @@
 {
-  "updated": "2026-05-03",
+  "updated": "Today",
   "items": [
+     {
+      "vessel": "Ocean Pride",
+      "voyage": "12",
+      "route": "Busan → Vladivostok",
+      "loading_date": "Every saturday",
+      "docs_deadline": "Until saturday",
+      "eta": "2-3 days",
+      "status": "Open",
+      "tracking": "",
+      "note": "Please check documents in advance"
+    },
     {
       "vessel": "Hiroyuki",
       "voyage": "11",
@@ -8,21 +19,11 @@
       "loading_date": "2026-05-08",
       "docs_deadline": "2026-05-07",
       "eta": "2026-05-11",
-      "status": "Open",
+      "status": "Temporary closed",
       "tracking": "",
       "note": "Planned loading is confirmed by the manager"
     },
-    {
-      "vessel": "Ocean Pride",
-      "voyage": "12",
-      "route": "Busan → Vladivostok",
-      "loading_date": "2026-05-15",
-      "docs_deadline": "2026-05-14",
-      "eta": "2026-05-18",
-      "status": "Closing Soon",
-      "tracking": "",
-      "note": "Please check documents in advance"
-    },
+   
     {
       "vessel": "Hansung",
       "voyage": "13",
@@ -30,7 +31,7 @@
       "loading_date": "2026-05-22",
       "docs_deadline": "2026-05-21",
       "eta": "2026-05-25",
-      "status": "On Request",
+      "status": "Temporary closed",
       "tracking": "",
       "note": "Date may be adjusted by the line"
     },
@@ -41,7 +42,7 @@
       "loading_date": "2026-05-29",
       "docs_deadline": "2026-05-28",
       "eta": "2026-06-01",
-      "status": "Open",
+      "status": "Temporary closed",
       "tracking": "",
       "note": "It is better to send documents in advance"
     }
