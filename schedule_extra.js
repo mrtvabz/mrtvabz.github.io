@@ -46,12 +46,12 @@
     .replace(/'/g, '&#39;');
 
   const statusBadge = (status) => {
-    const raw = (status || 'По запросу').toLowerCase();
+    const raw = (status || '480$').toLowerCase();
     let cls = 'sch-status';
     if (raw.includes('откры')) cls += ' sch-status--open';
     else if (raw.includes('скоро') || raw.includes('послед')) cls += ' sch-status--closing';
     else if (raw.includes('закры')) cls += ' sch-status--closed';
-    return `<span class="${cls}">${escapeHtml(status || 'По запросу')}</span>`;
+    return `<span class="${cls}">${escapeHtml(status || '480$')}</span>`;
   };
 
   const datePill = (value, isWarn) => {
