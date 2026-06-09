@@ -63,7 +63,7 @@
     if (row.tracking) {
       return `<a class="sch-track-link" href="${escapeHtml(row.tracking)}" target="_blank" rel="noopener">Track</a>`;
     }
-    return `<span class="sch-track-link--muted">On Request</span>`;
+    return `<span class="sch-track-link--muted">480$</span>`;
   };
 
   const calendarTile = (value) => {
