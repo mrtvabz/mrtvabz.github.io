@@ -5,12 +5,67 @@
       "vessel": "Ocean Pride",
       "voyage": "11",
       "route": "Busan → Vladivostok",
-      "loading_date": "Каждая суббота",
+      "loading_date": "2026.06.13",
       "docs_deadline": "До субботы",
       "eta": "2-3 дней",
       "status": "Открыто",
       "tracking": "",
-      "note": "Проверьте документы заранее"
+      "note": "480$"
+    },
+    {
+      "vessel": "Ocean Pride",
+      "voyage": "11",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026.06.20",
+      "docs_deadline": "До субботы",
+      "eta": "2-3 дней",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "480$"
+    },
+    {
+      "vessel": "Ocean Pride",
+      "voyage": "11",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026.06.27",
+      "docs_deadline": "До субботы",
+      "eta": "2-3 дней",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "480$"
+    },
+    {
+      "vessel": "Ocean Pride",
+      "voyage": "11",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026.07.04",
+      "docs_deadline": "До субботы",
+      "eta": "2-3 дней",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "480$"
+    },
+    {
+      "vessel": "Ocean Pride",
+      "voyage": "11",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026.07.11",
+      "docs_deadline": "До субботы",
+      "eta": "2-3 дней",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "480$"
+    },
+    {
+      "vessel": "Ocean Pride",
+      "voyage": "11",
+      "route": "Busan → Vladivostok",
+      "loading_date": "2026.07.18",
+      "docs_deadline": "До субботы",
+      "eta": "2-3 дней",
+      "status": "Открыто",
+      "tracking": "",
+      "note": "480$"
     },
     {
       "vessel": "Hiroyuki",
