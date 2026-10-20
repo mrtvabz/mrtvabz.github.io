@@ -9,9 +9,27 @@
   const subEl = document.getElementById("shipModalSubtitle");
   const detailsEl = document.getElementById("shipModalDetails");
   const thumbsEl = document.getElementById("shipModalThumbs");
+  const imageFallback = document.createElement('span');
+  imageFallback.className = 'ship-modal-fallback';
+  imageFallback.hidden = true;
+  imgEl.after(imageFallback);
+  imgEl.addEventListener('error', () => {
+    imgEl.hidden = true;
+    imageFallback.hidden = false;
+    imageFallback.textContent = `Фото ${titleEl.textContent} появится после добавления файла ${imgEl.getAttribute('src')}.`;
+  });
+  imgEl.addEventListener('load', () => {
+    imgEl.hidden = false;
+    imageFallback.hidden = true;
+  });
   // Contacts modal (RoRo CTA button)
   const contactsModal = document.getElementById("contactsModal");
   const contactsBtn = document.getElementById("openContacts");
+  document.querySelectorAll('.ship-card[data-images]').forEach(card => {
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Открыть фотографии судна ${card.dataset.title || ''}`);
+  });
 
   function updateScrollLock(){
     const shipOpen = modal.classList.contains("is-open");
@@ -44,7 +62,14 @@
       const btn = document.createElement("button");
       btn.type="button";
       btn.className="ship-thumb" + (idx===0 ? " is-active" : "");
-      btn.innerHTML = `<img src="${src}" alt="thumb">`;
+      const thumbnail = document.createElement('img');
+      thumbnail.src = src;
+      thumbnail.alt = `Фото ${title} ${idx + 1}`;
+      thumbnail.addEventListener('error', () => {
+        thumbnail.hidden = true;
+        btn.textContent = String(idx + 1);
+      });
+      btn.appendChild(thumbnail);
       btn.addEventListener("click", ()=>{
         imgEl.src = src;
         setActiveThumb(idx);
@@ -53,6 +78,9 @@
     });
 
     imgEl.src = safeImages[0] || "";
+    imgEl.alt = `Фото судна ${title}`;
+    imgEl.hidden = false;
+    imageFallback.hidden = true;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     updateScrollLock();
@@ -74,6 +102,12 @@
   });
 
   document.addEventListener("keydown", (e)=>{
+    const card = e.target.closest?.('.ship-card[data-images]');
+    if (card && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      openModal(card);
+      return;
+    }
     if (e.key === "Escape") closeModal();
   });
 
@@ -104,6 +138,13 @@
     });
   }
 
-  // Simple reveal (only if global reveal isn't present)
-  if (!document.querySelector("[data-reveal]")) return;
+  const reveals = document.querySelectorAll('[data-reveal]');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  } else {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+    }, {threshold: .12});
+    reveals.forEach(el => observer.observe(el));
+  }
 })();

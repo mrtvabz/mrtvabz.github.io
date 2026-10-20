@@ -1,412 +1,1237 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MaxWin Logistics — Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shipping cars and cargo from South Korea | MaxWin Logistics</title>
+  <meta name="description" content="We help you buy and ship cars and cargo from South Korea. RoRo and container transport, export documents, photo and video reports, and direct contact with our Incheon team.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.maxwinlogistics.co/en/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shipping cars and cargo from South Korea | MaxWin Logistics">
+  <meta property="og:description" content="Car buying, RoRo and container shipping, documents and photo reports. MaxWin Logistics in Incheon.">
+  <meta property="og:url" content="https://www.maxwinlogistics.co/en/">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../refresh.css">
+  <link rel="stylesheet" href="../refinement.css">
+  <style id="mw-game-styles">
+/* MaxWin Route Run — self-contained homepage arcade. */
+.mw-arcade-section{padding:84px 0 90px;scroll-margin-top:90px;background:#edf4f4}
+.mw-arcade-heading{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:27px}
+.mw-arcade-heading h2{margin:12px 0 0;color:#102f3c;font:800 clamp(30px,3.3vw,46px)/1.16 Manrope,'Open Sans',sans-serif;letter-spacing:-.045em}
+.mw-arcade-heading p{max-width:410px;margin:0;color:#58727c;font-size:15px;line-height:1.7}
+.mw-game-pickers{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:12px;margin:0 0 20px}
+.mw-game-picker-group{min-width:0;padding:14px;border:1px solid #c4d9df;border-radius:14px;background:#f9fcfb}
+.mw-game-picker-title{display:flex;justify-content:space-between;gap:10px;margin-bottom:11px;color:#123b4b;font:800 11px/1.2 Manrope,'Open Sans',sans-serif;letter-spacing:.09em;text-transform:uppercase}
+.mw-game-picker-title small{color:#70909a;font:700 11px/1.2 Manrope,'Open Sans',sans-serif;letter-spacing:0;text-transform:none}
+.mw-game-destinations,.mw-game-cars{display:grid;gap:8px}
+.mw-game-destinations{grid-template-columns:repeat(4,minmax(0,1fr))}.mw-game-cars{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mw-game-destination,.mw-game-car{min-width:0;min-height:66px;border:1px solid #c5dae1;border-radius:8px;background:#fff;color:#173c4d;text-align:left;cursor:pointer;transition:transform .16s ease,border-color .16s ease,background .16s ease,box-shadow .16s ease}
+.mw-game-destination{display:flex;align-items:center;gap:8px;padding:9px 10px}.mw-game-destination b{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #a7d2db;border-radius:4px;background:#e7f4f6;color:#117c94;font:900 11px/1 ui-monospace,Consolas,monospace}
+.mw-game-destination>span{min-width:0;font:800 12px/1.2 Manrope,'Open Sans',sans-serif}.mw-game-destination small{display:block;margin-top:4px;color:#738c96;font:700 9px/1.2 Manrope,'Open Sans',sans-serif}
+.mw-game-destination:hover,.mw-game-car:hover{transform:translateY(-2px);border-color:#6ca9b8}.mw-game-destination:focus-visible,.mw-game-car:focus-visible{outline:3px solid #11c7ed;outline-offset:2px}
+.mw-game-destination.is-active,.mw-game-car.is-active{border-color:#0d9cb7;background:#edfafd;box-shadow:inset 0 0 0 1px #0d9cb7}.mw-game-destination.is-active b{border-color:#10a9c7;background:#15c5e0;color:#07384c}
+.mw-game-car{display:grid;place-items:center;gap:2px;padding:7px 4px;text-align:center;font:800 11px/1.1 Manrope,'Open Sans',sans-serif}
+.mw-game-car-icon{position:relative;display:block;width:62px;height:27px;--car-color:#f5fbff}.mw-game-car-icon:before{position:absolute;top:8px;left:2px;width:55px;height:13px;border:2px solid #164769;border-radius:5px 8px 4px 4px;background:var(--car-color);content:''}.mw-game-car-icon:after{position:absolute;bottom:0;left:9px;width:8px;height:8px;border-radius:50%;background:#0c2c4e;box-shadow:35px 0 #0c2c4e;content:''}.mw-game-car-icon i{position:absolute;top:2px;left:16px;z-index:1;width:30px;height:11px;border:2px solid #164769;border-bottom:0;border-radius:5px 8px 0 0;background:#54aed6}.mw-game-car-icon--sedan{--car-color:#21bed5}.mw-game-car-icon--sedan i{top:5px;left:19px;width:29px;height:8px}.mw-game-car-icon--van{--car-color:#f8a25e}.mw-game-car-icon--van i{top:1px;left:38px;width:15px;height:12px}
+.mw-game{--mw-game-accent:#11d5ec;overflow:hidden;scroll-margin-top:90px;border:1px solid #adcbd4;border-radius:18px;background:#071d3d;box-shadow:0 24px 52px rgba(14,48,63,.12)}
+.mw-game:focus-visible{outline:3px solid #11c7ed;outline-offset:4px}
+.mw-game-hud{display:grid;grid-template-columns:58px 140px 140px 126px 86px minmax(220px,1fr);align-items:center;min-height:100px;padding:15px 22px;background:#071d3d;color:#f1f8fc}
+.mw-game-pause{display:grid;place-items:center;width:48px;height:48px;border:2px solid #0bcaef;border-radius:10px;background:#092849;color:#e9faff;font:800 25px/1 ui-monospace,Consolas,monospace;cursor:pointer}
+.mw-game-pause:hover,.mw-game-pause:focus-visible{background:#114166}.mw-game-pause:disabled{opacity:.45;cursor:default}
+.mw-game-hud-item{min-width:0;min-height:55px;padding:4px 13px 4px 22px;border-left:1px solid #426582}
+.mw-game-hud-item>span{display:block;margin-bottom:6px;color:#addcf0;font:800 11px/1.1 Manrope,'Open Sans',sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.mw-game-hud-item strong{display:block;white-space:nowrap;color:#f6fbff;font:800 28px/1 ui-monospace,Consolas,monospace;letter-spacing:.035em}
+.mw-game-hud-item--score strong{color:#18dcf3}.mw-game-hud-item--lives strong{color:#ff605d;font-size:25px;letter-spacing:-.03em}
+.mw-game-route{padding:0 10px 0 23px;border-left:1px solid #426582}
+.mw-game-track{position:relative;height:26px;margin:0 12px}
+.mw-game-track:before,.mw-game-track-fill{position:absolute;top:11px;left:0;height:5px;border-radius:5px;content:''}
+.mw-game-track:before{right:0;background:#6b88a4}
+.mw-game-track-fill{width:0;background:var(--mw-game-accent);box-shadow:0 0 10px rgba(16,213,236,.65);transition:width .18s linear}
+.mw-game-track i{position:absolute;top:6px;z-index:1;width:15px;height:15px;border:3px solid #8ca9bf;border-radius:50%;background:#849eb5}
+.mw-game-track i:first-of-type{left:0;transform:translateX(-50%);border-color:#12d4ec;background:#12d4ec}
+.mw-game-track i:nth-of-type(2){left:50%;transform:translateX(-50%)}
+.mw-game-track i:last-of-type{right:0;transform:translateX(50%)}
+.mw-game-track i.is-reached{border-color:var(--mw-game-accent);background:var(--mw-game-accent)}
+.mw-game-cities{display:flex;justify-content:space-between;gap:6px;color:#bed5e4;font:800 11px/1.2 Manrope,'Open Sans',sans-serif}
+.mw-game-cities span:nth-child(2){text-align:center}.mw-game-cities span:last-child{text-align:right}
+.mw-game-stage{position:relative;height:clamp(360px,42vw,560px);overflow:hidden;background:#56bafa;touch-action:manipulation}
+.mw-game-stage canvas{display:block;width:100%;height:100%;image-rendering:pixelated;cursor:pointer}
+.mw-game-scene-tag{position:absolute;top:16px;right:16px;z-index:1;min-width:160px;padding:8px 12px;border:1px solid #83ddf0;border-radius:6px;background:#062951de;color:#fff;text-align:right;pointer-events:none;box-shadow:0 7px 20px #02254730}.mw-game-scene-tag span{display:block;color:#8cf4ff;font:800 9px/1.2 Manrope,'Open Sans',sans-serif;letter-spacing:.11em;text-transform:uppercase}.mw-game-scene-tag b{display:block;margin-top:4px;font:800 13px/1.2 Manrope,'Open Sans',sans-serif}
+.mw-game-level{position:absolute;top:16px;left:16px;z-index:1;min-width:140px;padding:8px 12px;border:1px solid #c7e7ee;border-radius:6px;background:#062951de;color:#fff;pointer-events:none;box-shadow:0 7px 20px #02254730}.mw-game-level span{display:block;color:#9ff2e0;font:800 9px/1.2 Manrope,'Open Sans',sans-serif;letter-spacing:.11em;text-transform:uppercase}.mw-game-level b{display:block;margin-top:4px;font:800 13px/1.2 Manrope,'Open Sans',sans-serif}
+.mw-game-overlay{position:absolute;bottom:22px;right:22px;z-index:2;width:min(360px,calc(100% - 44px));padding:22px 24px 23px;border:2px solid #16c8f0;border-radius:14px;background:rgba(4,23,54,.94);color:#fff;box-shadow:0 14px 32px rgba(2,18,38,.25)}
+.mw-game-overlay[hidden],.mw-game-toast[hidden]{display:none}
+.mw-game-overlay-kicker{display:block;color:#4ee6f5;font:800 10px/1.2 Manrope,'Open Sans',sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.mw-game-overlay h3{margin:10px 0 7px;color:#fff;font:800 25px/1.18 Manrope,'Open Sans',sans-serif;letter-spacing:-.035em}
+.mw-game-overlay p{margin:0 0 17px;color:#d1e2ed;font-size:13px;line-height:1.55}
+.mw-game-start{min-height:46px;padding:10px 18px;border:0;border-radius:9px;background:#18c8ed;color:#042640;font:800 13px/1.2 Manrope,'Open Sans',sans-serif;cursor:pointer}
+.mw-game-start:hover,.mw-game-start:focus-visible{background:#7beef8}
+.mw-game-toast{position:absolute;top:18px;left:50%;z-index:2;max-width:calc(100% - 30px);transform:translateX(-50%);padding:10px 15px;border:1px solid #6ee9f2;border-radius:8px;background:#06284de8;color:#fff;text-align:center;font:800 12px/1.4 Manrope,'Open Sans',sans-serif;box-shadow:0 8px 20px rgba(2,20,41,.2)}
+.mw-game-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:86px;padding:15px 24px;border-top:3px solid #18c8ed;background:#071d3d;color:#e2f2f8}
+.mw-game-help{margin:0;color:#d3e6ef;font:700 14px/1.5 Manrope,'Open Sans',sans-serif}
+.mw-game-help kbd{display:inline-block;margin-right:5px;padding:5px 9px;border:1px solid #9eb9d0;border-radius:5px;background:#274360;color:#fff;font:800 12px/1 ui-monospace,Consolas,monospace}
+.mw-game-jump{display:flex;align-items:center;justify-content:center;gap:17px;min-width:175px;min-height:54px;padding:11px 21px;border:2px solid #19d6f1;border-radius:10px;background:#0b3156;color:#fff;font:800 16px/1.2 Manrope,'Open Sans',sans-serif;cursor:pointer;touch-action:manipulation}
+.mw-game-jump span{color:#22e2f4;font-size:25px;line-height:.8}
+.mw-game-jump:hover,.mw-game-jump:focus-visible{background:#13517a}.mw-game-jump:active{transform:translateY(2px)}
+.mw-game-caption{margin:14px 0 0;color:#617b83;font-size:12px;line-height:1.6}.mw-game-caption a{color:#116f88;font-weight:800;text-underline-offset:3px}
+.mw-game-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1200px){.mw-game-pickers{grid-template-columns:1fr}.mw-game-destinations{grid-template-columns:repeat(4,minmax(0,1fr))}.mw-game-picker-group--cars{max-width:530px}}
+@media(max-width:1050px){.mw-game-hud{grid-template-columns:52px repeat(4,minmax(0,1fr));row-gap:15px}.mw-game-route{grid-column:1/-1;padding:0 8px;border-left:0}.mw-game-hud-item{padding-left:15px}.mw-game-track{margin:0 16px}}
+@media(max-width:700px){.mw-arcade-section{padding:64px 0 68px}.mw-arcade-heading{display:block;margin-bottom:22px}.mw-arcade-heading h2{font-size:31px}.mw-arcade-heading p{margin-top:13px;font-size:14px}.mw-game-picker-group{padding:11px}.mw-game-destinations{grid-template-columns:repeat(2,minmax(0,1fr))}.mw-game-destination{min-height:58px}.mw-game-picker-title small{font-size:10px}.mw-game-picker-group--cars{max-width:none}.mw-game{border-radius:12px}.mw-game-hud{grid-template-columns:43px repeat(4,minmax(0,1fr));min-height:0;padding:11px 10px 12px;row-gap:9px}.mw-game-pause{width:38px;height:38px;border-radius:7px;font-size:21px}.mw-game-hud-item{min-height:41px;padding:2px 4px 2px 8px}.mw-game-hud-item>span{margin-bottom:6px;font-size:8px;letter-spacing:.025em}.mw-game-hud-item strong{font-size:16px;letter-spacing:0}.mw-game-hud-item--lives strong{font-size:15px}.mw-game-route{padding:0 5px}.mw-game-track{margin:0 8px}.mw-game-cities{font-size:10px}.mw-game-stage{height:390px}.mw-game-scene-tag{top:10px;right:10px;min-width:123px;padding:6px 8px}.mw-game-scene-tag span{font-size:8px}.mw-game-scene-tag b{font-size:11px}.mw-game-overlay{top:58px;right:14px;bottom:auto;left:14px;width:auto;padding:16px 18px}.mw-game-overlay h3{font-size:22px}.mw-game-controls{display:grid;gap:13px;padding:15px}.mw-game-help{font-size:12px}.mw-game-jump{width:100%;min-height:58px}.mw-game-caption{font-size:11px}}
+@media(max-width:410px){.mw-game-hud-item strong{font-size:14px}.mw-game-hud-item--lives strong{font-size:13px}.mw-game-hud-item>span{font-size:7px}.mw-game-stage{height:410px}}
+@media(max-width:700px){.mw-game-level{top:10px;left:10px;min-width:105px;padding:6px 8px}.mw-game-level span{font-size:8px}.mw-game-level b{font-size:11px}}
+@media(max-width:640px){body.mw-game-in-view .mw-mobile-contact{display:none}}
+@media(prefers-reduced-motion:reduce){.mw-game-track-fill{transition:none}.mw-game-jump:active{transform:none}}
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9TMZM8ZWFM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9TMZM8ZWFM');
-</script>
-
-  <meta name="description" content="Car shipping from Korea (Busan/Incheon) to Vladivostok and Central Asia. RoRo and container services, documentation support, photo reports, and tracking." />
-
-
-
-
-  <!-- Global styles used across the site -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Home-only styles (safe, won't touch other pages) -->
-  <link rel="stylesheet" href="home_updates.css" />
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link rel="canonical" href="https://www.maxwinlogistics.co/en/" />
-
-<link rel="alternate" hreflang="en" href="https://www.maxwinlogistics.co/en/" />
-<link rel="alternate" hreflang="ru" href="https://www.maxwinlogistics.co/" />
-<link rel="alternate" hreflang="x-default" href="https://www.maxwinlogistics.co/" />
-
-</head>
-
+/* Route mastery, readable controls and small moments of feedback. */
+.mw-game-destination{min-height:82px;align-items:flex-start}
+.mw-game-destination b{margin-top:4px}
+.mw-game-medal-badge{display:inline-flex;align-items:center;gap:4px;margin-top:7px;padding:3px 6px;border:1px solid #cbdce0;border-radius:4px;background:#f0f5f5;color:#55717a;font:800 9px/1 Manrope,'Open Sans',sans-serif;font-style:normal;white-space:nowrap}
+.mw-game-medal-badge::before{width:5px;height:5px;border-radius:50%;background:currentColor;content:''}
+.mw-game-medal-badge[data-rank="1"],#mw-game-medal[data-rank="1"]{border-color:#c98969;background:#fbe8da;color:#8c4d32}
+.mw-game-medal-badge[data-rank="2"],#mw-game-medal[data-rank="2"]{border-color:#9ab2bf;background:#e7f0f5;color:#435e70}
+.mw-game-medal-badge[data-rank="3"],#mw-game-medal[data-rank="3"]{border-color:#d6ad4b;background:#fff2c8;color:#795b0d}
+.mw-game-brief{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 14px;padding:12px 18px;border:1px solid #c4d9df;border-left:4px solid #16afc5;border-radius:9px;background:#fbfefd;color:#274b58}
+.mw-game-brief p{display:flex;align-items:center;gap:8px;margin:0;font:700 12px/1.5 Manrope,'Open Sans',sans-serif}
+.mw-game-brief p strong{color:#143c4d;white-space:nowrap}
+.mw-game-brief-mark{display:grid;place-items:center;flex:0 0 27px;width:27px;height:27px;border-radius:6px;background:#e2f8fb;color:#0e9bb4;font-size:16px}
+.mw-game-brief-medal{display:flex;align-items:center;flex:0 0 auto;gap:9px;padding-left:15px;border-left:1px solid #cbdde0}
+.mw-game-brief-medal>span{max-width:115px;color:#5b7a82;font:800 9px/1.25 Manrope,'Open Sans',sans-serif;letter-spacing:.035em;text-transform:uppercase}
+#mw-game-medal{display:inline-flex;align-items:center;justify-content:center;min-width:84px;min-height:27px;padding:4px 8px;border:1px solid #bdd5da;border-radius:5px;background:#edf4f4;color:#315968;font:900 11px/1.1 Manrope,'Open Sans',sans-serif;text-align:center;white-space:nowrap}
+.mw-game-help{max-width:610px}
+.mw-game-help>span,.mw-game-help small{display:block}
+.mw-game-help small{margin-top:6px;color:#8eb2c1;font:700 11px/1.4 Manrope,'Open Sans',sans-serif}
+.mw-game-actions{display:flex;align-items:stretch;flex:0 0 auto;gap:10px}
+.mw-game-nitro{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:4px;width:148px;min-height:62px;padding:7px 11px;border:2px solid #38b8c9;border-radius:10px;background:#103d5a;color:#e8fbff;text-align:left;font-family:Manrope,'Open Sans',sans-serif;cursor:pointer;touch-action:manipulation;transition:background .16s ease,box-shadow .16s ease,transform .16s ease}
+.mw-game-nitro-label{display:flex;align-items:center;gap:4px;font:900 12px/1.1 Manrope,'Open Sans',sans-serif;letter-spacing:.025em;text-transform:uppercase}
+.mw-game-nitro-spark{color:#44ebdd;font-size:17px;line-height:.7}
+.mw-game-nitro kbd{margin-left:auto;padding:2px 4px;border:1px solid #789eae;border-radius:3px;color:#d8f6fa;font:800 9px/1 ui-monospace,Consolas,monospace}
+.mw-game-nitro-meter{display:block;overflow:hidden;width:100%;height:5px;border-radius:5px;background:#496e81}
+#mw-game-nitro-fill{display:block;width:0;height:100%;border-radius:inherit;background:#45e9d3;box-shadow:0 0 8px #45e9d3;transition:width .2s linear}
+.mw-game-nitro-status{color:#c0dce1;font:800 9px/1.1 Manrope,'Open Sans',sans-serif;white-space:nowrap}
+.mw-game-nitro:not(:disabled):hover,.mw-game-nitro:not(:disabled):focus-visible{background:#155274;box-shadow:0 0 0 2px #77e9e7 inset}
+.mw-game-nitro:not(:disabled):active{transform:translateY(2px)}
+.mw-game-nitro:disabled{cursor:default;opacity:.73}
+.mw-game-nitro.is-active,.mw-game-nitro[data-active="true"]{border-color:#bafc9b;background:#165d54;box-shadow:0 0 18px #78ffd66e}
+.mw-game-jump{min-height:62px}
+.mw-game-stage.is-hit canvas{animation:mw-game-hit-shake .26s ease-out both}
+@keyframes mw-game-hit-shake{0%,100%{transform:translateX(0)}15%{transform:translateX(-5px)}35%{transform:translateX(4px)}58%{transform:translateX(-3px)}78%{transform:translateX(2px)}}
+@media(max-width:900px){.mw-game-brief{align-items:flex-start}.mw-game-brief p{flex-wrap:wrap}.mw-game-brief-medal{min-height:35px}}
+@media(max-width:700px){.mw-game-destination{min-height:76px}.mw-game-brief{gap:12px;padding:10px 12px}.mw-game-brief p{gap:5px;font-size:11px}.mw-game-brief-medal{align-self:center;padding-left:10px}.mw-game-brief-medal>span{display:none}.mw-game-help{max-width:none}.mw-game-help small{margin-top:4px;font-size:10px}.mw-game-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);width:100%;gap:8px}.mw-game-nitro{width:auto;min-width:0;min-height:58px;padding:6px 9px}.mw-game-jump{min-width:0;min-height:58px;padding:9px 12px;font-size:15px}}
+@media(max-width:410px){.mw-game-destination{display:block;min-height:80px;padding:7px}.mw-game-destination b{float:right;width:27px;height:27px;margin:0 0 2px 4px;font-size:9px}.mw-game-destination>span{display:block}.mw-game-destination small{font-size:8px}.mw-game-medal-badge{margin-top:5px;padding:3px 5px;font-size:8px}.mw-game-brief-mark{display:none}.mw-game-brief-medal{flex:0 0 auto}.mw-game-nitro-label{font-size:11px}.mw-game-nitro-status{font-size:8px}.mw-game-jump{gap:8px;font-size:14px}.mw-game-jump span{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.mw-game-stage.is-hit canvas{animation:none}.mw-game-nitro,#mw-game-nitro-fill{transition:none}}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TMZM8ZWFM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-9TMZM8ZWFM');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MaxWin Logistics","url":"https://www.maxwinlogistics.co/en/","description":"Shipping cars and cargo from South Korea by sea and rail.","address":{"@type":"PostalAddress","streetAddress":"서해대로179번길 17","addressLocality":"Incheon","addressCountry":"KR"},"email":"maxwincorp1@gmail.com"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which shipping methods do you offer?","acceptedAnswer":{"@type":"Answer","text":"We use RoRo and containers. The right method depends on the car, cargo and route."}},{"@type":"Question","name":"Will I receive photos and videos?","acceptedAnswer":{"@type":"Answer","text":"We show car handover, preparation and loading. The exact report is confirmed for each shipment."}},{"@type":"Question","name":"Which documents will I need?","acceptedAnswer":{"@type":"Answer","text":"Documents depend on the route and car. Your manager will provide the current list before processing."}},{"@type":"Question","name":"How can I find the next departure date?","acceptedAnswer":{"@type":"Answer","text":"Contact the MaxWin Logistics team. We will check available sailings and confirm current terms."}}]}</script>
+  <link rel="alternate" hreflang="en" href="https://www.maxwinlogistics.co/en/">
+  <link rel="alternate" hreflang="ru" href="https://www.maxwinlogistics.co/">
+  </head>
 <body class="home">
-
-  <header id="header" class="shadow bg-light">
-    <nav class="container navbar">
-      <a href="index.html" class="nav-brand text-dark brand">
-  <img src="Picture1.png" alt="MaxWin Logistics" class="brand-logo">
-  <span class="brand-text">MaxWin Logistics</span>
-</a>
-      <a class="lang-switch" href="/" title="Русский">RU</a>
-
-      <button class="toggle-button">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-
-      <div class="collapse">
-        <ul class="navbar-nav">
-           <li><a href="/en/" class="nav-link">About us</a></li>
-          <li><a href="/en/roro.html" class="nav-link">RoRo</a></li>
-          <li><a href="/en/container.html" class="nav-link">Container</a></li>
-          <li><a href="/en/cartrade.html" class="nav-link">CarTrade</a></li>
-          <li><a href="schedule-en.html" class="nav-link">Schedule</a></li>
-          <li><a href="/en/contacts.html" class="nav-link">Contacts</a></li>
-          <li><a href="/en/pogruzka.html" class="nav-link">Loading</a></li>
-        </ul>
+  <header id="header" class="mw-header">
+    <div class="mw-header-inner">
+      <a class="mw-brand" href="index.html" aria-label="MaxWin Logistics — home">
+        <img class="mw-brand-logo" src="../Picture1.png" alt="">
+        <span class="mw-brand-name">MaxWin Logistics</span>
+      </a>
+      <nav class="mw-nav" id="mw-nav" aria-label="Main navigation">
+        <a href="index.html">About us</a><a href="roro.html">RoRo</a><a href="container.html">Container</a><a href="cartrade.html">CarTrade</a><a href="incheon-yantai-altynkol.html">To Kazakhstan</a><a href="schedule.html">Schedule</a><a href="pogruzka.html">Loading</a><a href="contacts.html">Contacts</a>
+      </nav>
+      <div class="mw-header-actions">
+        <a class="mw-lang" href="../index.html" lang="ru" aria-label="Russian version">RU</a>
+        <a class="mw-btn mw-btn--small mw-header-cta" href="contacts.html">Contact us</a>
+        <button class="mw-nav-toggle" type="button" aria-label="Open menu" aria-controls="mw-nav" aria-expanded="false">☰</button>
       </div>
-
-      <div class="collapse">
-        <ul class="navbar-nav">
-        
-            <!-- Put your real links here -->
-            <a href="https://www.instagram.com/maxwin.co?igsh=MWpsNnZzN3JlbXF5eQ%3D%3D&utm_source=qr" class="nav-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com/@maxwin.co1?si=4Nvc-4zzMUFd7dng" class="nav-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            
-          </div>
-        </ul>
-      </div>
-    </nav>
+    </div>
   </header>
 
   <main id="site-main">
-    <div class="home-wrap">
-      <section class="home-hero reveal">
-        <h1 class="home-title">News & Schedule</h1>
-        <p class="home-subtitle">Straight to the point: what matters now and the next departures.</p>
-      </section>
-
-      <section class="home-grid">
-        <!-- NEWS -->
-        <article class="home-card reveal" id="home-news">
-          <header class="home-card__head">
-            <div>
-              <h2>News</h2>
-              <p class="home-muted">News: <span id="news-updated"> South Korean used-car exporters are facing serious logistics challenges due to instability around the Strait of Hormuz and Red Sea shipping routes.
-
-Freight costs for vehicle exports have surged up to four times higher than normal levels, while some shipments heading toward Dubai and North Africa have been delayed or rerouted through alternative ports such as Sri Lanka.
-
-The situation has heavily affected exporters operating through Incheon Port, one of Asia’s largest used-car export hubs. </span></p>
-              
-            </div>
-          </header>
-
-          <div class="home-list" id="news-list">
-            <div class="home-skeleton"></div>
-            <div class="home-skeleton"></div>
-            <div class="home-skeleton"></div>
-          </div>
-
-          <div class="home-spacer" aria-hidden="true"></div>
-        </article>
-
-        <!-- SCHEDULE -->
-        <article class="home-card reveal" id="home-schedule">
-          <header class="home-card__head">
-            <div>
-              <h2>Departure Schedule</h2>
-              <p class="home-muted">Update: <span id="schedule-updated">We are pleased to announce that we have signed a new contract with Ocean Pride, which means we now have regular departures every Saturday. We currently have a special offer — only $450 per car when shipping 5 vehicles. </span></p>
-                <p class="home-muted">Ship: <span id="schedule-updated">Ocean Pride</span></p>
-            
-            </div>
-          </header>
-
-          <div class="home-schedule" id="schedule-list">
-            <div class="home-skeleton"></div>
-            <div class="home-skeleton"></div>
-            <div class="home-skeleton"></div>
-          </div>
-
-          <div class="home-spacer" aria-hidden="true"></div>
-        </article>
-      </section>
-
-    <!-- ABOUT US (6 cards, alternating left/right) -->
-    <section class="home-about" id="about">
-      <div class="container">
-
-        <article class="about-card">
-          <div class="about-card__text">
-            <div class="about-kicker">ABOUT THE COMPANY</div>
-            <h2 class="about-title">MaxWin Logistics</h2>
-            <p class="about-lead">We’re a team in Korea that helps clients buy and ship cars and cargo quickly, transparently, and safely. We follow a clear process: inspection → documents → photo report → shipment (RoRo / container).</p>
-            <p class="about-lead">MaxWin Logistics is a logistics company founded in 2020, operating in Korea and specializing in exporting cars and cargo by sea.
-
-We help clients buy and ship cars and spare parts from Korea quickly, transparently, and safely, building the process so it’s clear even for those doing international shipping for the first time.
-
-Our work follows a simple and logical scheme: inspection → preparation → photo report → shipment (RoRo or container). Every stage is controlled so the client always understands where their cargo is.
-
-We handle communication with shipping lines and ports, show the process through photos and videos, and support the shipment until it arrives.
-
-Our goal is to give the client a sense of control and confidence at every step.
-
-We explain everything in simple language — without pressure and without “smart words”. Max Win Logistics (South Korea) — maxwinlogistics.co”</p>
-
-            
-
-            <div class="about-actions">
-              <a class="about-btn about-btn--ghost" href="contacts.html"><span class="about-ico">✉️</span>Contact</a>
-              <a class="about-btn about-btn--dark" href="pogruzka.html"><span class="about-ico">▶</span>View loadings</a>
-            </div>
-          </div>
-
-          <div class="about-card__media">
-            <!-- Replace this placeholder with: <img src="img/about-01.jpg" alt="..."> -->
-            <img class="about-media-ph" src="bb.png" alt="MaxWin Logistics">
-          </div>
-        </article>
-
-        <article class="about-card about-card--reverse">
-          <div class="about-card__text">
-            <div class="about-kicker">SERVICE</div>
-            <h3 class="about-title">RoRo and container</h3>
-            <p class="about-lead">Transparent logistics without “gray zones”.
-We work with two main sea-shipping formats — RoRo and containers — which lets us flexibly choose the delivery method for different tasks.
-
-You can export cars and spare parts from Korea to any destination, choosing the optimal option depending on the cargo type, route, and shipping requirements.
-
-No matter the chosen format, we support the process from dispatch to arrival, providing clear and structured logistics without unnecessary complexity.</p>
-            
-            <div class="about-actions">
-              <a class="about-btn about-btn--ghost" href="roro.html">Learn more</a>
-            </div>
-          </div>
-          <div class="about-card__media">
-            <!-- Replace: <img src="img/about-02.jpg" alt="RoRo / container"> -->
-            <img class="about-media-ph" src="90.jpg" alt="RoRo and container">
-          </div>
-        </article>
-
-        <article class="about-card">
-          <div class="about-card__text">
-            <div class="about-kicker">CONTROL</div>
-            <h3 class="about-title">Photo/Video report</h3>
-            <p class="about-lead">We show the real process: receiving, preparation, loading, and securing. If a question comes up, you have proof through photo/video.</p>
-           
-            <div class="about-actions">
-              <a class="about-btn about-btn--dark" href="pogruzka.html">View examples</a>
-            </div>
-          </div>
-          <div class="about-card__media">
-            <!-- Replace: <img src="img/about-03.jpg" alt="Photo/Video report"> -->
-            <img class="about-media-ph" src="00.png" alt="Photo/Video report">
-          </div>
-        </article>
-
-        <article class="about-card about-card--reverse">
-          <div class="about-card__text">
-            <div class="about-kicker">DOCUMENTS</div>
-            <h3 class="about-title">DOCUMENTS </h3>
-            <p class="about-lead">We keep paperwork simple and clear, without unnecessary bureaucracy.
-Invoices, Bills of Lading (B/L), and status updates are prepared and shared in a clear logic, so you always understand what’s happening, what stage the shipment is at, and what comes next.
-
-We follow a transparent approach: no complicated wording, no confusing steps — only up-to-date information and timely updates.</p>
-            <div class="about-chips">
-              <span class="about-chip">Invoice</span>
-              <span class="about-chip">BL</span>
-              <span class="about-chip">Statuses</span>
-            </div>
-            <div class="about-actions">
-              <a class="about-btn about-btn--ghost" href="contacts.html">Ask a question</a>
-            </div>
-          </div>
-          <div class="about-card__media">
-            <!-- Replace: <img src="img/about-04.jpg" alt="Documents"> -->
-            <img class="about-media-ph" src="91.jpg" alt="Documents">
-          </div>
-        </article>
-
-        <article class="about-card">
-          <div class="about-card__text">
-            <div class="about-kicker">NETWORK</div>
-            <h3 class="about-title">Routes and support</h3>
-            <p class="about-lead">We work with all countries across the post‑Soviet region, organizing exports of cars and cargo from Korea to various destinations.
-We support the process at every stage, stay in touch, and provide relevant status updates so you always know how the shipment is going.
-Estimated sea transit time to Vladivostok is 2–3 days.
-
-Estimated time at sea: 2–3 days.</p>
-            
-          </div>
-          <div class="about-card__media">
-            <!-- Replace: <img src="img/about-05.jpg" alt="Route network"> -->
-            <img class="about-media-ph" src="88.jpg" alt="Route network">
-          </div>
-        </article>
-
-        <article class="about-card about-card--reverse">
-          <div class="about-card__text">
-            <div class="about-kicker">PREMIUM</div>
-            <h3 class="about-title">Cargo safety</h3>
-            <p class="about-lead">We pay special attention to keeping the vehicle safe at every stage of transportation.
-During loading and securing, we use special lashing straps and fixation to reliably hold the vehicle and prevent shifting during sea transport.
-
-If needed, we provide reinforced packing and additional fixation, choosing the solution depending on the vehicle type and shipping format (RoRo or container).
-
-The loading and securing process is accompanied by photo control, so you can be sure the vehicle is prepared and secured correctly.
-
-Our goal is simple — the cargo arrives safely, with no surprises.</p>
-            
-          </div>
-          <div class="about-card__media">
-            <!-- Replace: <img src="img/about-06.jpg" alt="Safety"> -->
-            <img class="about-media-ph" src="89.jpg" alt="Safety">
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ADDRESS + MAP (Kakao, no API key needed) -->
-    <section class="home-map" id="address">
-      <div class="container">
-        <h2 class="map-title">Address</h2>
-        <div class="map-subtitle">How to find us</div>
-        <div class="map-text">
-          <div class="map-line">90, Hang-dong 7(chil)-ga, Jung-gu, Incheon</div>
-          <div class="map-line">인천광역시 중구 서해대로179번길 17</div>
+    <section class="mw-home-hero">
+      <div class="mw-container mw-home-hero-grid">
+        <div>
+          <span class="mw-kicker">Logistics from South Korea</span>
+          <h1>Shipping cars <span>from South Korea</span></h1>
+          <p class="mw-lead">We help you buy, prepare and ship a car or cargo from Korea. We arrange RoRo or container transport, handle the documents and show our work through photos and videos.</p>
+          <p class="mw-hero-support">Know what's happening to your car, from preparation in Korea to the agreed arrival point.</p>
+          <div class="mw-hero-actions"><a class="mw-btn" href="contacts.html">Contact us <span aria-hidden="true">↗</span></a><a class="mw-btn mw-btn--ghost" href="pogruzka.html">Watch loading videos</a></div>
+          <div class="mw-statline" aria-label="Main services"><span>RoRo</span><span>Container</span><span>Documents</span><span>Photo and video reports</span></div>
         </div>
-
-        <div class="map-embed">
-          <a class="kakao-map-link" href="https://map.kakao.com/?urlX=415717.4999999999&amp;urlY=1096179.9999999988&amp;name=%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%84%9C%ED%95%B4%EB%8C%80%EB%A1%9C179%EB%B2%88%EA%B8%B8%2017&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank" rel="noopener">
-            <img class="kakao-map-img" src="https://t1.daumcdn.net/roughmap/imgmap/db7de9d078d131c74462e6c417fc5178c1aacccebd15dbb39635d4958992e291" alt="KakaoMap — MaxWin Logistics" loading="lazy">
-          </a>
-
-          <div class="kakao-map-bar">
-            <a href="https://map.kakao.com" target="_blank" rel="noopener" class="kakao-map-logo">
-              <img src="https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" width="72" height="16" alt="카카오맵">
-            </a>
-            <a target="_blank" rel="noopener" class="kakao-map-route" href="https://map.kakao.com/?from=roughmap&amp;eName=%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%84%9C%ED%95%B4%EB%8C%80%EB%A1%9C179%EB%B2%88%EA%B8%B8%2017&amp;eX=415717.4999999999&amp;eY=1096179.9999999988">길찾기</a>
-          </div>
+        <div class="mw-media mw-home-hero-media">
+          <img src="../00.png" alt="Loading a car for sea freight">
+          <span class="mw-image-fallback" aria-hidden="true">Car loading</span>
+          <span class="mw-hero-media-caption">Real shipping stages, shown in photos and video</span>
         </div>
       </div>
     </section>
 
-    </div>
+                    
+
+    <section class="mw-section" id="services">
+      <div class="mw-container">
+        <div class="mw-section-heading mw-reveal"><div><span class="mw-kicker">Destinations</span><h2>How we'll ship your car</h2></div><p>RoRo by sea or a route to Kazakhstan via Yantai. See each stage and the handover point.</p></div>
+        <div class="mw-service-chooser mw-reveal" data-mw-service-chooser>
+          <div class="mw-service-tabs" aria-label="Choose a shipping destination">
+            <button class="mw-service-tab is-active" id="mw-tab-roro" type="button" aria-controls="mw-panel-roro" data-mw-service-tab="roro"><span class="mw-service-tab-number">01</span><span>RoRo<small>Car on a vessel</small></span><span class="mw-service-tab-arrow" aria-hidden="true">↗</span></button>
+            <button class="mw-service-tab" id="mw-tab-kazakhstan" type="button" aria-controls="mw-panel-kazakhstan" data-mw-service-tab="kazakhstan"><span class="mw-service-tab-number">02</span><span>Kazakhstan<small>RoRo + rail</small></span><span class="mw-service-tab-arrow" aria-hidden="true">↗</span></button>
+          </div>
+          <div class="mw-service-panel is-active" id="mw-panel-roro" aria-labelledby="mw-tab-roro" data-mw-service-panel="roro">
+            <div class="mw-service-panel-copy"><span class="mw-service-eyebrow">Sea freight / 01</span><h3>RoRo: your car drives onto the vessel</h3><p>For a car that can be prepared to drive aboard a specialized vessel. We agree on the route, handle documents and show the loading stages.</p><ul><li>Discuss the car's condition and arrival port</li><li>Check documents before departure</li><li>Confirm the available sailing and terms</li></ul><a class="mw-btn" href="roro.html">Learn more about RoRo <span aria-hidden="true">↗</span></a></div>
+            <div class="mw-roro-art"><div class="mw-roro-art-head"><span>Sea freight</span><span>01 / RoRo</span></div><div class="mw-roro-art-main"><strong>RoRo</strong><span>Your car drives onto the vessel</span></div><ol class="mw-roro-art-steps"><li><span>01</span>Handover</li><li><span>02</span>Loading</li><li><span>03</span>Departure</li></ol></div>
+          </div>
+          <div class="mw-service-panel" id="mw-panel-kazakhstan" aria-labelledby="mw-tab-kazakhstan" data-mw-service-panel="kazakhstan">
+            <div class="mw-service-panel-copy"><span class="mw-service-eyebrow">Route / 02</span><h3>RoRo to Kazakhstan via Yantai</h3><p>The car travels by RoRo from Incheon to Yantai, then by rail to Altynkol. It is handed over there; delivery to another city is arranged separately.</p><ul><li>Check transit documents</li><li>Confirm departure and schedule</li><li>Estimated transit time: 15–17 days</li></ul><a class="mw-btn" href="incheon-yantai-altynkol.html">Explore the route <span aria-hidden="true">↗</span></a></div>
+            <div class="mw-kz-route-art"><div class="mw-kz-route-art-head"><span>The car's route</span><span>KR / CN / KZ</span></div><ol class="mw-kz-route-stops"><li><span>01</span><strong>Incheon</strong><small>Korea · RoRo</small></li><li><span>02</span><strong>Yantai</strong><small>China · transfer to rail</small></li><li><span>03</span><strong>Altynkol</strong><small>Kazakhstan · handover</small></li></ol><div class="mw-kz-route-art-foot"><span>Sea freight to Yantai</span><span>Rail to Altynkol</span></div></div>
+          </div>
+          <p class="mw-service-note">We confirm the available sailing, timing and terms after checking the car and documents.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mw-section mw-section--soft" id="process">
+      <div class="mw-container"><div class="mw-section-heading mw-reveal"><div><span class="mw-kicker">Process</span><h2>A clear path from inquiry to departure</h2></div><p>We stay in touch and show you what's happening to your car at every stage.</p></div>
+        <div class="mw-process-list"><div class="mw-process-item mw-reveal"><h3>Inquiry</h3><p>We confirm the car, destination and suitable shipping method.</p></div><div class="mw-process-item mw-reveal"><h3>Inspection and preparation</h3><p>We agree on the steps needed before departure.</p></div><div class="mw-process-item mw-reveal"><h3>Documents and loading</h3><p>We arrange transport and document loading with photos and video.</p></div><div class="mw-process-item mw-reveal"><h3>Departure and updates</h3><p>We share status and support the shipment to the agreed handover point.</p></div></div>
+      </div>
+    </section>
+
+    <section class="mw-section" id="kazakhstan-route"><div class="mw-container"><div class="mw-feature-route mw-reveal"><div><span class="mw-kicker">Route to Kazakhstan</span><h2>Incheon → Yantai → Altynkol</h2><p>RoRo by sea from Incheon to Yantai, then by train to Altynkol, where the car is handed over.</p><ol class="mw-route-preview" aria-label="Route stages"><li><span>Incheon</span><small>Departure</small></li><li><span>Yantai</span><small>Transfer to rail</small></li><li><span>Altynkol</span><small>Handover</small></li></ol><div class="mw-feature-route-points"><span>RoRo + rail</span><span>Approximately 15–17 days</span></div><div style="margin-top:26px"><a class="mw-btn" href="incheon-yantai-altynkol.html">Explore the route <span aria-hidden="true">↗</span></a></div></div><div class="mw-feature-route-price"><small>Current price</small><strong>$2,500</strong><small>per car to Altynkol</small></div></div></div></section>
+
+    <section class="mw-section mw-section--soft" id="proof"><div class="mw-container"><div class="mw-section-heading mw-reveal"><div><span class="mw-kicker">In action</span><h2>See how loading really works</h2></div><p>Watch cars being received, positioned and secured before departure.</p></div><div class="mw-grid-3">
+      <article class="mw-card mw-proof-card mw-reveal"><div class="mw-media"><img src="../sf.jpg" alt="Car loading video"><span class="mw-image-fallback" aria-hidden="true">Car loading video</span></div><div class="mw-proof-card-body"><h3>Car loading</h3><p>Video from MaxWin Logistics at work.</p><a class="mw-card-link" href="pogruzka.html">Watch video</a></div></article>
+      <article class="mw-card mw-proof-card mw-reveal"><div class="mw-media"><img src="../vv.jpg" alt="Video of preparations for shipping"><span class="mw-image-fallback" aria-hidden="true">Preparing for departure</span></div><div class="mw-proof-card-body"><h3>Preparing for departure</h3><p>See the shipping process for yourself.</p><a class="mw-card-link" href="pogruzka.html">Watch video</a></div></article>
+      <article class="mw-card mw-proof-card mw-reveal"><div class="mw-media"><img src="../ww.jpg" alt="Video of a car before shipping"><span class="mw-image-fallback" aria-hidden="true">Port operations</span></div><div class="mw-proof-card-body"><h3>Port checks</h3><p>Photos and videos from the yard and loading.</p><a class="mw-card-link" href="pogruzka.html">Watch video</a></div></article>
+    </div><p class="mw-quiet-note" style="margin:24px 0 0">Ask a manager about the details of your shipment.</p></div></section>
+
+    <section class="mw-section" id="about"><div class="mw-container mw-about-grid"><div class="mw-reveal"><span class="mw-kicker">About us</span><h2>Logistics with a clear view of every step</h2></div><div class="mw-reveal"><p>MaxWin Logistics is a team in South Korea working with exports of cars, spare parts and cargo since 2020. We guide customers through the process, from choosing a shipping method and preparing the car to handling documents and departure.</p><p>With international shipping, you need to know more than the route: you need to know what's already been done to your car. We stay in touch, explain the next stage and provide photos and videos of preparation and loading. Customers see the real work, not just a status update.</p><p>We work with ports and shipping lines in Korea. For each inquiry, we confirm the car, destination and transport terms, then suggest a suitable plan.</p><div class="mw-about-points"><div><b>Documents</b>Preparing and checking export paperwork</div><div><b>Oversight</b>Photos and videos at key stages</div><div><b>Routes</b>Choosing a shipping method for the job</div><div><b>Team</b>Direct contact with specialists</div></div></div></div></section>
+
+    <section class="mw-section mw-section--mist" id="expertise"><div class="mw-container"><div class="mw-section-heading mw-reveal"><div><span class="mw-kicker">How we work</span><h2>More detail. Fewer unknowns.</h2></div><p>Every shipment is different. Here's what we discuss and check before a car leaves Korea.</p></div><div class="mw-editorial-grid">
+      <article class="mw-editorial-item mw-reveal"><span class="mw-editorial-number">01 / SHIPPING METHOD</span><h3>RoRo or container</h3><p>RoRo carries a car on a specialized vessel. A container is used when cargo needs enclosed placement, additional securing or particular preparation. We compare options for the car, route and shipping terms rather than suggest one format for everyone.</p><a href="roro.html">Learn more about RoRo</a><a href="container.html">Learn more about containers</a></article>
+      <article class="mw-editorial-item mw-reveal"><span class="mw-editorial-number">02 / DOCUMENTS</span><h3>Paperwork without confusion</h3><p>Export requires agreed details about the car, sender and recipient. We explain what information is needed, check documents before port handover and tell you when they're ready. Requirements depend on the route and cargo, so we confirm them for each shipment.</p><a href="contacts.html">Ask about documents</a></article>
+      <article class="mw-editorial-item mw-reveal"><span class="mw-editorial-number">03 / VISIBILITY</span><h3>Photos and videos, not guesswork</h3><p>Car handover, preparation and loading are stages you can see. Photos and videos help confirm the car's condition and placement before departure. We agree on the report beforehand; it depends on the shipping method and access to each stage.</p><a href="pogruzka.html">See loading videos</a></article>
+      <article class="mw-editorial-item mw-reveal"><span class="mw-editorial-number">04 / CARGO CARE</span><h3>Preparation and securing</h3><p>The car or cargo must be placed correctly before departure. Depending on the method, we agree on securing, packing and any extra support needed. We discuss this before loading so you know what's included and what may require separate work.</p><a href="container.html">About container shipping</a></article>
+    </div></div></section>
+
+    <section class="mw-section mw-section--sand" id="directions"><div class="mw-container mw-direction-grid"><div class="mw-reveal"><span class="mw-kicker">Destinations</span><h2>From Korea, by an agreed route</h2></div><div class="mw-reveal"><p>MaxWin Logistics arranges shipments from South Korea to a range of destinations. For sea freight via Vladivostok, we discuss the onward land leg separately. For Kazakhstan, the Incheon → Yantai → Altynkol route uses RoRo to Yantai and then rail to the car handover point.</p><p>The route, timing and services depend on the destination. Before booking, we confirm the final point, required documents and where the car will be handed to the recipient.</p><div class="mw-direction-links"><a class="mw-card-link" href="roro.html">Shipping via Vladivostok</a><a class="mw-card-link" href="incheon-yantai-altynkol.html">Route to Altynkol</a></div></div></div></section>
+
+    <section class="mw-section mw-section--soft" id="location"><div class="mw-container mw-location-grid"><div class="mw-reveal"><span class="mw-kicker">Our office</span><h2>We're based in Incheon</h2><p>90, Hang-dong 7(chil)-ga, Jung-gu, Incheon<br>인천광역시 중구 서해대로179번길 17</p><a class="mw-btn mw-btn--ghost" href="https://map.kakao.com/?urlX=415717.4999999999&amp;urlY=1096179.9999999988&amp;name=%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%84%9C%ED%95%B4%EB%8C%80%EB%A1%9C179%EB%B2%88%EA%B8%B8%2017&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank" rel="noopener noreferrer">Open map <span aria-hidden="true">↗</span></a></div><a class="mw-location-map mw-media mw-reveal" href="https://map.kakao.com/?urlX=415717.4999999999&amp;urlY=1096179.9999999988&amp;name=%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%84%9C%ED%95%B4%EB%8C%80%EB%A1%9C179%EB%B2%88%EA%B8%B8%2017&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank" rel="noopener noreferrer" aria-label="Open MaxWin Logistics location in Kakao Map"><img src="https://t1.daumcdn.net/roughmap/imgmap/db7de9d078d131c74462e6c417fc5178c1aacccebd15dbb39635d4958992e291" alt="Map showing MaxWin Logistics in Incheon" loading="lazy"><span class="mw-image-fallback" aria-hidden="true">Incheon · South Korea</span></a></div></section>
+
+    <section class="mw-section" id="updates"><div class="mw-container"><div class="mw-section-heading mw-reveal"><div><span class="mw-kicker">Latest information</span><h2>Sailings and current terms</h2></div><p>Schedules and prices can change. Before booking, we will confirm the available sailing and terms for your shipment.</p></div><a class="mw-btn mw-btn--ghost" href="schedule.html">Open schedule</a></div></section>
+
+        
+
+        
+
+        
+
+    <section class="mw-arcade-section" id="route-game" aria-labelledby="mw-game-heading">
+      <div class="mw-container">
+        <div class="mw-arcade-heading">
+          <div><span class="mw-kicker">MaxWin Arcade / 01</span><h2 id="mw-game-heading">Your next run starts here</h2></div>
+          <p>Choose a destination and a car. Find your rhythm on the road, earn a medal and beat your score on the next run.</p>
+        </div>
+        <div class="mw-game-pickers" aria-label="Game setup">
+          <div class="mw-game-picker-group">
+            <div class="mw-game-picker-title"><span>01 / Destination</span><small>Four game worlds</small></div>
+            <div class="mw-game-destinations" role="group" aria-label="Choose a destination">
+              <button class="mw-game-destination is-active" type="button" data-mw-destination="kz" aria-pressed="true"><b>KZ</b><span>Kazakhstan<small>Steppe and railway</small><em class="mw-game-medal-badge" data-mw-medal="kz">First run</em></span></button>
+              <button class="mw-game-destination" type="button" data-mw-destination="ru" aria-pressed="false"><b>RU</b><span>Russia<small>Taiga and snow road</small><em class="mw-game-medal-badge" data-mw-medal="ru">First run</em></span></button>
+              <button class="mw-game-destination" type="button" data-mw-destination="uz" aria-pressed="false"><b>UZ</b><span>Uzbekistan<small>Desert and old town</small><em class="mw-game-medal-badge" data-mw-medal="uz">First run</em></span></button>
+              <button class="mw-game-destination" type="button" data-mw-destination="kg" aria-pressed="false"><b>KG</b><span>Kyrgyzstan<small>Mountains and pass</small><em class="mw-game-medal-badge" data-mw-medal="kg">First run</em></span></button>
+            </div>
+          </div>
+          <div class="mw-game-picker-group mw-game-picker-group--cars">
+            <div class="mw-game-picker-title"><span>02 / Garage</span><small>Choose your style</small></div>
+            <div class="mw-game-cars" role="group" aria-label="Choose a car">
+              <button class="mw-game-car is-active" type="button" data-mw-car="suv" aria-pressed="true"><span class="mw-game-car-icon mw-game-car-icon--suv" aria-hidden="true"><i></i></span><span>SUV</span></button>
+              <button class="mw-game-car" type="button" data-mw-car="sedan" aria-pressed="false"><span class="mw-game-car-icon mw-game-car-icon--sedan" aria-hidden="true"><i></i></span><span>Sedan</span></button>
+              <button class="mw-game-car" type="button" data-mw-car="van" aria-pressed="false"><span class="mw-game-car-icon mw-game-car-icon--van" aria-hidden="true"><i></i></span><span>Van</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="mw-game-brief" aria-label="Run objective">
+          <p><span class="mw-game-brief-mark" aria-hidden="true">✦</span><strong>Find the rhythm:</strong> barrier, landing, low drone. Collect cargo without mistakes to charge nitro.</p>
+          <div class="mw-game-brief-medal"><span>Best medal / selected route</span><strong id="mw-game-medal">None yet</strong></div>
+        </div>
+        <div class="mw-game" id="mw-game" tabindex="0" aria-describedby="mw-game-help" data-game-state="ready">
+          <div class="mw-game-hud">
+            <button class="mw-game-pause" id="mw-game-pause" type="button" aria-label="Pause" disabled>Ⅱ</button>
+            <div class="mw-game-hud-item"><span>Distance</span><strong id="mw-game-distance">0000 m</strong></div>
+            <div class="mw-game-hud-item mw-game-hud-item--score"><span>Score</span><strong id="mw-game-score">000000</strong></div>
+            <div class="mw-game-hud-item mw-game-hud-item--cargo"><span>Cargo</span><strong id="mw-game-cargo">0/12</strong></div>
+            <div class="mw-game-hud-item mw-game-hud-item--lives"><span>Lives</span><strong id="mw-game-lives" aria-label="3 lives">♥♥♥</strong></div>
+            <div class="mw-game-route" id="mw-game-route" aria-label="Incheon — Yantai — Altynkol">
+              <div class="mw-game-track" id="mw-game-track" role="progressbar" aria-label="Route progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="mw-game-track-fill" id="mw-game-progress"></span><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i></div>
+              <div class="mw-game-cities" aria-hidden="true"><span>Incheon</span><span id="mw-game-mid">Yantai</span><span id="mw-game-finish">Altynkol</span></div>
+            </div>
+          </div>
+          <div class="mw-game-stage">
+            <canvas id="mw-game-canvas" width="1200" height="560" aria-hidden="true"></canvas>
+            <div class="mw-game-level" id="mw-game-level"><span>01 / 03 · Pace</span><b>Warm-up</b></div>
+            <div class="mw-game-scene-tag" id="mw-game-scene-tag"><span>01 / Incheon Port</span><b>Kazakhstan</b></div>
+            <div class="mw-game-overlay" id="mw-game-overlay">
+              <span class="mw-game-overlay-kicker" id="mw-game-overlay-kicker">Run 01 / Kazakhstan</span>
+              <h3 id="mw-game-overlay-title">Ready to roll?</h3>
+              <p id="mw-game-overlay-detail">1,500 m to the finish. Learn obstacle sequences, charge nitro with clean driving and earn a medal.</p>
+              <button class="mw-game-start" id="mw-game-start" type="button">Start run</button>
+            </div>
+            <div class="mw-game-toast" id="mw-game-toast" aria-hidden="true" hidden></div>
+          </div>
+          <div class="mw-game-controls">
+            <p class="mw-game-help" id="mw-game-help"><span><kbd>Space</kbd> or tap to double jump. <kbd>N</kbd> for nitro. <kbd>P</kbd> to pause.</span><small>Medals: bronze — finish; silver — 8 cargo and ≤1 hit; gold — 12 cargo, 0 hits and nitro.</small></p>
+            <div class="mw-game-actions">
+              <button class="mw-game-nitro" id="mw-game-nitro" type="button" aria-label="Nitro, press N" aria-describedby="mw-game-nitro-status" disabled><span class="mw-game-nitro-label"><span class="mw-game-nitro-spark" aria-hidden="true">✦</span> Nitro <kbd>N</kbd></span><span class="mw-game-nitro-meter" id="mw-game-nitro-meter" role="progressbar" aria-label="Nitro charge" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="mw-game-nitro-fill"></span></span><span class="mw-game-nitro-status" id="mw-game-nitro-status">Charging</span></button>
+              <button class="mw-game-jump" id="mw-game-jump" type="button">Jump <span aria-hidden="true">↑</span></button>
+            </div>
+          </div>
+          <p class="mw-game-sr" id="mw-game-status" role="status" aria-live="polite"></p>
+        </div>
+        <p class="mw-game-caption">These game destinations are fictional adventures, not delivery estimates. <a href="incheon-yantai-altynkol.html">See the real Kazakhstan route</a>.</p>
+        <noscript><p>JavaScript is needed to play. You can still open the route details above.</p></noscript>
+      </div>
+    </section>
+
+    <section class="mw-section" id="faq"><div class="mw-container"><div class="mw-section-heading mw-reveal"><div><span class="mw-kicker">Questions and answers</span><h2>What to know before shipping</h2></div></div><div class="mw-faq"><details><summary>Which shipping methods do you offer?</summary><p>We use RoRo and containers. The right method depends on the car, cargo and route.</p></details><details><summary>Can I ship spare parts or other cargo?</summary><p>Yes, we can ship spare parts and other cargo from Korea. We confirm the method, packing and documents for each inquiry.</p></details><details><summary>Will I receive photos and videos?</summary><p>We show car handover, preparation and loading. The exact report is confirmed for each shipment.</p></details><details><summary>Which documents will I need?</summary><p>Documents depend on the route and car. Your manager will provide the current list before processing.</p></details><details><summary>Will you deliver the car to my city?</summary><p>The handover point depends on the route and agreed terms. On the route via Yantai, for example, the car is handed over in Altynkol. Onward delivery is discussed separately.</p></details><details><summary>How can I find the next departure date?</summary><p>Contact the MaxWin Logistics team. We will check available sailings and confirm current terms.</p></details></div></div></section>
+
+    <section class="mw-contact-band"><div class="mw-container mw-contact-band-inner"><div><span class="mw-kicker">Let's start with your route</span><h2>Tell us which car you need to ship</h2><p>We'll explain the transport options, documents and next step.</p></div><a class="mw-btn mw-btn--dark" href="contacts.html">Contact us <span aria-hidden="true">↗</span></a></div></section>
   </main>
+<a class="mw-mobile-contact" href="contacts.html">Contact us</a>
 
-  <footer class="home-footer">
-    <div class="home-footer__inner">
-      <div class="home-footer__brand">
-        <span>© MaxWin Logistics</span>
-        <span class="home-muted">No Border can stop Us!</span>
-      </div>
-      
-    </div>
-  </footer>
+  <footer class="mw-site-footer"><div class="mw-container"><div class="mw-footer-grid"><div><h2>MaxWin Logistics</h2><p>Exporting cars and cargo from South Korea. Sea freight, documents and support.</p><p class="mw-footer-slogan">No Border can stop Us!</p><p>Incheon, South Korea · 서해대로179번길 17</p></div><div><h3>Services</h3><a href="roro.html">RoRo</a><a href="container.html">Container</a><a href="cartrade.html">CarTrade</a><a href="incheon-yantai-altynkol.html">Route to Kazakhstan</a></div><div><h3>Get in touch</h3><a href="contacts.html">Contacts</a><a href="schedule.html">Schedule</a><a href="pogruzka.html">Loading videos</a><a href="mailto:maxwincorp1@gmail.com">maxwincorp1@gmail.com</a><a href="https://www.instagram.com/maxwin.co/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/@maxwin.co1" target="_blank" rel="noopener noreferrer">YouTube</a></div></div><div class="mw-footer-bottom">© <span class="mw-year">2026</span> MaxWin Logistics. All rights reserved.</div></div></footer>
+  <script src="refresh.en.js" defer></script>
+  <script id="mw-game-script">
+/* MaxWin Route Run: original, dependency-free Canvas mini-game. */
+(() => {
+  const root = document.getElementById('mw-game');
+  if (!root) return;
+  const section = root.closest('.mw-arcade-section');
+  const stage = root.querySelector('.mw-game-stage');
+  const canvas = document.getElementById('mw-game-canvas');
+  const ctx = canvas.getContext('2d', { alpha: false });
+  if (!ctx) return;
 
-  <!-- FontAwesome (same as your other pages) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  const els = {
+    distance: document.getElementById('mw-game-distance'),
+    score: document.getElementById('mw-game-score'),
+    cargo: document.getElementById('mw-game-cargo'),
+    lives: document.getElementById('mw-game-lives'),
+    progress: document.getElementById('mw-game-progress'),
+    track: document.getElementById('mw-game-track'),
+    route: document.getElementById('mw-game-route'),
+    mid: document.getElementById('mw-game-mid'),
+    finish: document.getElementById('mw-game-finish'),
+    sceneTag: document.getElementById('mw-game-scene-tag'),
+    level: document.getElementById('mw-game-level'),
+    stops: Array.from(root.querySelectorAll('.mw-game-track i')),
+    pause: document.getElementById('mw-game-pause'),
+    jump: document.getElementById('mw-game-jump'),
+    nitro: document.getElementById('mw-game-nitro'),
+    nitroMeter: document.getElementById('mw-game-nitro-meter'),
+    nitroFill: document.getElementById('mw-game-nitro-fill'),
+    nitroStatus: document.getElementById('mw-game-nitro-status'),
+    medal: document.getElementById('mw-game-medal'),
+    overlay: document.getElementById('mw-game-overlay'),
+    kicker: document.getElementById('mw-game-overlay-kicker'),
+    title: document.getElementById('mw-game-overlay-title'),
+    detail: document.getElementById('mw-game-overlay-detail'),
+    start: document.getElementById('mw-game-start'),
+    toast: document.getElementById('mw-game-toast'),
+    status: document.getElementById('mw-game-status')
+  };
 
+  const GOAL = 1500;
+  const CARGO_GOAL = 12;
+  const MEDAL_NAMES = ['No medal', 'Bronze', 'Silver', 'Gold'];
+  const PATTERNS = [
+    [
+      [['cone', 2.15]],
+      [['pallet', 2.2]],
+      [['barrier', 2.15]],
+      [['cone', .78], ['pallet', 2.35]]
+    ],
+    [
+      [['stack', 1.48], ['drone', 2.35]],
+      [['drone', 1.42], ['barrier', 2.3]],
+      [['pallet', .84], ['cone', 2.2]],
+      [['stack', 2.05]]
+    ],
+    [
+      [['drone', 1.34], ['barrier', 1.48], ['stack', 2.3]],
+      [['stack', 1.45], ['drone', 1.5], ['pallet', 2.25]],
+      [['cone', .72], ['pallet', 1.42], ['drone', 2.3]],
+      [['barrier', 1.48], ['stack', 2.15]]
+    ]
+  ];
+  const ROUTES = {
+    kz: { name: 'Kazakhstan', mid: 'Yantai', finish: 'Altynkol', accent: '#13d2ed', scene: ['Incheon Port', 'Sea crossing', 'Terminal', 'Steppe horizon', 'Altynkol'] },
+    ru: { name: 'Russia', mid: 'Seaport', finish: 'Russia', accent: '#8ee1ff', scene: ['Incheon Port', 'Sea crossing', 'Terminal', 'Taiga', 'Snow road'] },
+    uz: { name: 'Uzbekistan', mid: 'Transfer hub', finish: 'Uzbekistan', accent: '#ffcb75', scene: ['Incheon Port', 'Sea crossing', 'Terminal', 'Desert road', 'Old town'] },
+    kg: { name: 'Kyrgyzstan', mid: 'Transfer hub', finish: 'Kyrgyzstan', accent: '#d1f4ff', scene: ['Incheon Port', 'Sea crossing', 'Terminal', 'Mountain valley', 'Mountain pass'] }
+  };
+  const VEHICLES = {
+    suv: { w: 108, h: 62, scale: 1.3 },
+    sedan: { w: 108, h: 62, scale: 1.3 },
+    van: { w: 110, h: 64, scale: 1.3 }
+  };
+  let route = ROUTES.kz, routeId = 'kz', vehicle = VEHICLES.suv, vehicleId = 'suv';
+  let mode = 'ready';
+  let W = 0, H = 0, unit = 1, ground = 0;
+  let distance = 0, score = 0, cargo = 0, lives = 3, checkpoint = false, combo = 0, comboTimer = 0, sceneIndex = -1, challenge = -1, shield = false;
+  let hits = 0, nitro = 0, nitroActive = 0, nitroUses = 0, landingPulse = 0, patternIndex = 0, patternQueue = [], droneIntroduced = false;
+  const routeMedals = Object.fromEntries(Object.keys(ROUTES).map(id => [id, 0]));
+  let obstacles = [], loot = [], particles = [];
+  let obstacleIn = 1.9, lootIn = 1.1, invincible = 0, toastIn = 0;
+  let frameId = 0, lastFrame = 0;
+  const car = { x: 0, y: 0, w: 0, h: 0, vy: 0, grounded: true, jumps: 0 };
+  const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+  const random = (min, max) => min + Math.random() * (max - min);
+  const pixel = n => Math.round(n);
+  const fill = (x, y, w, h, color) => {
+    if (w <= 0 || h <= 0) return;
+    ctx.fillStyle = color;
+    ctx.fillRect(pixel(x), pixel(y), pixel(w), pixel(h));
+  };
+  const poly = (points, color) => {
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(pixel(points[0][0]), pixel(points[0][1]));
+    points.slice(1).forEach(([x, y]) => ctx.lineTo(pixel(x), pixel(y)));
+    ctx.closePath();
+    ctx.fill();
+  };
+  const line = (x1, y1, x2, y2, width, color) => {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = Math.max(1, pixel(width));
+    ctx.beginPath();
+    ctx.moveTo(pixel(x1), pixel(y1));
+    ctx.lineTo(pixel(x2), pixel(y2));
+    ctx.stroke();
+  };
+  function medalRank(id) {
+    try { routeMedals[id] = Math.max(routeMedals[id], clamp(Number(localStorage.getItem(`mw-route-run-medal-${id}`)) || 0, 0, 3)); }
+    catch (_) { /* Current-session medals remain available. */ }
+    return routeMedals[id];
+  }
+  function updateMedals() {
+    section.querySelectorAll('[data-mw-medal]').forEach(badge => {
+      const rank = medalRank(badge.dataset.mwMedal);
+      badge.textContent = MEDAL_NAMES[rank];
+      badge.dataset.rank = String(rank);
+    });
+    if (els.medal) {
+      const rank = medalRank(routeId);
+      els.medal.textContent = MEDAL_NAMES[rank];
+      els.medal.dataset.rank = String(rank);
+    }
+  }
+  function updateNitroUi() {
+    if (!els.nitro) return;
+    els.nitroFill.style.width = `${Math.floor(nitro)}%`;
+    els.nitroMeter.setAttribute('aria-valuenow', String(Math.floor(nitro)));
+    els.nitro.disabled = mode !== 'playing' || nitro < 100 || nitroActive > 0;
+    els.nitroStatus.textContent = nitroActive > 0 ? `${nitroActive.toFixed(1)} s` : nitro >= 100 ? 'Ready' : `${Math.floor(nitro)}%`;
+    els.nitro.classList.toggle('is-active', nitroActive > 0);
+    root.classList.toggle('is-nitro', nitroActive > 0);
+  }
+  function chargeNitro(amount) { nitro = Math.min(100, nitro + amount); }
 
-  <!-- Existing site JS -->
-  <script src="sss.js"></script>
+  function resize() {
+    const oldGround = ground;
+    W = Math.max(280, stage.clientWidth);
+    H = Math.max(300, stage.clientHeight);
+    unit = clamp(W / 980, .64, 1.12);
+    ground = H - 87 * unit;
+    canvas.width = Math.max(1, Math.round(W / 2));
+    canvas.height = Math.max(1, Math.round(H / 2));
+    ctx.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+    ctx.imageSmoothingEnabled = false;
+    car.x = Math.min(W * .2, 210 * unit);
+    car.w = vehicle.w * unit * vehicle.scale;
+    car.h = vehicle.h * unit * vehicle.scale;
+    if (car.grounded || !oldGround) car.y = ground - car.h;
+    else car.y += ground - oldGround;
+    draw();
+  }
 
-  <!-- Home-only JS (safe, won't touch other pages) -->
-  <script src="home_updates.js"></script>
+  function updateHud() {
+    els.distance.textContent = `${String(Math.floor(distance)).padStart(4, '0')} m`;
+    els.score.textContent = String(Math.floor(score)).padStart(6, '0');
+    els.cargo.textContent = `${cargo}/${CARGO_GOAL}`;
+    els.lives.textContent = '♥'.repeat(lives) + '♡'.repeat(3 - lives);
+    els.lives.setAttribute('aria-label', `${lives} of 3 lives`);
+    const pct = Math.min(100, distance / GOAL * 100);
+    els.progress.style.width = `${pct}%`;
+    els.track.setAttribute('aria-valuenow', String(Math.floor(pct)));
+    els.stops[1].classList.toggle('is-reached', distance >= GOAL / 2);
+    els.stops[2].classList.toggle('is-reached', distance >= GOAL);
+    const nextScene = distance < GOAL * .22 ? 0 : distance < GOAL * .4 ? 1 : distance < GOAL * .62 ? 2 : distance < GOAL * .82 ? 3 : 4;
+    if (nextScene !== sceneIndex) {
+      sceneIndex = nextScene;
+      els.sceneTag.querySelector('span').textContent = `${String(sceneIndex + 1).padStart(2, '0')} / ${route.scene[sceneIndex]}`;
+      els.sceneTag.querySelector('b').textContent = route.name;
+    }
+    const nextChallenge = distance < GOAL * .3 ? 0 : distance < GOAL * .68 ? 1 : 2;
+    if (nextChallenge !== challenge) {
+      challenge = nextChallenge;
+      els.level.querySelector('span').textContent = `${String(challenge + 1).padStart(2, '0')} / 03 · Pace`;
+      els.level.querySelector('b').textContent = ['Warm-up', 'Express', 'Final stretch'][challenge];
+      if (mode === 'playing' && challenge > 0) showToast(challenge === 1 ? 'The pace is rising · look ahead!' : 'Final stretch · keep the rhythm!', 2);
+    }
+    updateNitroUi();
+  }
+
+  function showOverlay(kicker, title, detail, action) {
+    els.kicker.textContent = kicker;
+    els.title.textContent = title;
+    els.detail.textContent = detail;
+    els.start.textContent = action;
+    els.overlay.hidden = false;
+  }
+  function showToast(text, seconds = 1.6) {
+    els.toast.textContent = text;
+    els.toast.hidden = false;
+    toastIn = seconds;
+    els.status.textContent = text;
+  }
+  function reset() {
+    distance = 0; score = 0; cargo = 0; lives = 3; checkpoint = false; combo = 0; comboTimer = 0; sceneIndex = -1; challenge = -1; shield = false;
+    hits = 0; nitro = 0; nitroActive = 0; nitroUses = 0; landingPulse = 0; patternIndex = 0; patternQueue = []; droneIntroduced = false;
+    obstacles = [{ x: W + 80 * unit, kind: 'barrier', w: 48 * unit, h: 34 * unit }];
+    loot = [{ x: W * .85, kind: 'cargo', size: 28 * unit, y: ground - 105 * unit }];
+    particles = [];
+    obstacleIn = 2.65; lootIn = 1.55; invincible = 0; toastIn = 0;
+    stage.classList.remove('is-hit');
+    els.toast.hidden = true;
+    car.vy = 0; car.grounded = true; car.jumps = 0; car.y = ground - car.h;
+    updateHud();
+    draw();
+  }
+  function selectRun() {
+    cancelAnimationFrame(frameId);
+    mode = 'ready';
+    root.dataset.gameState = mode;
+    route = ROUTES[routeId];
+    vehicle = VEHICLES[vehicleId];
+    root.style.setProperty('--mw-game-accent', route.accent);
+    section.querySelectorAll('[data-mw-destination]').forEach(button => {
+      const selected = button.dataset.mwDestination === routeId;
+      button.classList.toggle('is-active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
+    section.querySelectorAll('[data-mw-car]').forEach(button => {
+      const selected = button.dataset.mwCar === vehicleId;
+      button.classList.toggle('is-active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
+    els.mid.textContent = route.mid;
+    els.finish.textContent = route.finish;
+    els.route.setAttribute('aria-label', `Game route: Incheon — ${route.mid} — ${route.finish}`);
+    els.track.setAttribute('aria-label', `Game route progress in ${route.name}`);
+    updateMedals();
+    els.pause.disabled = true;
+    els.pause.textContent = 'Ⅱ';
+    els.pause.setAttribute('aria-label', 'Pause');
+    resize();
+    reset();
+    showOverlay(`Run 01 · ${route.name}`, 'Ready to roll?', '1,500 m to the finish. Jump over barriers and stay low beneath drones. Clean passes and cargo charge your nitro.', 'Start run');
+    els.status.textContent = `Game route selected: ${route.name}. Ready to start.`;
+  }
+  function start() {
+    cancelAnimationFrame(frameId);
+    reset();
+    mode = 'playing';
+    root.dataset.gameState = mode;
+    updateNitroUi();
+    els.overlay.hidden = true;
+    els.pause.disabled = false;
+    els.pause.textContent = 'Ⅱ';
+    els.pause.setAttribute('aria-label', 'Pause');
+    els.status.textContent = 'Run started. Jump over obstacles and collect cargo.';
+    root.focus({ preventScroll: true });
+    root.scrollIntoView({ block: 'start', behavior: 'auto' });
+    lastFrame = performance.now();
+    frameId = requestAnimationFrame(frame);
+  }
+  function pause() {
+    if (mode !== 'playing') return;
+    mode = 'paused';
+    root.dataset.gameState = mode;
+    updateNitroUi();
+    cancelAnimationFrame(frameId);
+    els.pause.textContent = '▶';
+    els.pause.setAttribute('aria-label', 'Continue');
+    showOverlay('Pause', 'Run paused', 'Continue when you are ready.', 'Continue');
+    els.status.textContent = 'Game paused.';
+  }
+  function resume() {
+    if (mode !== 'paused') return;
+    mode = 'playing';
+    root.dataset.gameState = mode;
+    updateNitroUi();
+    els.overlay.hidden = true;
+    els.pause.textContent = 'Ⅱ';
+    els.pause.setAttribute('aria-label', 'Pause');
+    els.status.textContent = 'Run resumed.';
+    root.focus({ preventScroll: true });
+    root.scrollIntoView({ block: 'start', behavior: 'auto' });
+    lastFrame = performance.now();
+    frameId = requestAnimationFrame(frame);
+  }
+  function finish(won) {
+    mode = won ? 'won' : 'lost';
+    root.dataset.gameState = mode;
+    cancelAnimationFrame(frameId);
+    els.pause.disabled = true;
+    let earnedMedal = 0;
+    if (won) {
+      score += cargo >= CARGO_GOAL ? 500 : 200;
+      distance = GOAL;
+      earnedMedal = cargo >= CARGO_GOAL && hits === 0 && nitroUses > 0 ? 3
+        : cargo >= 8 && hits <= 1 ? 2 : 1;
+      routeMedals[routeId] = Math.max(routeMedals[routeId], earnedMedal);
+      try { localStorage.setItem(`mw-route-run-medal-${routeId}`, String(routeMedals[routeId])); }
+      catch (_) { /* Keep the medal for this session if storage is unavailable. */ }
+      updateMedals();
+      updateHud();
+    }
+    let best = Math.floor(score);
+    try {
+      best = Math.max(best, Number(localStorage.getItem(`mw-route-run-best-${routeId}`)) || 0);
+      localStorage.setItem(`mw-route-run-best-${routeId}`, String(best));
+    } catch (_) { /* The game still works when storage is unavailable. */ }
+    if (won) {
+      const bonus = cargo >= CARGO_GOAL ? 'Full cargo — 500-point bonus.' : 'Arrival bonus — 200 points.';
+      showOverlay(`Finish · ${route.finish}`, `${MEDAL_NAMES[earnedMedal]} · cargo delivered!`, `Collected ${cargo}/${CARGO_GOAL}. ${bonus} Best: ${best}.`, 'Play again');
+      els.status.textContent = `Finish. Medal: ${MEDAL_NAMES[earnedMedal]}. Score ${Math.floor(score)}. Cargo collected: ${cargo} of ${CARGO_GOAL}.`;
+    } else {
+      showOverlay('Run over', 'Try again?', `You travelled ${Math.floor(distance)} m and collected ${cargo}/${CARGO_GOAL} cargo. Best: ${best}.`, 'New run');
+      els.status.textContent = `Run ended at ${Math.floor(distance)} metres.`;
+    }
+    updateNitroUi();
+    draw();
+  }
+  function jump() {
+    if (mode === 'ready' || mode === 'won' || mode === 'lost') start();
+    if (mode !== 'playing' || car.jumps >= 2) return;
+    car.vy = -(car.jumps === 0 ? 680 : 550) * unit;
+    car.jumps++;
+    car.grounded = false;
+    for (let i = 0; i < 7; i++) {
+      particles.push({ x: car.x + 8 * unit, y: ground - 4 * unit, vx: random(-100, -15) * unit, vy: random(-80, -15) * unit, life: random(.25, .55), color: '#c8eef3' });
+    }
+  }
+  function activateNitro() {
+    if (mode !== 'playing' || nitro < 100 || nitroActive > 0) return;
+    nitro = 0;
+    nitroActive = 2.5;
+    nitroUses++;
+    burst(car.x + 5 * unit, car.y + car.h * .75, '#39ecff', 22);
+    showToast('Nitro! Reach the finish faster · score more points', 1.6);
+    updateNitroUi();
+  }
+  function addObstacle() {
+    if (!patternQueue.length) {
+      const tier = distance < GOAL * .34 ? 0 : distance < GOAL * .68 ? 1 : 2;
+      const options = PATTERNS[tier];
+      const routeOffset = Object.keys(ROUTES).indexOf(routeId);
+      patternQueue = options[(patternIndex + routeOffset) % options.length].map(([kind, delay]) => ({ kind, delay }));
+      patternIndex++;
+    }
+    const { kind, delay } = patternQueue.shift();
+    const sizes = { cone: [28, 36], pallet: [48, 27], barrier: [46, 35], stack: [44, 55], drone: [54, 27] };
+    const [w, h] = sizes[kind];
+    obstacles.push({ x: W + 45 * unit, kind, w: w * unit, h: h * unit, hit: false, passed: false });
+    obstacleIn = delay;
+    if (kind === 'drone' && !droneIntroduced) {
+      droneIntroduced = true;
+      showToast('Drone ahead — stay low!', 2.2);
+    }
+  }
+  function addLoot() {
+    const roll = Math.random();
+    const kind = !shield && distance > GOAL * .2 && roll < .13 ? 'shield'
+      : cargo < CARGO_GOAL && roll < .78 ? 'cargo' : 'coin';
+    loot.push({ x: W + 45 * unit, kind, size: (kind === 'cargo' ? 27 : 26) * unit,
+      y: ground - (kind === 'coin' ? random(61, 84) : random(86, 105)) * unit });
+  }
+  function intersects(a, b) {
+    return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+  }
+  function burst(x, y, color, amount) {
+    for (let i = 0; i < amount; i++) particles.push({
+      x, y, vx: random(-135, 135) * unit, vy: random(-180, -35) * unit,
+      life: random(.25, .7), color
+    });
+  }
+  function droneTop(item) {
+    return ground - car.h - 50 * unit + Math.sin(distance * .06 + item.x * .018) * 4 * unit;
+  }
+  function update(dt) {
+    const boosting = nitroActive > 0;
+    const speed = (220 + distance * .1) * clamp(W / 900, .7, 1.25) * (boosting ? 1.25 : 1);
+    distance = Math.min(GOAL, distance + dt * 24 * (boosting ? 1.25 : 1));
+    score += dt * 10 * (boosting ? 1.5 : 1);
+    nitroActive = Math.max(0, nitroActive - dt);
+    landingPulse = Math.max(0, landingPulse - dt);
+    invincible = Math.max(0, invincible - dt);
+    comboTimer = Math.max(0, comboTimer - dt);
+    if (!comboTimer) combo = 0;
+    if (!car.grounded) {
+      car.vy += 1580 * unit * dt;
+      car.y += car.vy * dt;
+      if (car.y >= ground - car.h) {
+        car.y = ground - car.h;
+        car.vy = 0;
+        car.grounded = true;
+        car.jumps = 0;
+        landingPulse = .18;
+        burst(car.x + car.w * .5, ground - 5 * unit, '#d2f0f4', 9);
+      }
+    }
+    if (distance >= GOAL / 2 && !checkpoint) {
+      checkpoint = true;
+      showToast(`${route.mid} · onward to ${route.finish}`, 2.5);
+      if (!shield) loot.push({ x: W + 70 * unit, kind: 'shield', size: 26 * unit, y: ground - 94 * unit });
+    }
+    obstacleIn -= dt;
+    while (obstacleIn <= 0) {
+      const overshoot = obstacleIn;
+      addObstacle();
+      obstacleIn += overshoot;
+    }
+    lootIn -= dt;
+    if (lootIn <= 0) {
+      addLoot();
+      lootIn = random(1.5, 2.25);
+    }
+    obstacles.forEach(item => { item.x -= speed * dt; });
+    loot.forEach(item => { item.x -= speed * dt; });
+    obstacles = obstacles.filter(item => item.x + item.w > -60);
+    loot = loot.filter(item => item.x + item.size > -60 && !item.taken);
+    const hitbox = { x: car.x + 9 * unit, y: car.y + 8 * unit, w: car.w - 18 * unit, h: car.h - 11 * unit };
+    for (const item of obstacles) {
+      if (item.hit) continue;
+      const hazard = item.kind === 'drone'
+        ? { x: item.x + 3 * unit, y: droneTop(item), w: item.w - 6 * unit, h: item.h }
+        : { x: item.x + 4 * unit, y: ground - item.h + 5 * unit, w: item.w - 8 * unit, h: item.h - 5 * unit };
+      if (invincible > 0) {
+        if (intersects(hitbox, hazard)) item.suppressed = true;
+        continue;
+      }
+      if (intersects(hitbox, hazard)) {
+        item.hit = true;
+        hits++;
+        combo = 0; comboTimer = 0;
+        stage.classList.remove('is-hit');
+        void stage.offsetWidth;
+        stage.classList.add('is-hit');
+        setTimeout(() => stage.classList.remove('is-hit'), 260);
+        if (shield) {
+          shield = false;
+          invincible = .95;
+          burst(car.x + car.w, car.y + car.h / 2, '#72f6ed', 18);
+          showToast('The shield saved you!', 1.4);
+        } else {
+          lives--;
+          invincible = 1.35;
+          score = Math.max(0, score - 60);
+          burst(car.x + car.w, car.y + car.h / 2, '#ffb85c', 14);
+          showToast(lives ? 'Careful! One life lost' : 'No lives left');
+          if (!lives) { updateHud(); finish(false); return; }
+        }
+      }
+    }
+    for (const item of obstacles) {
+      if (item.passed || item.x + item.w >= car.x) continue;
+      item.passed = true;
+      if (!item.hit && !item.suppressed && invincible <= 0) {
+        chargeNitro(10);
+        score += 12 * (boosting ? 1.5 : 1);
+      }
+    }
+    for (const item of loot) {
+      if (item.taken) continue;
+      if (intersects(hitbox, { x: item.x, y: item.y, w: item.size, h: item.size })) {
+        item.taken = true;
+        if (item.kind === 'shield') {
+          shield = true;
+          score += 80 * (boosting ? 1.5 : 1);
+          chargeNitro(6);
+          showToast('Shield active · blocks one hit', 1.8);
+        } else {
+          combo = comboTimer > 0 ? Math.min(combo + 1, 5) : 1;
+          comboTimer = 4;
+          if (item.kind === 'cargo') {
+            cargo = Math.min(CARGO_GOAL, cargo + 1);
+            score += (120 + (combo - 1) * 30) * (boosting ? 1.5 : 1);
+            chargeNitro(12);
+          } else {
+            score += (60 + (combo - 1) * 20) * (boosting ? 1.5 : 1);
+            chargeNitro(8);
+          }
+          if (combo === 3) showToast('Combo ×3 · keep collecting!', 1.2);
+        }
+        burst(item.x + item.size / 2, item.y + item.size / 2, item.kind === 'cargo' ? '#40e5ff' : item.kind === 'shield' ? '#9dffe2' : '#ffcc4d', 13);
+      }
+    }
+    particles.forEach(item => { item.x += item.vx * dt; item.y += item.vy * dt; item.vy += 300 * unit * dt; item.life -= dt; });
+    particles = particles.filter(item => item.life > 0);
+    if (toastIn > 0) {
+      toastIn -= dt;
+      if (toastIn <= 0) els.toast.hidden = true;
+    }
+    updateHud();
+    if (distance >= GOAL) finish(true);
+  }
+  function frame(now) {
+    if (mode !== 'playing') return;
+    const dt = clamp((now - lastFrame) / 1000, 0, .04);
+    lastFrame = now;
+    update(dt);
+    draw();
+    if (mode === 'playing') frameId = requestAnimationFrame(frame);
+  }
+
+  function cloud(x, y, s) {
+    fill(x + 12*s, y, 45*s, 11*s, '#e9faff');
+    fill(x, y + 11*s, 80*s, 14*s, '#f7feff');
+    fill(x + 23*s, y - 9*s, 30*s, 9*s, '#f7feff');
+    fill(x + 5*s, y + 25*s, 71*s, 5*s, '#b6e9fb');
+  }
+  function drawSky(scene) {
+    const palettes = {
+      kz: [['#63c7f9','#7dd5ff','#82c5e8'],['#78d5f5','#a6eafa','#46b4db'],['#9bd5e9','#cbe9ec','#7cb9c9'],['#8bd1ec','#d3edec','#b6ccae'],['#f6bb83','#ffdfaa','#d8bf83']],
+      ru: [['#63c7f9','#7dd5ff','#82c5e8'],['#78d5f5','#a6eafa','#46b4db'],['#9bd5e9','#cbe9ec','#7cb9c9'],['#9ecce5','#d3e8f2','#a4c8d9'],['#9bb9d6','#d7e8f1','#a9c8da']],
+      uz: [['#63c7f9','#7dd5ff','#82c5e8'],['#78d5f5','#a6eafa','#46b4db'],['#9bd5e9','#cbe9ec','#7cb9c9'],['#ffd5a2','#ffe7bb','#e8c69a'],['#efac7f','#ffd6a0','#dfae83']],
+      kg: [['#63c7f9','#7dd5ff','#82c5e8'],['#78d5f5','#a6eafa','#46b4db'],['#9bd5e9','#cbe9ec','#7cb9c9'],['#9acdf0','#dceefd','#9ebeda'],['#74b9e5','#ceeafb','#91b8d1']]
+    };
+    const [top,light,horizon] = palettes[routeId][scene];
+    fill(0, 0, W, H, top);
+    fill(0, 0, W, H*.28, light);
+    fill(0, ground-170*unit, W, 170*unit, horizon);
+    const drift = distance*.28;
+    cloud(((W*.10-drift*.35)%(W+180)+W+180)%(W+180)-85,H*.13,unit*.8);
+    cloud(((W*.53-drift*.24)%(W+180)+W+180)%(W+180)-85,H*.08,unit*1.1);
+    cloud(((W*.82-drift*.28)%(W+180)+W+180)%(W+180)-85,H*.22,unit*.65);
+    if(scene===0 || scene===2) {
+      for(let i=0;i<Math.ceil(W/(53*unit))+2;i++) {
+        const x=i*53*unit-(distance*1.8)%(53*unit), h=(30+(i*17)%58)*unit;
+        fill(x,ground-116*unit-h,37*unit,h+116*unit,scene===0?'#428dce':'#6c9fba');
+        fill(x+7*unit,ground-105*unit-h,5*unit,4*unit,'#c3ecf5');
+        fill(x+22*unit,ground-88*unit-h,5*unit,4*unit,'#c3ecf5');
+      }
+    }
+  }
+  function container(x, y, w, h, color) {
+    fill(x, y, w, h, '#123d80');
+    fill(x+3*unit, y+3*unit, w-6*unit, h-6*unit, color);
+    for (let i=10*unit; i<w-3*unit; i+=12*unit) fill(x+i,y+5*unit,2*unit,h-10*unit,'#1554a0');
+    fill(x+5*unit,y+5*unit,7*unit,4*unit,'#ffd985');
+  }
+  function crane(x, top, s) {
+    const blue = '#0b54a9';
+    line(x-30*s, ground-55*s, x, top, 7*s, blue);
+    line(x+35*s, ground-55*s, x, top, 7*s, blue);
+    line(x-30*s, ground-55*s, x+35*s, ground-55*s, 6*s, blue);
+    fill(x-11*s, top-7*s, 22*s, 12*s, '#0a4697');
+    line(x-115*s, top+73*s, x+112*s, top+73*s, 17*s, blue);
+    line(x, top+4*s, x-103*s, top+68*s, 5*s, blue);
+    line(x, top+4*s, x+103*s, top+68*s, 5*s, blue);
+    line(x, top+4*s, x-50*s, top+68*s, 4*s, blue);
+    line(x, top+4*s, x+50*s, top+68*s, 4*s, blue);
+    fill(x-105*s,top+60*s,18*s,10*s,'#0b4a9b');
+    fill(x+93*s,top+60*s,15*s,10*s,'#0b4a9b');
+    line(x+56*s,top+77*s,x+56*s,top+113*s,2*s,'#0c4284');
+    fill(x+47*s,top+111*s,20*s,17*s,'#1266c6');
+    fill(x+49*s,top+113*s,16*s,2*s,'#65cefa');
+  }
+  function drawShip() {
+    const x=W*.72, y=ground-170*unit, s=unit;
+    poly([[x-84*s,y+62*s],[x+167*s,y+62*s],[x+149*s,y+132*s],[x-54*s,y+132*s]],'#073b8e');
+    fill(x-36*s,y+20*s,144*s,44*s,'#e8f8ff');
+    fill(x+70*s,y-7*s,41*s,30*s,'#f6ffff');
+    fill(x+80*s,y-21*s,23*s,14*s,'#0c4c9d');
+    fill(x+83*s,y-24*s,19*s,4*s,'#144e99');
+    for(let i=0;i<7;i++) fill(x-22*s+i*21*s,y+32*s,12*s,8*s,'#1a65aa');
+    for(let i=0;i<4;i++) fill(x+81*s+i*8*s,y+2*s,5*s,5*s,'#1a65aa');
+    fill(x-65*s,y+54*s,90*s,10*s,'#0a58ad');
+    fill(x+23*s,y+45*s,64*s,16*s,'#166ac1');
+    ctx.fillStyle='#f2fbff';
+    ctx.font=`900 ${pixel(23*s)}px Manrope, sans-serif`;
+    ctx.fillText('MAXWIN',x-31*s,y+104*s);
+  }
+  function drawPort() {
+    crane(W*.17, ground-290*unit, unit*.92);
+    crane(W*.49, ground-250*unit, unit*.7);
+    crane(W*.81, ground-215*unit, unit*.48);
+    const shift=(distance*3)%(68*unit);
+    for(let i=-1;i<Math.ceil(W/(68*unit))+1;i++){
+      const x=i*68*unit-shift;
+      container(x,ground-99*unit,66*unit,42*unit,i%4===0?'#f1874c':'#1370c3');
+      if(i%3!==0) container(x,ground-143*unit,66*unit,42*unit,i%5===0?'#e87d52':'#1761b2');
+    }
+    drawShip();
+  }
+  function drawRail() {
+    poly([[0,ground-165*unit],[W*.2,ground-250*unit],[W*.45,ground-166*unit],[W*.69,ground-270*unit],[W,ground-155*unit],[W,ground]],'#6fa7bb');
+    poly([[0,ground-105*unit],[W*.25,ground-178*unit],[W*.5,ground-103*unit],[W*.81,ground-184*unit],[W,ground-120*unit],[W,ground]],'#5a98ad');
+    fill(0,ground-91*unit,W,6*unit,'#27517d');
+    fill(0,ground-74*unit,W,5*unit,'#27517d');
+    for(let i=0;i<W/(32*unit)+1;i++) fill(i*32*unit-(distance*3)%(32*unit),ground-88*unit,10*unit,18*unit,'#435e76');
+    const shift=(distance*2.8)%(90*unit);
+    for(let i=-1;i<W/(90*unit)+2;i++){
+      const x=i*90*unit-shift;
+      container(x,ground-157*unit,85*unit,61*unit,i%4===0?'#ef8b56':'#1768b8');
+      fill(x+8*unit,ground-95*unit,70*unit,5*unit,'#1b497b');
+      fill(x+15*unit,ground-78*unit,12*unit,12*unit,'#132f53');
+      fill(x+60*unit,ground-78*unit,12*unit,12*unit,'#132f53');
+    }
+  }
+  function drawSea() {
+    const s=unit, drift=distance*1.5;
+    fill(0,ground-125*s,W,125*s,'#1c93ce');
+    fill(0,ground-100*s,W,9*s,'#80d9ed');
+    for(let i=0;i<Math.ceil(W/(105*s))+2;i++){
+      const x=i*105*s-drift%(105*s);
+      fill(x,ground-78*s,50*s,3*s,'#b6eafa');
+      fill(x+42*s,ground-45*s,33*s,3*s,'#74cce5');
+    }
+    const shipX=W*.55-drift*.23%(W+340*s);
+    ctx.save(); ctx.translate(shipX-W*.55,0); drawShip(); ctx.restore();
+    for(let i=0;i<Math.ceil(W/(215*s))+2;i++){
+      const x=i*215*s-(distance*.42)%(215*s);
+      fill(x+68*s,ground-165*s,7*s,76*s,'#dcecf0');
+      line(x+71*s,ground-165*s,x-30*s,ground-92*s,2*s,'#dcecf0');
+      line(x+71*s,ground-165*s,x+174*s,ground-92*s,2*s,'#dcecf0');
+      fill(x-30*s,ground-94*s,206*s,8*s,'#416e9a');
+    }
+  }
+  function drawCountry(scene) {
+    const s=unit, shift=(distance*1.9)%(170*s);
+    if(routeId==='kz'){
+      poly([[0,ground-130*s],[W*.28,ground-164*s],[W*.56,ground-125*s],[W,ground-165*s],[W,ground]],scene===3?'#9bbe85':'#d4ab72');
+      poly([[0,ground-72*s],[W*.3,ground-98*s],[W*.7,ground-70*s],[W,ground-96*s],[W,ground]],'#96a874');
+      for(let i=-1;i<W/(170*s)+2;i++){
+        const x=i*170*s-shift;
+        fill(x+47*s,ground-115*s,3*s,69*s,'#535f5d');
+        line(x+48*s,ground-115*s,x+218*s,ground-110*s,2*s,'#667c79');
+        fill(x+88*s,ground-57*s,30*s,5*s,'#679e72');
+        fill(x+98*s,ground-71*s,4*s,17*s,'#597552');
+      }
+      if(scene===4){fill(W*.72,ground-200*s,77*s,115*s,'#cfb489');fill(W*.7,ground-204*s,81*s,8*s,'#8c765f');fill(W*.75,ground-184*s,16*s,33*s,'#425a60');}
+    } else if(routeId==='ru'){
+      poly([[0,ground-177*s],[W*.22,ground-219*s],[W*.49,ground-165*s],[W*.7,ground-226*s],[W,ground-169*s],[W,ground]],'#8fb1c4');
+      poly([[0,ground-90*s],[W*.34,ground-127*s],[W*.72,ground-98*s],[W,ground-135*s],[W,ground]],'#d3e8e9');
+      for(let i=-1;i<W/(72*s)+2;i++){
+        const x=i*72*s-(distance*2.3)%(72*s), h=(80+(i*19%40))*s;
+        poly([[x,ground-48*s],[x+19*s,ground-48*s-h],[x+39*s,ground-48*s]],'#315f62');
+        fill(x+16*s,ground-65*s,5*s,25*s,'#49666b');
+        if(scene===4) poly([[x+5*s,ground-86*s],[x+19*s,ground-48*s-h],[x+33*s,ground-86*s]],'#e6f8f7');
+      }
+    } else if(routeId==='uz'){
+      poly([[0,ground-130*s],[W*.19,ground-172*s],[W*.46,ground-125*s],[W*.74,ground-181*s],[W,ground-129*s],[W,ground]],'#d99d69');
+      poly([[0,ground-76*s],[W*.31,ground-111*s],[W*.55,ground-77*s],[W,ground-119*s],[W,ground]],'#e8ba7e');
+      for(let i=-1;i<W/(210*s)+2;i++){
+        const x=i*210*s-shift;
+        if(scene===4){
+          fill(x,ground-143*s,115*s,96*s,'#c47d5e');fill(x+5*s,ground-153*s,105*s,11*s,'#e4a677');
+          fill(x+40*s,ground-115*s,30*s,68*s,'#684d58');fill(x+47*s,ground-107*s,16*s,60*s,'#d49d75');
+          fill(x+120*s,ground-183*s,23*s,136*s,'#d49c71');fill(x+116*s,ground-188*s,31*s,8*s,'#5baaba');
+        } else {
+          fill(x+90*s,ground-84*s,4*s,34*s,'#826950');
+          poly([[x+78*s,ground-76*s],[x+89*s,ground-108*s],[x+103*s,ground-76*s]],'#5b9a79');
+        }
+      }
+    } else {
+      poly([[0,ground-139*s],[W*.16,ground-278*s],[W*.27,ground-175*s],[W*.45,ground-316*s],[W*.66,ground-159*s],[W*.81,ground-284*s],[W,ground-153*s],[W,ground]],'#668eaf');
+      poly([[W*.1,ground-230*s],[W*.16,ground-278*s],[W*.21,ground-230*s],[W*.38,ground-267*s],[W*.45,ground-316*s],[W*.53,ground-245*s],[W*.75,ground-226*s],[W*.81,ground-284*s],[W*.88,ground-220*s]],'#e9f7f8');
+      poly([[0,ground-104*s],[W*.25,ground-150*s],[W*.52,ground-103*s],[W*.8,ground-162*s],[W,ground-106*s],[W,ground]],'#6da18e');
+      for(let i=-1;i<W/(180*s)+2;i++){
+        const x=i*180*s-shift;
+        if(scene===4){
+          poly([[x+17*s,ground-54*s],[x+56*s,ground-92*s],[x+96*s,ground-54*s]],'#e9e7ce');
+          fill(x+25*s,ground-55*s,64*s,8*s,'#b27e58');fill(x+52*s,ground-68*s,12*s,17*s,'#6c8a87');
+        } else {
+          fill(x+43*s,ground-87*s,6*s,40*s,'#516c64');
+          poly([[x+26*s,ground-68*s],[x+46*s,ground-122*s],[x+66*s,ground-68*s]],'#3b756c');
+        }
+      }
+    }
+  }
+  function drawDock(scene) {
+    const s=unit;
+    const dock=scene<2;
+    const base=scene===2?'#596b7d':routeId==='ru'?'#b8d4dc':routeId==='uz'?'#ae815d':routeId==='kg'?'#456f71':'#718b63';
+    fill(0,ground+42*s,W,H-ground-42*s,dock?'#0877ca':base);
+    if(dock){
+      fill(0,ground+47*s,W,8*s,'#2caaf1');
+      for(let i=0;i<Math.ceil(W/(70*s))+2;i++){
+        const x=i*70*s-(distance*8)%(70*s);
+        fill(x,ground+61*s,31*s,4*s,'#8ee7f5');
+        fill(x+29*s,ground+73*s,22*s,3*s,'#c2faff');
+      }
+    } else for(let i=0;i<W/(73*s)+2;i++){
+      const x=i*73*s-(distance*8)%(73*s);
+      fill(x+12*s,ground+54*s,36*s,5*s,scene===2?'#8ca0a7':'#aec5a0');
+    }
+    fill(0,ground,W,44*s,dock?'#799fba':scene===2?'#7a8d9b':'#656d68');
+    fill(0,ground,W,8*s,'#bed5dc');
+    fill(0,ground+29*s,W,7*s,'#113e73');
+    for(let i=0;i<Math.ceil(W/(84*s))+2;i++){
+      const x=i*84*s-(distance*7)%(84*s);
+      fill(x,ground+8*s,2*s,20*s,'#4d789b');
+      if(dock){
+        fill(x+32*s,ground+41*s,11*s,9*s,'#113e73');
+        fill(x+36*s,ground+45*s,18*s,20*s,'#0b315e');
+        fill(x+41*s,ground+50*s,8*s,10*s,'#153d70');
+      }
+    }
+    fill(0,ground-4*s,W,4*s,'#12395d');
+    for(let i=0;i<Math.ceil(W/(86*s))+2;i++){
+      const x=i*86*s-(distance*10)%(86*s);
+      fill(x+14*s,ground+1*s,31*s,3*s,'#f1f8f8');
+    }
+  }
+  function drawFinish() {
+    if(distance<GOAL-140) return;
+    const x=W-(distance-(GOAL-140))*(W-car.x-15*unit)/140;
+    fill(x,ground-132*unit,6*unit,132*unit,'#102c52');
+    for(let row=0;row<4;row++)for(let col=0;col<4;col++)
+      fill(x+6*unit+col*11*unit,ground-132*unit+row*11*unit,11*unit,11*unit,(row+col)%2?'#0a2d54':'#f6ffff');
+  }
+  function drawObstacle(item) {
+    const x=item.x, y=ground-item.h, s=unit;
+    if(item.kind==='drone'){
+      const dy=droneTop(item);
+      fill(x+6*s,dy+6*s,item.w-12*s,14*s,'#16334e');
+      fill(x+12*s,dy+8*s,item.w-24*s,9*s,'#e75e53');
+      fill(x+item.w/2-5*s,dy+10*s,10*s,5*s,'#ffe7aa');
+      fill(x,dy,15*s,5*s,'#254b63');fill(x+item.w-15*s,dy,15*s,5*s,'#254b63');
+      fill(x+7*s,dy-5*s,3*s,5*s,'#0d3557');fill(x+item.w-10*s,dy-5*s,3*s,5*s,'#0d3557');
+      fill(x+3*s,dy+21*s,8*s,3*s,'#f66b55');fill(x+item.w-11*s,dy+21*s,8*s,3*s,'#f66b55');
+    } else if(item.kind==='stack'){
+      fill(x,ground-5*s,item.w,5*s,'#543924');
+      fill(x+2*s,y,item.w-4*s,24*s,'#b8683f');
+      fill(x+5*s,y+3*s,item.w-10*s,18*s,'#f4a15d');
+      fill(x+2*s,y+27*s,item.w-4*s,23*s,'#9e5738');
+      fill(x+5*s,y+30*s,item.w-10*s,16*s,'#db814f');
+      fill(x+item.w/2-2*s,y,4*s,51*s,'#603b30');
+      fill(x+6*s,y+8*s,9*s,3*s,'#fff0b6');
+    } else if(item.kind==='cone'){
+      fill(x+1*s,ground-7*s,item.w-2*s,7*s,'#113a63');
+      poly([[x+5*s,ground-7*s],[x+item.w/2,y],[x+item.w-5*s,ground-7*s]],'#ef782e');
+      fill(x+9*s,ground-18*s,item.w-18*s,5*s,'#f7f4e8');
+    } else if(item.kind==='pallet'){
+      fill(x,ground-7*s,item.w,7*s,'#753d20');
+      fill(x+3*s,y,item.w-6*s,7*s,'#e8a351');
+      fill(x+5*s,y+9*s,item.w-10*s,6*s,'#a55c2a');
+      fill(x+8*s,y+18*s,item.w-16*s,4*s,'#f0b45e');
+      fill(x+9*s,ground-6*s,6*s,6*s,'#3e2b21');
+      fill(x+item.w-15*s,ground-6*s,6*s,6*s,'#3e2b21');
+    } else {
+      fill(x,y,item.w,item.h,'#0e315a');
+      fill(x+3*s,y+3*s,item.w-6*s,item.h-8*s,'#f8b92b');
+      for(let i=0;i<4;i++) poly([[x+i*12*s,y+item.h-6*s],[x+(i+1)*12*s,y+3*s],[x+(i+1)*12*s+6*s,y+3*s],[x+i*12*s+6*s,y+item.h-6*s]],'#122e53');
+    }
+  }
+  function drawLoot(item) {
+    const x=item.x, y=item.y, s=item.size;
+    fill(x-7*unit,y-7*unit,s+14*unit,s+14*unit,item.kind==='cargo'?'#71eeff55':item.kind==='shield'?'#8effdc55':'#fff0a044');
+    if(item.kind==='cargo'){
+      fill(x,y,s,s,'#0e71d1'); fill(x+3*unit,y+3*unit,s-6*unit,s-6*unit,'#16c9ff');
+      poly([[x,y],[x+s/2,y-7*unit],[x+s+2*unit,y],[x+s/2,y+8*unit]],'#a2f9ff');
+      line(x+s/2,y+8*unit,x+s/2,y+s,2*unit,'#e8ffff');
+      line(x+3*unit,y+3*unit,x+s/2,y+8*unit,2*unit,'#e8ffff');
+      line(x+s-3*unit,y+3*unit,x+s/2,y+8*unit,2*unit,'#e8ffff');
+    } else if(item.kind==='shield'){
+      poly([[x+s/2,y],[x+s,y+s*.22],[x+s*.84,y+s*.76],[x+s/2,y+s],[x+s*.16,y+s*.76],[x,y+s*.22]],'#0b5368');
+      poly([[x+s/2,y+3*unit],[x+s-4*unit,y+s*.26],[x+s*.76,y+s*.71],[x+s/2,y+s-4*unit],[x+s*.24,y+s*.71],[x+4*unit,y+s*.26]],'#83ffe0');
+      fill(x+s*.43,y+s*.31,s*.14,s*.4,'#08768b');
+      fill(x+s*.3,y+s*.44,s*.4,s*.13,'#08768b');
+    } else {
+      fill(x+5*unit,y,s-10*unit,s,'#a74c12');
+      fill(x+2*unit,y+4*unit,s-4*unit,s-8*unit,'#ffc62e');
+      fill(x+6*unit,y+7*unit,s-12*unit,s-14*unit,'#ffe777');
+      fill(x+s/2-2*unit,y+7*unit,4*unit,s-14*unit,'#d87a13');
+    }
+    fill(x-7*unit,y+s*.3,4*unit,4*unit,'#d9fbff');
+    fill(x+s+4*unit,y+s*.65,3*unit,3*unit,'#d9fbff');
+  }
+  function drawVehicle(x,y,type,s,ambient=false) {
+    ctx.save();
+    ctx.translate(pixel(x),pixel(y));
+    if(ambient) ctx.globalAlpha=.55;
+    else if(invincible>0 && Math.floor(invincible*4)%2) ctx.globalAlpha=.45;
+    else if(!car.grounded) ctx.rotate(clamp(car.vy/5000,-.08,.09));
+    const B=(a,b,w,h,c)=>fill(a*s,b*s,w*s,h*s,c);
+    const P=(points,c)=>poly(points.map(([a,b])=>[a*s,b*s]),c);
+    const edge='#103350';
+    if(type==='sedan'){
+      P([[2,33],[8,25],[20,24],[33,10],[62,10],[76,25],[98,26],[106,31],[106,46],[2,46]],edge);
+      P([[5,31],[20,27],[35,13],[60,13],[75,28],[96,29],[103,34],[103,43],[5,43]],ambient?'#6fc8ce':'#18bbd5');
+      P([[36,15],[58,15],[70,26],[28,26]],'#235d79');
+      B(6,40,95,4,'#0a718d');
+      B(52,28,2,14,'#b9f5f5');
+    } else if(type==='van'){
+      P([[2,31],[6,8],[64,8],[68,17],[91,17],[106,30],[108,47],[2,47]],edge);
+      P([[5,31],[8,11],[61,11],[65,20],[89,20],[103,32],[105,43],[5,43]],ambient?'#dfb285':'#f89d5d');
+      B(9,14,44,18,'#edc4a0');
+      P([[69,22],[87,22],[99,32],[70,32]],'#275c78');
+      B(5,40,99,4,'#d9763f');
+      B(63,19,3,24,'#8a4d3f');
+    } else {
+      P([[2,32],[8,25],[21,23],[31,6],[70,6],[79,21],[94,23],[106,29],[108,46],[2,46]],edge);
+      P([[5,30],[21,26],[34,9],[67,9],[77,24],[92,26],[104,32],[104,43],[5,43]],ambient?'#c7e5e8':'#f8fbf4');
+      P([[36,11],[48,11],[48,24],[27,24]],'#2b6689');
+      P([[51,11],[65,11],[73,24],[51,24]],'#2b6689');
+      B(5,39,100,5,'#1685ca');
+      B(50,26,2,17,'#9cb8b9');
+    }
+    B(3,32,5,10,'#ee695c');
+    B(102,31,6,8,'#fff6be');
+    B(105,39,3,4,'#4deaff');
+    B(107,42,8,3,'#133650');
+    B(8,46,93,3,'#132d44');
+    if(!ambient){
+      ctx.fillStyle=type==='suv'?'#0d4e84':'#f8ffff';
+      ctx.font=`900 ${pixel(10*s)}px Manrope,sans-serif`;
+      ctx.fillText('MW',type==='van'?23*s:47*s,38*s);
+    }
+    for(const wx of [25,83]){
+      ctx.fillStyle='#0a203a';ctx.beginPath();ctx.arc(wx*s,49*s,11*s,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='#d6e3e5';ctx.beginPath();ctx.arc(wx*s,49*s,5*s,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='#577b8f';ctx.beginPath();ctx.arc(wx*s,49*s,2*s,0,Math.PI*2);ctx.fill();
+      if(!ambient && mode==='playing'){
+        const angle=distance*.42;
+        for(let i=0;i<4;i++){
+          const a=angle+i*Math.PI/2;
+          line((wx+Math.cos(a)*2.2)*s,(49+Math.sin(a)*2.2)*s,(wx+Math.cos(a)*4)*s,(49+Math.sin(a)*4)*s,1*s,'#386b83');
+        }
+      }
+    }
+    ctx.restore();
+  }
+  function drawTraffic(scene) {
+    if(scene===1) return;
+    const s=unit*.52, span=W+240*unit;
+    for(let i=0;i<2;i++){
+      const x=((i*.55*span+distance*(i?1.7:2.35))%span)-120*unit;
+      drawVehicle(x,ground-102*unit,i?'van':'sedan',s,true);
+    }
+  }
+  function drawCar() {
+    const s=unit*vehicle.scale;
+    fill(car.x+6*s,ground+2*s,car.w-5*s,4*s,'#29445c88');
+    const suspension=mode==='playing' && car.grounded ? Math.sin(distance*.48)*1.25*unit+landingPulse/.18*2.5*unit : 0;
+    drawVehicle(car.x,car.y+suspension,vehicleId,s);
+    if(shield){
+      ctx.save();ctx.strokeStyle='#9affea';ctx.lineWidth=Math.max(2,3*unit);
+      ctx.shadowBlur=14*unit;ctx.shadowColor='#62ffe2';
+      ctx.strokeRect(pixel(car.x-8*unit),pixel(car.y-9*unit),pixel(car.w+16*unit),pixel(car.h+12*unit));
+      ctx.restore();
+    }
+    if(!car.grounded){
+      for(let i=0;i<5;i++) fill(car.x-(i*12+10)*unit,car.y+car.h*(.66+i*.04),7*unit,3*unit,i%2?'#e6ffff':'#28e3fa');
+    }
+    if(nitroActive>0 && mode==='playing'){
+      const flare=8*unit+Math.sin(distance*.7)*3*unit;
+      poly([[car.x+4*unit,car.y+car.h*.56],[car.x-flare,car.y+car.h*.6],[car.x+3*unit,car.y+car.h*.65]],'#65eaff');
+      poly([[car.x+2*unit,car.y+car.h*.59],[car.x-flare*.62,car.y+car.h*.61],[car.x+2*unit,car.y+car.h*.64]],'#e6ffff');
+      for(let i=0;i<5;i++) fill(car.x-(i*19+24)*unit,car.y+car.h*(.55+i*.025),11*unit,2*unit,i%2?'#d3ffff':'#38dcfa');
+    }
+  }
+  function renderScene(scene) {
+    drawSky(scene);
+    if(scene===0) drawPort();
+    else if(scene===1) drawSea();
+    else if(scene===2) drawRail();
+    else drawCountry(scene);
+    drawTraffic(scene);
+    drawDock(scene);
+  }
+  function drawAtmosphere(scene) {
+    if(scene<3) return;
+    const kind=routeId;
+    const count=kind==='ru'?26:kind==='uz'?18:12;
+    for(let i=0;i<count;i++){
+      const x=((i*173.4-distance*(kind==='ru'?3.8:5.2))%(W+40)+W+40)%(W+40)-20;
+      const y=((i*67.7+distance*(kind==='ru'?1.2:.46))%(ground-30*unit));
+      if(kind==='ru') fill(x,y,Math.max(2,3*unit),Math.max(2,3*unit),'#f9ffffc9');
+      else if(kind==='uz') fill(x,y,8*unit,2*unit,'#ffe4ae8c');
+      else if(kind==='kg') fill(x,y,12*unit,2*unit,'#e6f6f6a0');
+      else fill(x,y,5*unit,2*unit,'#dff2cc8c');
+    }
+  }
+  function drawSpeedLines() {
+    if(mode!=='playing') return;
+    const count=(challenge===0?3:challenge===1?6:9)+(nitroActive>0?8:0);
+    for(let i=0;i<count;i++){
+      const x=((i*149-distance*13)%(W+150)+W+150)%(W+150)-50;
+      fill(x,ground+(i%3)*12*unit,((i%3)+2)*16*unit,2*unit,'#eafcffe0');
+    }
+  }
+  function draw() {
+    if(!W || !H) return;
+    ctx.clearRect(0,0,W,H);
+    const starts=[0,.22,.4,.62,.82].map(v=>v*GOAL);
+    const scene=distance<starts[1]?0:distance<starts[2]?1:distance<starts[3]?2:distance<starts[4]?3:4;
+    renderScene(scene);
+    if(scene>0 && distance-starts[scene]<GOAL*.045){
+      const blend=1-(distance-starts[scene])/(GOAL*.045);
+      ctx.save();ctx.globalAlpha=blend;renderScene(scene-1);ctx.restore();
+    }
+    drawFinish();
+    loot.forEach(drawLoot);
+    obstacles.forEach(drawObstacle);
+    drawCar();
+    drawAtmosphere(scene);
+    drawSpeedLines();
+    particles.forEach(item=>fill(item.x,item.y,Math.max(2,4*unit),Math.max(2,4*unit),item.color));
+  }
+
+  els.start.addEventListener('click', () => mode === 'paused' ? resume() : start());
+  section.querySelectorAll('[data-mw-destination]').forEach(button => button.addEventListener('click', () => {
+    routeId = button.dataset.mwDestination;
+    selectRun();
+  }));
+  section.querySelectorAll('[data-mw-car]').forEach(button => button.addEventListener('click', () => {
+    vehicleId = button.dataset.mwCar;
+    selectRun();
+  }));
+  els.pause.addEventListener('click', () => mode === 'playing' ? pause() : resume());
+  els.jump.addEventListener('click', () => { jump(); root.focus({ preventScroll: true }); });
+  els.nitro.addEventListener('click', () => { activateNitro(); root.focus({ preventScroll: true }); });
+  canvas.addEventListener('pointerdown', event => {
+    if(event.pointerType === 'touch') event.preventDefault();
+    jump();
+    root.focus({ preventScroll: true });
+  });
+  root.addEventListener('keydown', event => {
+    if((event.target instanceof HTMLButtonElement || event.target instanceof HTMLAnchorElement) && !['KeyN','KeyP','KeyR'].includes(event.code)) return;
+    if(['Space','ArrowUp','KeyW'].includes(event.code)) {
+      event.preventDefault();
+      jump();
+    } else if(event.code === 'KeyP') {
+      event.preventDefault();
+      mode === 'playing' ? pause() : resume();
+    } else if(event.code === 'KeyN') {
+      event.preventDefault();
+      activateNitro();
+    } else if(event.code === 'KeyR') {
+      event.preventDefault();
+      start();
+    }
+  });
+  document.addEventListener('visibilitychange', () => { if(document.hidden) pause(); });
+  if('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      document.body.classList.toggle('mw-game-in-view', entries[0].isIntersecting);
+      if(!entries[0].isIntersecting) pause();
+    }, { threshold: .05 }).observe(root);
+  }
+  if('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
+  else window.addEventListener('resize', resize);
+  selectRun();
+})();
+  </script>
 </body>
-
-<!-- HELP / HELP -->
-<section class="mw-help">
-  <div class="mw-help__inner">
-
-    <div class="mw-help__head">
-      <h2 class="mw-help__h">FAQ</h2>
-      <div class="mw-help__line"></div>
-    </div>
-
-    <div class="mw-help__grid">
-
-      <article class="mw-help__card">
-        <div class="mw-help__tag">Useful</div>
-        <h3 class="mw-help__title">Where does MaxWin Logistics ship from in South Korea?</h3>
-        <p class="mw-help__text">We primarily operate out of the ports of Incheon and Busan. Our headquarters is located in Incheon, allowing us to manage the export of vehicles and cargo directly from Korea’s most active shipping hubs.</p>
-        
-      </article>
-
-      <article class="mw-help__card">
-        <div class="mw-help__tag">Useful</div>
-        <h3 class="mw-help__title">Which countries do you export cars to?</h3>
-        <p class="mw-help__text">We specialize in the CIS region and post-Soviet countries. This includes regular routes to Russia (Vladivostok), Kazakhstan, Uzbekistan, and Kyrgyzstan. We handle all necessary export documentation for these specific customs zones.</p>
-       
-      </article>
-
-      <article class="mw-help__card">
-        <div class="mw-help__tag">Useful</div>
-        <h3 class="mw-help__title">How long is the shipping time from Korea to Vladivostok?</h3>
-        <p class="mw-help__text">The sea transit time is approximately 2–3 days. However, the total time depends on the specific vessel schedule and the time required for customs clearance in the port of departure.</p>
-        
-      </article>
-
-       <article class="mw-help__card">
-        <div class="mw-help__tag">Useful</div>
-        <h3 class="mw-help__title">What shipping methods do you offer for vehicle exports?</h3>
-        <p class="mw-help__text">We offer two main methods: RoRo (Roll-on/Roll-off) for drivable vehicles and Container shipping for high-value cars, non-runners, or shipments that include spare parts.</p>
-        <a class="mw-help__link" href="container.html">Open Container →</a>
-         <a class="mw-help__link" href="roro.html">Open Roro →</a>
-      </article>
-
-       <article class="mw-help__card">
-        <div class="mw-help__tag">Useful</div>
-        <h3 class="mw-help__title">How do you ensure the safety of the vehicle during transit?</h3>
-        <p class="mw-help__text">We provide a full photo and video report of the loading process. Every vehicle is secured using professional lashing straps and specialized fixation to prevent movement during sea transport.</p>
-        <a class="mw-help__link" href="pogruzka.html">Open Loading →</a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- FOOTER (Premium simple) -->
-<footer class="mw-footer">
-  <div class="mw-footer__inner">
-    <div class="mw-footer__grid">
-      <div class="mw-footer__col">
-        <h4 class="mw-footer__title">About</h4>
-        <p class="mw-footer__text">
-          MaxWin Logistics — car exports from Korea.<br>
-          RoRo and container shipping, vehicle inspection and preparation, and document support. Max Win Logistics (South Korea) — maxwinlogistics.co”
-        </p>
-      </div>
-
-      <div class="mw-footer__col">
-        <h4 class="mw-footer__title">About us</h4>
-        <ul class="mw-footer__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="roro.html">RoRo</a></li>
-          <li><a href="container.html">Container</a></li>
-          <li><a href="cartrade.html">CarTrade</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-            <div class="footer-title text-dark">Contacts</div>
-            <p class="secondary-title text-secondary display-3 footer-text">
-                Email: <a class="text-dark" href="mailto:maxwincorp1@gmail.com">maxwincorp1@gmail.com</a>
-            </p>
-            <div class="footer-social">
-                <a href="https://www.instagram.com/maxwin.co?igsh=MWpsNnZzN3JlbXF5eQ%3D%3D&utm_source=qr" class="nav-link" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://youtube.com/@maxwin.co1?si=4Nvc-4zzMUFd7dng" class="nav-link" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
-            
-            </div>
-        </div>
-    </div>
-
-
-    <div class="mw-footer__bottom">
-      <span>© 2021 MAXWIN Logistics.</span>
-    </div>
-  </div>
-</footer>
-
 </html>

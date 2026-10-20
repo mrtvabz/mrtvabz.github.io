@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MaxWin Logistics — Расписание</title>
+  <title>Расписание отправок и отслеживание груза | MaxWin Logistics</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TMZM8ZWFM"></script>
   <script>
@@ -17,42 +17,39 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="schedule_extra.css" />
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="description" content="Проверяйте будущие RoRo-рейсы, ищите судно и переходите к отслеживанию контейнера. Доступность отправки и даты подтверждает команда MaxWin Logistics.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.maxwinlogistics.co/schedule.html">
+  <meta property="og:title" content="Расписание отправок и отслеживание груза | MaxWin Logistics">
+  <meta property="og:description" content="Проверяйте будущие RoRo-рейсы, ищите судно и переходите к отслеживанию контейнера. Доступность отправки и даты подтверждает команда MaxWin Logistics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.maxwinlogistics.co/schedule.html">
+  <link rel="stylesheet" href="refresh.css">
+  <link rel="stylesheet" href="refinement.css">
+  <script type="application/ld+json" id="structured-faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему я не вижу ближайших рейсов?","acceptedAnswer":{"@type":"Answer","text":"Мы показываем только будущие даты из подтверждённых данных. Если список пуст, свяжитесь с командой и уточните актуальные варианты."}},{"@type":"Question","name":"Можно ли считать ETA гарантированной датой?","acceptedAnswer":{"@type":"Answer","text":"Нет. Время прибытия ориентировочное и может меняться из-за линии, порта, погоды и обработки груза."}},{"@type":"Question","name":"Что можно отслеживать по номеру?","acceptedAnswer":{"@type":"Answer","text":"Для RoRo обычно проверяют судно по названию. Для контейнерной перевозки линия может предоставлять поиск по номеру контейнера, booking или коносамента."}}]}</script>
+  <link rel="alternate" hreflang="ru" href="https://www.maxwinlogistics.co/schedule.html">
+  <link rel="alternate" hreflang="en" href="https://www.maxwinlogistics.co/en/schedule.html">
 </head>
 <body class="page-schedule">
-  <header id="header" class="shadow bg-light">
-    <nav class="container navbar">
-      <a href="index.html" class="nav-brand text-dark brand">
-        <img src="Picture1.png" alt="MaxWin Logistics" class="brand-logo">
-        <span class="brand-text">MaxWin Logistics</span>
+  <header id="header" class="mw-header">
+    <div class="mw-header-inner">
+      <a class="mw-brand" href="index.html" aria-label="MaxWin Logistics — главная">
+        <img class="mw-brand-logo" src="Picture1.png" alt="">
+        <span class="mw-brand-name">MaxWin Logistics</span>
       </a>
-
-      <button class="toggle-button" type="button" aria-label="Menu">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-
-      <div class="collapse">
-        <ul class="navbar-nav">
-          <a href="index.html" class="nav-link">О компании</a>
-          <a href="roro.html" class="nav-link">RoRo</a>
-          <a href="container.html" class="nav-link">Контейнер</a>
-          <a href="cartrade.html" class="nav-link">КарТрейд</a>
-          <a href="schedule.html" class="nav-link nav-link--current">Расписание</a>
-          <a href="contacts.html" class="nav-link">Контакты</a>
-          <a href="pogruzka.html" class="nav-link">Погрузка</a>
-        </ul>
+      <nav class="mw-nav" id="mw-nav" aria-label="Основная навигация">
+        <a href="index.html">О компании</a><a href="roro.html">RoRo</a><a href="container.html">Контейнер</a><a href="cartrade.html">КарТрейд</a><a href="incheon-yantai-altynkol.html">В Казахстан</a><a href="schedule.html">Расписание</a><a href="pogruzka.html">Погрузка</a><a href="contacts.html">Контакты</a>
+      </nav>
+      <div class="mw-header-actions">
+        <a class="mw-lang" href="en/schedule.html" lang="en" aria-label="English version">EN</a>
+        <a class="mw-btn mw-btn--small mw-header-cta" href="contacts.html">Связаться с нами</a>
+        <button class="mw-nav-toggle" type="button" aria-label="Открыть меню" aria-controls="mw-nav" aria-expanded="false">☰</button>
       </div>
-
-      <div class="collapse">
-        <ul class="navbar-nav">
-          <a href="https://www.instagram.com/maxwin.co?igsh=MWpsNnZzN3JlbXF5eQ%3D%3D&utm_source=qr" class="nav-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://youtube.com/@maxwin.co1?si=4Nvc-4zzMUFd7dng" class="nav-link" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </ul>
-      </div>
-    </nav>
+    </div>
   </header>
 
   <main id="site-main">
@@ -64,16 +61,16 @@
         <div class="sch-hero">
           <h1 class="sch-title">Расписание движения флота</h1>
           <p class="sch-sub">
-            Актуальное расписание ближайших RoRo-отправок. Формат сделан как operational board:
-            видно судно, номер рейса, дату погрузки, ETA и дедлайн по документам.
+            Здесь отображаются только будущие рейсы с указанной датой отправления (ETD). Доступность мест и условия отправки уточняйте у команды MaxWin Logistics.
           </p>
         </div>
 
+<div class="mw-schedule-context"><p>На странице собраны данные о будущих рейсах и инструменты для проверки судна или контейнера. <strong>По маршруту Инчхон → Яньтай → Алтынколь отдельное расписание здесь не опубликовано</strong>: даты этой отправки подтверждает операционная команда.</p><div class="mw-page-intro-links"><a href="roro.html">О перевозке RoRo</a><a href="container.html">О контейнерах</a><a href="incheon-yantai-altynkol.html">Маршрут до Алтынколя</a></div></div>
         <section class="sch-board">
           <div class="sch-board__top">
             <div class="sch-chip sch-chip--date">
               <i class="fa-regular fa-calendar"></i>
-              Обновлено: <span id="scheduleUpdatedLabel">вручную</span>
+              Данные: <span id="scheduleUpdatedLabel">по запросу</span>
             </div>
 
             <div class="sch-chip sch-chip--hint">
@@ -86,12 +83,12 @@
               <thead>
                 <tr>
                   <th>Судно</th>
-                  <th>#</th>
-                  <th>Busan</th>
-                  <th>ETA Владивосток</th>
-                  <th>Документы до</th>
-                  <th>Статус</th>
+                  <th>ETD</th>
+                  <th>Порт отправки</th>
+                  <th>Порт прибытия</th>
+                  <th>В пути</th>
                   <th>Цена</th>
+                  <th>Документы до</th>
                 </tr>
               </thead>
               <tbody id="scheduleFleetBody">
@@ -107,19 +104,24 @@
               <h3>Важно</h3>
               <ul>
                 <li>Погрузка подтверждается только после согласования заявки.</li>
-                <li>Даты могут меняться в зависимости от линии, порта и погодных условий.</li>
-                <li>Лучше отправлять документы заранее, а не в последний день.</li>
+                <li>Даты рейсов Sun Rio могут измениться на 1 день.</li>
+                <li>Последний срок подачи документов — за один день до ETD. Лучше отправить их заранее.</li>
               </ul>
             </div>
 
             <div class="sch-cta">
               <h3>Нужен ближайший рейс?</h3>
               <p>Напишите модель автомобиля, VIN или направление — подскажем ближайшую доступную отправку.</p>
+              <div class="sch-booking-contacts" aria-label="Контакты для бронирования">
+                <a href="tel:+821081818303"><span>Жавохир</span><strong>+82 10 8181 8303</strong></a>
+                <a href="tel:+821056946990"><span>Абдулазиз</span><strong>+82 10 5694 6990</strong></a>
+                <a href="tel:+821057629770"><span>Сардор</span><strong>+82 10 5762 9770</strong></a>
+              </div>
               <div class="sch-cta__actions">
                 <a href="contacts.html" class="sch-btn sch-btn--dark">
                   <i class="fa-solid fa-envelope"></i> Контакты
                 </a>
-                <a href="https://wa.me/821097069303" class="sch-btn" target="_blank" rel="noopener">
+                <a href="https://wa.me/821081818303" class="sch-btn" target="_blank" rel="noopener">
                   <i class="fa-brands fa-whatsapp"></i> WhatsApp
                 </a>
               </div>
@@ -172,7 +174,7 @@
                     id="marineTrafficInput"
                     class="sch-tools__input"
                     type="text"
-                    placeholder="Например: Hiroyuki"
+                    placeholder="Например: Sun Rio"
                     autocomplete="off"
                   />
                   <button type="submit" class="sch-btn sch-btn--dark">
@@ -183,7 +185,6 @@
 
               <div class="sch-tools__chips">
                 <button type="button" class="sch-tools__chip" data-mt-vessel="Ocean Pride">Ocean Pride</button>
-                <button type="button" class="sch-tools__chip" data-mt-vessel="Hiroyuki">Hiroyuki</button>
                 <button type="button" class="sch-tools__chip" data-mt-vessel="Hansung">Hansung</button>
                 <button type="button" class="sch-tools__chip" data-mt-vessel="Sun Rio">Sun Rio</button>
               </div>
@@ -244,7 +245,11 @@
 
       </div>
     </section>
-  </main>
+<section class="mw-section mw-section--sand" id="schedule-faq"><div class="mw-container mw-about-grid"><div><span class="mw-kicker">Вопросы по отправке</span><h2>Как пользоваться расписанием</h2></div><div class="mw-simple-faq"><details><summary>Почему я не вижу ближайших рейсов?</summary><p>Мы показываем только будущие даты из подтверждённых данных. Если список пуст, свяжитесь с командой и уточните актуальные варианты.</p></details><details><summary>Можно ли считать ETA гарантированной датой?</summary><p>Нет. Время прибытия ориентировочное и может меняться из-за линии, порта, погоды и обработки груза.</p></details><details><summary>Что можно отслеживать по номеру?</summary><p>Для RoRo обычно проверяют судно по названию. Для контейнерной перевозки линия может предоставлять поиск по номеру контейнера, booking или коносамента.</p></details></div></div></section>
+    <section class="mw-contact-band"><div class="mw-container mw-contact-band-inner"><div><span class="mw-kicker">Нужна отправка?</span><h2>Обсудим ваш автомобиль и маршрут</h2><p>Команда подскажет способ перевозки и следующие шаги.</p></div><a class="mw-btn mw-btn--dark" href="contacts.html">Связаться с нами <span aria-hidden="true">↗</span></a></div></section>
+</main>
+<a class="mw-mobile-contact" href="contacts.html">Связаться с нами</a>
+<footer class="mw-site-footer"><div class="mw-container"><div class="mw-footer-grid"><div><h2>MaxWin Logistics</h2><p>Экспорт автомобилей и грузов из Южной Кореи. Морская перевозка, документы и сопровождение.</p><p class="mw-footer-slogan">No Border can stop Us!</p><p>Инчхон, Южная Корея · 서해대로179번길 17</p></div><div><h3>Услуги</h3><a href="roro.html">RoRo</a><a href="container.html">Контейнер</a><a href="cartrade.html">КарТрейд</a><a href="incheon-yantai-altynkol.html">Маршрут в Казахстан</a></div><div><h3>Связь</h3><a href="contacts.html">Контакты</a><a href="schedule.html">Расписание</a><a href="pogruzka.html">Видео погрузок</a><a href="mailto:maxwincorp1@gmail.com">maxwincorp1@gmail.com</a><a href="https://www.instagram.com/maxwin.co/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/@maxwin.co1" target="_blank" rel="noopener noreferrer">YouTube</a></div></div><div class="mw-footer-bottom">© <span class="mw-year">2026</span> MaxWin Logistics. Все права защищены.</div></div></footer>
 
   <div class="sch-detail-modal" id="scheduleDetailModal" aria-hidden="true">
     <div class="sch-detail-modal__overlay" data-sch-modal-close="1"></div>
@@ -257,5 +262,6 @@
 
   <script src="sss.js" defer></script>
   <script src="schedule_extra.js" defer></script>
+  <script src="refresh.js" defer></script>
 </body>
 </html>

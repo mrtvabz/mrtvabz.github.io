@@ -286,6 +286,44 @@
   line-height: 1.6;
 }
 
+.page-schedule .sch-booking-contacts{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.page-schedule .sch-booking-contacts a{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d7dadd;
+  border-radius: 12px;
+  background: #f8fafb;
+  color: #19365f;
+  text-decoration: none;
+}
+
+.page-schedule .sch-booking-contacts a:hover,
+.page-schedule .sch-booking-contacts a:focus-visible{
+  border-color: #4bb8df;
+  background: #eefaff;
+}
+
+.page-schedule .sch-booking-contacts span{
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.page-schedule .sch-booking-contacts strong{
+  font-size: 12px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
 .page-schedule .sch-cta__actions{
   display: flex;
   flex-wrap: wrap;
@@ -728,6 +766,73 @@
     border-radius: 24px;
   }
 
+  .page-schedule .sch-table-wrap{
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .page-schedule .sch-fleet-table{
+    display: block;
+    min-width: 0;
+  }
+
+  .page-schedule .sch-fleet-table thead{
+    display: none;
+  }
+
+  .page-schedule .sch-fleet-table tbody{
+    display: grid;
+    gap: 10px;
+  }
+
+  .page-schedule .sch-fleet-table tbody tr.sch-trip-row{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 10px;
+    padding: 14px;
+    border: 1px solid #d7dadd;
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  .page-schedule .sch-fleet-table tbody tr.sch-trip-row td{
+    display: block;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .page-schedule .sch-fleet-table tbody tr.sch-trip-row td::before{
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    color: #667085;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .page-schedule .sch-fleet-table tbody tr.sch-trip-row td:first-child{
+    grid-column: 1 / -1;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e4e7ec;
+  }
+
+  .page-schedule .sch-fleet-table tbody tr.sch-trip-row td:first-child::before{
+    display: none;
+  }
+
+  .page-schedule .sch-fleet-table tbody tr:not(.sch-trip-row) td{
+    display: block;
+  }
+
   .page-schedule .sch-title{
     font-size: 36px;
   }
@@ -821,5 +926,11 @@
 
   .page-schedule .sch-detail-item strong{
     font-size: 17px;
+  }
+}
+
+@media (max-width: 600px){
+  .page-schedule .sch-booking-contacts{
+    grid-template-columns: 1fr;
   }
 }

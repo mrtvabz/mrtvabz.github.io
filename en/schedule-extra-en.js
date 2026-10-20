@@ -10,31 +10,38 @@
 
   let currentRows = [];
 
+  const parseTripDate = (value) => {
+    const match = String(value || '').match(/^(\d{4})[-.](\d{2})[-.](\d{2})$/);
+    if (!match) return null;
+    const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    return date.getFullYear() === Number(match[1]) && date.getMonth() === Number(match[2]) - 1 && date.getDate() === Number(match[3]) ? date : null;
+  };
+
   const fmtDate = (value, options) => {
     if (!value) return '';
-    const d = new Date(value);
-    if (Number.isNaN(d.getTime())) return value;
+    const d = parseTripDate(value);
+    if (!d) return value;
     return d.toLocaleDateString('en-GB', options || undefined);
   };
 
   const fmtShort = (value) => {
     if (!value) return '—';
-    const d = new Date(value);
-    if (Number.isNaN(d.getTime())) return value;
+    const d = parseTripDate(value);
+    if (!d) return value;
     return d.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' });
   };
 
   const fmtMonth = (value) => {
     if (!value) return '—';
-    const d = new Date(value);
-    if (Number.isNaN(d.getTime())) return '—';
-    return d.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase();
+    const d = parseTripDate(value);
+    if (!d) return '—';
+    return d.toLocaleDateString('en-GB', { month: 'short' }).replace('.', '').toUpperCase();
   };
 
   const fmtDay = (value) => {
     if (!value) return '—';
-    const d = new Date(value);
-    if (Number.isNaN(d.getTime())) return '—';
+    const d = parseTripDate(value);
+    if (!d) return '—';
     return String(d.getDate()).padStart(2, '0');
   };
 
@@ -46,12 +53,12 @@
     .replace(/'/g, '&#39;');
 
   const statusBadge = (status) => {
-    const raw = (status || 'On Request').toLowerCase();
+    const raw = (status || 'On request').toLowerCase();
     let cls = 'sch-status';
     if (raw.includes('open')) cls += ' sch-status--open';
-    else if (raw.includes('closing')) cls += ' sch-status--closing';
+    else if (raw.includes('soon') || raw.includes('last')) cls += ' sch-status--closing';
     else if (raw.includes('closed')) cls += ' sch-status--closed';
-    return `<span class="${cls}">${escapeHtml(status || 'On Request')}</span>`;
+    return `<span class="${cls}">${escapeHtml(status || 'On request')}</span>`;
   };
 
   const datePill = (value, isWarn) => {
@@ -59,11 +66,13 @@
     return `<span class="sch-date-pill${isWarn ? ' sch-date-pill--warn' : ''}">${escapeHtml(fmtShort(value))}</span>`;
   };
 
+  const priceLabel = (row) => Number.isFinite(row.price_usd) ? `$${row.price_usd}` : 'On request';
+
   const trackLink = (row) => {
     if (row.tracking) {
       return `<a class="sch-track-link" href="${escapeHtml(row.tracking)}" target="_blank" rel="noopener">Track</a>`;
     }
-    return `<span class="sch-track-link--muted">480$</span>`;
+    return `<span class="sch-track-link--muted">On request</span>`;
   };
 
   const calendarTile = (value) => {
@@ -72,7 +81,7 @@
         <div class="sch-cal-tile sch-cal-tile--empty">
           <div class="sch-cal-tile__top">Loading</div>
           <div class="sch-cal-tile__day">—</div>
-          <div class="sch-cal-tile__bottom">Date pending</div>
+          <div class="sch-cal-tile__bottom">Date to be confirmed</div>
         </div>
       `;
     }
@@ -93,62 +102,62 @@
           ${calendarTile(row.loading_date)}
 
           <div class="sch-detail-hero-copy">
-            <div class="sch-detail-overline">Voyage Details</div>
+            <div class="sch-detail-overline">Voyage details</div>
             <div class="sch-detail-head">${escapeHtml(row.vessel || '—')}</div>
-            <div class="sch-detail-sub">${escapeHtml(row.route || 'Route pending')}</div>
+            <div class="sch-detail-sub">${escapeHtml(row.route || 'Route to be confirmed')}</div>
             <div class="sch-detail-badges">
-              ${statusBadge(row.status)}
+              ${row.status ? statusBadge(row.status) : ''}
             </div>
           </div>
         </div>
 
         <div class="sch-detail-grid">
           <div class="sch-detail-item">
-            <span>Voyage No.</span>
-            <strong>${escapeHtml(row.voyage || '—')}</strong>
-            <small>Voyage / slot number</small>
+            <span>Departure port</span>
+            <strong>${escapeHtml(row.departure_port || 'To be confirmed')}</strong>
+            <small>Departure terminal</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Busan Loading</span>
-            <strong>${escapeHtml(row.loading_date ? fmtDate(row.loading_date) : 'Pending')}</strong>
-            <small>Planned loading date</small>
+            <span>ETD · departure</span>
+            <strong>${escapeHtml(row.loading_date ? fmtDate(row.loading_date) : 'To be confirmed')}</strong>
+            <small>Planned vessel departure</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Docs Deadline</span>
-            <strong>${escapeHtml(row.docs_deadline ? fmtDate(row.docs_deadline) : 'Pending')}</strong>
-            <small>Better to send early</small>
+            <span>Documents due</span>
+            <strong>${escapeHtml(row.docs_deadline ? fmtDate(row.docs_deadline) : 'To be confirmed')}</strong>
+            <small>Please send in advance</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>ETA Vladivostok</span>
-            <strong>${escapeHtml(row.eta ? fmtDate(row.eta) : 'Pending')}</strong>
-            <small>Estimated arrival</small>
+            <span>Arrival port</span>
+            <strong>${escapeHtml(row.arrival_port || 'To be confirmed')}</strong>
+            <small>Destination terminal</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Status</span>
-            <strong>${escapeHtml(row.status || 'On Request')}</strong>
-            <small>Final confirmation comes from the manager</small>
+            <span>Time in transit</span>
+            <strong>${escapeHtml(row.transit_time || 'To be confirmed')}</strong>
+            <small>Estimated sailing time</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Tracking</span>
-            <strong>${row.tracking ? 'Available' : 'On Request'}</strong>
-            <small>${row.tracking ? `<a class="sch-detail-link" href="${escapeHtml(row.tracking)}" target="_blank" rel="noopener">Open tracking</a>` : 'Tracking link is added manually'}</small>
+            <span>Price</span>
+            <strong>${escapeHtml(priceLabel(row))}</strong>
+            <small>Confirm the rate before booking</small>
           </div>
 
           <div class="sch-detail-item">
-            <span>Comment</span>
-            <strong>${escapeHtml(row.note || 'No comment')}</strong>
-            <small>Additional voyage info</small>
+            <span>Note</span>
+            <strong>${escapeHtml(row.note || 'No note')}</strong>
+            <small>Additional voyage information</small>
           </div>
 
           <div class="sch-detail-item">
             <span>Route</span>
             <strong>${escapeHtml(row.route || '—')}</strong>
-            <small>Main shipping direction</small>
+            <small>Primary shipping route</small>
           </div>
         </div>
       </div>
@@ -157,27 +166,32 @@
 
   const renderRows = (items) => {
     if (!tbody) return;
-    currentRows = Array.isArray(items) ? items : [];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    currentRows = Array.isArray(items) ? items.filter(row => {
+      const date = parseTripDate(row.loading_date);
+      return date && date >= today;
+    }) : [];
 
     if (!currentRows.length) {
-      tbody.innerHTML = `<tr><td colspan="7" class="sch-empty">No schedule data yet.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="7" class="sch-empty">No upcoming sailings have been confirmed yet. <a href="contacts.html">Contact us</a> to discuss your shipment.</td></tr>`;
       return;
     }
 
     tbody.innerHTML = currentRows.map((row, index) => `
-      <tr>
-        <td>
+      <tr class="sch-trip-row">
+        <td data-label="Vessel">
           <button type="button" class="sch-vessel-btn" data-row-index="${index}">
             <span class="sch-vessel-name">${escapeHtml(row.vessel || '—')}</span>
-            <span class="sch-vessel-meta">Click for voyage details</span>
+            <span class="sch-vessel-meta">View sailing details</span>
           </button>
         </td>
-        <td><span class="sch-voyage">${escapeHtml(row.voyage || '—')}</span></td>
-        <td>${datePill(row.loading_date, false)}</td>
-        <td>${datePill(row.eta, false)}</td>
-        <td>${datePill(row.docs_deadline, true)}</td>
-        <td>${statusBadge(row.status)}</td>
-        <td>${trackLink(row)}</td>
+        <td data-label="ETD">${datePill(row.loading_date, false)}</td>
+        <td data-label="Departure port">${escapeHtml(row.departure_port || '—')}</td>
+        <td data-label="Arrival port">${escapeHtml(row.arrival_port || '—')}</td>
+        <td data-label="Transit time">${escapeHtml(row.transit_time || '—')}</td>
+        <td data-label="Price"><span class="sch-voyage">${escapeHtml(priceLabel(row))}</span></td>
+        <td data-label="Documents due">${datePill(row.docs_deadline, true)}</td>
       </tr>
     `).join('');
   };
@@ -235,34 +249,47 @@
     let data = { updated: '', items: [] };
 
     try {
-      const res = await fetch('schedule_en.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('schedule_en.json not found');
+      const res = await fetch('../schedule.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('schedule.json not found');
       data = await res.json();
     } catch (err) {
       console.warn('Schedule load failed:', err);
-      data = {
-        updated: '',
-        items: [
-          {
-            vessel: 'Hiroyuki',
-            voyage: '11',
-            route: 'Busan → Vladivostok',
-            loading_date: '2026-05-08',
-            docs_deadline: '2026-05-07',
-            eta: '2026-05-11',
-            status: 'Open',
-            tracking: '',
-            note: 'Planned loading is confirmed by the manager'
-          }
-        ]
-      };
+      data = { updated: '', items: [] };
     }
 
     if (updatedEl) {
-      updatedEl.textContent = data.updated ? fmtDate(data.updated) : 'manually';
+      updatedEl.textContent = parseTripDate(data.updated) ? fmtDate(data.updated) : 'on request';
     }
 
-    renderRows(data.items);
+    // The shared schedule.json is maintained in Russian; translate only its
+    // visitor-facing values without changing the source or its field names.
+    const rowText = {
+      'До субботы': 'By Saturday',
+      '2-3 дней': '2–3 days',
+      'Открыто': 'Open',
+      'Временно закрыто': 'Temporarily closed',
+      'Плановая погрузка подтверждается менеджером': 'The scheduled loading date is confirmed by a manager',
+      'Дата может корректироваться линией': 'The carrier may adjust the date',
+      'Лучше отправить документы заранее': 'Please send documents in advance',
+      'Пусан — Камчон 5 → Мортэк': 'Busan–Kamcheon 5 → Mortek',
+      'Пусан — Камчон 5': 'Busan–Kamcheon 5',
+      'Мортэк': 'Mortek',
+      '2–3 дня': '2–3 days',
+      'Дата может измениться на 1 день.': 'Dates may change by one day.'
+    };
+    const translateValue = value => typeof value === 'string' ? (rowText[value] || value) : value;
+    const translatedRows = Array.isArray(data.items) ? data.items.map(row => ({
+      ...row,
+      route: translateValue(row.route),
+      departure_port: translateValue(row.departure_port),
+      arrival_port: translateValue(row.arrival_port),
+      transit_time: translateValue(row.transit_time),
+      docs_deadline: translateValue(row.docs_deadline),
+      eta: translateValue(row.eta),
+      status: translateValue(row.status),
+      note: translateValue(row.note)
+    })) : [];
+    renderRows(translatedRows);
     bindTable();
     bindModal();
   };

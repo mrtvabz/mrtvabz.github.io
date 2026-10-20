@@ -31,7 +31,7 @@
 })();
 
 /* MaxWin Logistics — pogruzka.js
-   - Filters cards by data-country
+   - Filters cards by actual video format
    - Opens modal and plays YouTube videos inside iframe
    Works with:
      data-yt="NjxoV7eQi3U" (ID)
@@ -45,6 +45,7 @@
   const filtersWrap = document.getElementById('pgFilters');
   const grid = document.getElementById('pgGrid');
   const cards = Array.from(document.querySelectorAll('.pg-card'));
+  const count = document.getElementById('pgCount');
 
   const modal = document.getElementById('pgModal');
   const modalTitle = document.getElementById('pgModalTitle');
@@ -97,6 +98,28 @@
     return s.includes('/shorts/');
   }
 
+  cards.forEach(card => {
+    const img = card.querySelector('.pg-media img');
+    if (!img) return;
+    const fallback = document.createElement('span');
+    fallback.className = 'mw-photo-fallback';
+    fallback.setAttribute('aria-hidden', 'true');
+    fallback.textContent = 'Видео MaxWin Logistics';
+    img.after(fallback);
+    const useVideoThumbnail = () => {
+      if (img.dataset.thumbnailTried) {
+        img.hidden = true;
+        return;
+      }
+      img.dataset.thumbnailTried = 'true';
+      const id = parseYouTubeId(card.getAttribute('data-yt'));
+      if (id) img.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+      else img.hidden = true;
+    };
+    img.addEventListener('error', useVideoThumbnail);
+    if (img.complete && img.naturalWidth === 0) useVideoThumbnail();
+  });
+
   function openModalWithYouTube(card) {
     const yt = card.getAttribute('data-yt');
     const title = card.getAttribute('data-title') || 'Видео';
@@ -144,11 +167,15 @@
 
   function applyFilter(filter) {
     const f = (filter || 'all').toLowerCase();
+    let visible = 0;
     cards.forEach((card) => {
-      const c = (card.getAttribute('data-country') || '').toLowerCase();
-      const show = (f === 'all') || (c === f) || (c === 'all');
+      const shortVideo = isShortsLink(card.getAttribute('data-yt'));
+      const show = f === 'all' || (f === 'shorts' && shortVideo) || (f === 'full' && !shortVideo);
+      card.hidden = !show;
       card.style.display = show ? '' : 'none';
+      if (show) visible += 1;
     });
+    if (count) count.textContent = `Показано видео: ${visible}`;
   }
 
   // Filters click
@@ -158,8 +185,12 @@
       if (!btn) return;
 
       const filter = btn.getAttribute('data-filter') || 'all';
-      filtersWrap.querySelectorAll('.pg-pill').forEach((b) => b.classList.remove('is-active'));
+      filtersWrap.querySelectorAll('.pg-pill').forEach((b) => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
       applyFilter(filter);
     });
   }
