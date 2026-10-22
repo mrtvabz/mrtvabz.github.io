@@ -125,6 +125,10 @@ body{background:#f8faf9}
 .page-contacts .staff-body{padding:22px!important}
 .page-contacts .staff-photo{height:220px!important;background:#dce9e9!important}
 .page-contacts .staff-photo img{width:100%!important;height:100%!important;object-fit:contain!important;background:#e8f0f0!important}
+@media (max-width:640px){
+  .page-contacts .staff-photo{height:auto!important;aspect-ratio:3/4;background:#10283b!important}
+  .page-contacts .staff-photo img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 28%;background:#10283b!important}
+}
 .page-contacts .staff-position{display:block;color:#357b8c;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;line-height:1.5;margin:0 0 7px}
 .page-contacts .staff-name{font-size:22px!important;margin:0 0 15px!important}
 .page-contacts .staff-meta strong{font-weight:600;color:#283d43}
