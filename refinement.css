@@ -125,6 +125,7 @@ body{background:#f8faf9}
 .page-contacts .staff-body{padding:22px!important}
 .page-contacts .staff-photo{height:auto!important;aspect-ratio:auto;display:block;padding:0;background:#fff!important}
 .page-contacts .staff-photo img{position:static;inset:auto;display:block;width:100%!important;max-width:100%;height:auto!important;object-fit:contain!important;object-position:center;border-radius:0;background:transparent!important}
+.page-contacts .staff-photo img[src$="gg.PNG"]{aspect-ratio:2/3;object-fit:cover!important;object-position:center 70%}
 @media (max-width:640px){
   .page-contacts .staff-grid{max-width:330px!important}
 }
