@@ -123,11 +123,11 @@ body{background:#f8faf9}
 .page-contacts .staff-grid{max-width:1200px!important;gap:20px!important}
 .page-contacts .staff-card{border:1px solid #dce6e6!important;border-radius:16px!important;box-shadow:var(--mw-shadow)!important}
 .page-contacts .staff-body{padding:22px!important}
-.page-contacts .staff-photo{height:auto!important;aspect-ratio:1/1;background:#10283b!important}
-.page-contacts .staff-photo img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 10%;background:#10283b!important}
+.page-contacts .staff-photo{height:auto!important;aspect-ratio:auto;display:flex;align-items:center;justify-content:center;padding:20px 20px 0;background:#fff!important}
+.page-contacts .staff-photo img{position:static;inset:auto;display:block;width:auto!important;max-width:100%;height:300px!important;object-fit:contain!important;object-position:center;border-radius:10px;background:#10283b!important}
 @media (max-width:640px){
-  .page-contacts .staff-photo{aspect-ratio:3/4}
-  .page-contacts .staff-photo img{object-position:center 28%}
+  .page-contacts .staff-photo{padding-top:18px}
+  .page-contacts .staff-photo img{height:280px!important}
 }
 .page-contacts .staff-position{display:block;color:#357b8c;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;line-height:1.5;margin:0 0 7px}
 .page-contacts .staff-name{font-size:22px!important;margin:0 0 15px!important}
