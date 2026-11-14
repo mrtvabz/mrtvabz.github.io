@@ -36,6 +36,11 @@
   <link rel="stylesheet" href="../refinement.css">
   <link rel="alternate" hreflang="ru" href="https://www.maxwinlogistics.co/pogruzka.html">
   <link rel="alternate" hreflang="en" href="https://www.maxwinlogistics.co/en/pogruzka.html">
+  <link rel="stylesheet" href="../unslop-subpages.css">
+  <link rel="stylesheet" href="../port-scenes.css">
+  <link rel="stylesheet" href="../header-contact.css">
+  <script src="../header-contact.js" defer></script>
+  <script src="../loading-scene.js" defer></script>
 </head>
 
 <body class="page-pogruzka">
@@ -60,9 +65,13 @@
     <section class="page-section pg-wrap">
       <div class="container">
 
+        <div class="mw-gallery-intro">
+        <video class="mw-loading-scene-video" muted playsinline loop preload="none" poster="../loading-process-poster.jpg" aria-hidden="true"><source data-src="../loading-process.mp4" type="video/mp4"></video>
+        <button class="mw-loading-scene-toggle" type="button" data-play-label="Play background video" data-pause-label="Pause background video" hidden></button>
         <div class="pg-breadcrumb">MaxWin <span>›</span> Loading</div>
         <h1 class="pg-title">Vehicle loading photos and videos</h1>
         <p class="mw-gallery-lead">This gallery shows how MaxWin Logistics handles vehicles before dispatch. See real preparation and loading stages. Ask your manager about the documentation and media available for your specific vehicle.</p>
+        </div>
 
         <!-- Filters -->
         <div class="pg-filters" id="pgFilters">

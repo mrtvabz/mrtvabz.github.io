@@ -121,6 +121,10 @@
 @media(max-width:410px){.mw-game-destination{display:block;min-height:80px;padding:7px}.mw-game-destination b{float:right;width:27px;height:27px;margin:0 0 2px 4px;font-size:9px}.mw-game-destination>span{display:block}.mw-game-destination small{font-size:8px}.mw-game-medal-badge{margin-top:5px;padding:3px 5px;font-size:8px}.mw-game-brief-mark{display:none}.mw-game-brief-medal{flex:0 0 auto}.mw-game-nitro-label{font-size:11px}.mw-game-nitro-status{font-size:8px}.mw-game-jump{gap:8px;font-size:14px}.mw-game-jump span{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.mw-game-stage.is-hit canvas{animation:none}.mw-game-nitro,#mw-game-nitro-fill{transition:none}}
   </style>
+  <link rel="stylesheet" href="../unslop-preview.css">
+  <link rel="stylesheet" href="../port-scenes.css">
+  <link rel="stylesheet" href="../header-contact.css">
+  <script src="../header-contact.js" defer></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TMZM8ZWFM"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-9TMZM8ZWFM');</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MaxWin Logistics","url":"https://www.maxwinlogistics.co/en/","description":"Shipping cars and cargo from South Korea by sea and rail.","address":{"@type":"PostalAddress","streetAddress":"서해대로179번길 17","addressLocality":"Incheon","addressCountry":"KR"},"email":"maxwincorp1@gmail.com"}</script>
@@ -152,8 +156,7 @@
         <div>
           <span class="mw-kicker">Logistics from South Korea</span>
           <h1>Shipping cars <span>from South Korea</span></h1>
-          <p class="mw-lead">We help you buy, prepare and ship a car or cargo from Korea. We arrange RoRo or container transport, handle the documents and show our work through photos and videos.</p>
-          <p class="mw-hero-support">Know what's happening to your car, from preparation in Korea to the agreed arrival point.</p>
+          <p class="mw-lead">We prepare your car, handle export documents and show the loading. RoRo and container shipping from Incheon.</p>
           <div class="mw-hero-actions"><a class="mw-btn" href="contacts.html">Contact us <span aria-hidden="true">↗</span></a><a class="mw-btn mw-btn--ghost" href="pogruzka.html">Watch loading videos</a></div>
           <div class="mw-statline" aria-label="Main services"><span>RoRo</span><span>Container</span><span>Documents</span><span>Photo and video reports</span></div>
         </div>
@@ -202,7 +205,7 @@
       <article class="mw-card mw-proof-card mw-reveal"><div class="mw-media"><img src="../ww.jpg" alt="Video of a car before shipping"><span class="mw-image-fallback" aria-hidden="true">Port operations</span></div><div class="mw-proof-card-body"><h3>Port checks</h3><p>Photos and videos from the yard and loading.</p><a class="mw-card-link" href="pogruzka.html">Watch video</a></div></article>
     </div><p class="mw-quiet-note" style="margin:24px 0 0">Ask a manager about the details of your shipment.</p></div></section>
 
-    <section class="mw-section" id="about"><div class="mw-container mw-about-grid"><div class="mw-reveal"><span class="mw-kicker">About us</span><h2>Logistics with a clear view of every step</h2></div><div class="mw-reveal"><p>MaxWin Logistics is a team in South Korea working with exports of cars, spare parts and cargo since 2020. We guide customers through the process, from choosing a shipping method and preparing the car to handling documents and departure.</p><p>With international shipping, you need to know more than the route: you need to know what's already been done to your car. We stay in touch, explain the next stage and provide photos and videos of preparation and loading. Customers see the real work, not just a status update.</p><p>We work with ports and shipping lines in Korea. For each inquiry, we confirm the car, destination and transport terms, then suggest a suitable plan.</p><div class="mw-about-points"><div><b>Documents</b>Preparing and checking export paperwork</div><div><b>Oversight</b>Photos and videos at key stages</div><div><b>Routes</b>Choosing a shipping method for the job</div><div><b>Team</b>Direct contact with specialists</div></div></div></div></section>
+    <section class="mw-section" id="about"><div class="mw-container mw-about-grid"><div class="mw-reveal"><span class="mw-kicker">About us</span><h2>Logistics with a clear view of every step</h2><figure class="mw-about-photo"><img src="../ll.jpg" alt="MaxWin staff preparing cars before loading" loading="lazy"><figcaption>Preparing cars for departure</figcaption></figure></div><div class="mw-reveal"><p>MaxWin Logistics has worked in South Korea since 2020. We ship cars, parts and cargo, help choose the transport method and prepare export documents.</p><p>We explain what happens next at each stage. Photos and videos of preparation and loading let you see the work on your car before departure.</p><p>For a quote, we confirm the car, destination and shipping terms. Then we propose a route and the next steps.</p><div class="mw-about-points"><div><b>Documents</b>Preparing and checking export paperwork</div><div><b>Oversight</b>Photos and videos at key stages</div><div><b>Routes</b>Choosing a shipping method for the job</div><div><b>Team</b>Direct contact with specialists</div></div></div></div></section>
 
     <section class="mw-section mw-section--mist" id="expertise"><div class="mw-container"><div class="mw-section-heading mw-reveal"><div><span class="mw-kicker">How we work</span><h2>More detail. Fewer unknowns.</h2></div><p>Every shipment is different. Here's what we discuss and check before a car leaves Korea.</p></div><div class="mw-editorial-grid">
       <article class="mw-editorial-item mw-reveal"><span class="mw-editorial-number">01 / SHIPPING METHOD</span><h3>RoRo or container</h3><p>RoRo carries a car on a specialized vessel. A container is used when cargo needs enclosed placement, additional securing or particular preparation. We compare options for the car, route and shipping terms rather than suggest one format for everyone.</p><a href="roro.html">Learn more about RoRo</a><a href="container.html">Learn more about containers</a></article>
@@ -1232,6 +1235,16 @@
   else window.addEventListener('resize', resize);
   selectRun();
 })();
+  </script>
+  <script>
+    (() => {
+      const hero = document.querySelector('.mw-home-hero');
+      if (!hero || !('IntersectionObserver' in window)) return;
+      const observer = new IntersectionObserver(([entry]) => {
+        document.body.classList.toggle('mw-hero-in-view', entry.isIntersecting);
+      }, { threshold: .05 });
+      observer.observe(hero);
+    })();
   </script>
 </body>
 </html>
