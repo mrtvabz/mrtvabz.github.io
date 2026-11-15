@@ -44,7 +44,7 @@ body.page-pogruzka .mw-gallery-intro::before {
   inset: -10px;
   z-index: 0;
   background: var(--mw-scene) var(--mw-scene-position, center) / cover no-repeat;
-  filter: blur(1.5px) saturate(.85);
+  filter: saturate(.9);
   transform: scale(1.025);
   pointer-events: none;
   animation: mw-scene-drift 28s ease-in-out infinite alternate;
@@ -96,8 +96,8 @@ body.page-pogruzka .mw-gallery-intro > * {
 body.page-schedule .sch-hero,
 body.page-pogruzka .mw-gallery-intro {
   padding: 34px 38px;
-  border: 1px solid #d7e2e1;
-  border-radius: 5px;
+  border: 0;
+  border-radius: 0 30px 0 0;
 }
 body.page-pogruzka .mw-gallery-intro { margin-bottom: 25px; }
 body.page-pogruzka .mw-gallery-intro .mw-gallery-lead { margin-bottom: 0; }
@@ -153,7 +153,7 @@ body.home #process::before {
   inset: -10px;
   z-index: 0;
   background: url('00.png') center 56% / cover no-repeat;
-  filter: blur(1.5px) saturate(.8);
+  filter: saturate(.85);
   pointer-events: none;
 }
 body.home #process::after {
@@ -181,7 +181,7 @@ body.home .mw-kz-route-art::before {
   inset: -8px;
   z-index: 0;
   background: url('00.png') center 57% / cover no-repeat;
-  filter: blur(1.5px) saturate(.8);
+  filter: saturate(.85);
   opacity: .9;
   pointer-events: none;
 }
