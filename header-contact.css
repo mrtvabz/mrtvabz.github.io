@@ -8,16 +8,18 @@
   width: 42px;
   height: 42px;
   padding: 0;
-  border: 1px solid #cbd9da;
-  border-radius: 6px;
-  background: #f7f9f8;
-  color: #286879;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--mw-muted);
   cursor: pointer;
-  transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+  transition: color .18s ease;
 }
 .mw-contact-trigger svg { display: block; width: 20px; height: 20px; }
 .mw-contact-trigger:hover,
-.mw-contact-picker.is-open .mw-contact-trigger { border-color: #9fc7cf; background: #e7f1f1; color: #123c4b; }
+.mw-contact-picker.is-open .mw-contact-trigger { border: 0; background: transparent; box-shadow: none; color: var(--mw-ink); }
 .mw-contact-trigger:focus-visible,
 .mw-contact-panel a:focus-visible { outline: 2px solid #128eab; outline-offset: 3px; }
 .mw-contact-panel {
